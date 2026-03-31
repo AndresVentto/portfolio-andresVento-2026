@@ -14,16 +14,17 @@ export default {
 
     extend: {
       colors: {
-        sectionColor: "hsl(0 0% 93%)",
+        sectionColor: "hsl(0 0% 92%)",
         darkBodyColor: "hsl(216, 100%, 4%)",
         darkSectionColor: "hsl(211, 100%, 12%)",
         primaryColor: "hsl(209, 87%, 21%)",
         primaryColorLight: "hsl(209, 74%, 45%)",
-        whiteColor: "hsl(0, 0%, 98%)",
+        whiteColor: "hsl(0, 0%, 97%)",
         textColor: "hsl(0, 0%, 100%)",
         menuColor: "hsla(216, 100%, 5%, 0.75)",
-        secondaryColor: "red"
-        
+        primary: "hsl(214, 89%, 52%)",
+        primaryLight: "hsl(214, 89%, 65%)",
+
       },
 
       fontFamily: {

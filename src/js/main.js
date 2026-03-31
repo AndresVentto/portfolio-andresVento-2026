@@ -63,7 +63,7 @@ function darkMode() {
 // Light Mode:
 function lightMode() {
      html.classList.remove("dark"); 
-     themeBtn.classList.remove("fa-sun"); 
+     themeBtn.classList.remove("fa-sun");  
      themeBtn.classList.add("fa-moon"); 
      localStorage.setItem("mode", "light"); 
 
@@ -344,3 +344,7 @@ copyIcons.forEach(icon => {
           });
      });
 });
+
+
+
+
