@@ -121,61 +121,74 @@ function cargarParticles(color) {
      });
 }
 
-/*~~~~~~~~~~~~~~~ PESTAÑAS ~~~~~~~~~~~~~~~*/ 
+/*~~~~~~~~~~~~~~~ FILTRO DE PROYECTOS ~~~~~~~~~~~~~~~*/ 
 let tabs = document.querySelectorAll(".tab");
-let indicador = document.querySelector(".indicador");
+let indicador = document.querySelector("#indicador");
+
 const todos = document.querySelectorAll(".work_card");
 const frontends = document.querySelectorAll(".frontend");
-const backends = document.querySelectorAll(".backend");
+const sistemas = document.querySelectorAll(".sistema");
 const mobiles = document.querySelectorAll(".mobile");
 
-indicador.style.width = tabs[0].getBoundingClientRect().width + "px";
-indicador.style.left = tabs[0].getBoundingClientRect().left - tabs[0].parentElement.getBoundingClientRect().left + "px";
+// 🔥 Función reutilizable (más limpio)
+function moverIndicador(tab) {
+     const tabRect = tab.getBoundingClientRect();
+     const parentRect = tab.parentElement.getBoundingClientRect();
+
+     indicador.style.width = tabRect.width + "px";
+     indicador.style.transform = `translateX(${tabRect.left - parentRect.left}px)`;
+}
+
+// Estado inicial
+moverIndicador(tabs[0]);
+tabs[0].classList.add("text-whiteColor");
 
 tabs.forEach((tab) => {
      tab.addEventListener("click", () => {
-          indicador.style.width = tab.getBoundingClientRect().width + "px";
-          indicador.style.left = tab.getBoundingClientRect().left - tab.parentElement.getBoundingClientRect().left + "px";
 
+          // 🔥 Movimiento fluido
+          moverIndicador(tab);
+
+          // Activar color
           tabs.forEach(t => t.classList.remove("text-whiteColor"));
           tab.classList.add("text-whiteColor");
 
           const tabval = tab.getAttribute("data-tabs");
 
-          todos.forEach(items => {
-               items.style.display  = "none";
-          });
+          // Ocultar todos
+          todos.forEach(items => items.style.display = "none");
 
-          if(tabval == "frontend") {
-               frontends.forEach(item => {
-                    item.style.display = "block";
-               });
-          } else if(tabval == "backend") {
-               backends.forEach(item => {
-                    item.style.display = "block";
-               });
-          } else if(tabval == "mobile") {
-               mobiles.forEach(item => {
-                    item.style.display = "block";
-               });
+          // Mostrar según filtro
+          if(tabval === "frontend") {
+               frontends.forEach(item => item.style.display = "block");
+
+          } else if(tabval === "sistema") {
+               sistemas.forEach(item => item.style.display = "block");
+
+          } else if(tabval === "mobile") {
+               mobiles.forEach(item => item.style.display = "block");
+
           } else {
-               todos.forEach(items => {
-                    items.style.display = "block";
-               });
+               todos.forEach(items => items.style.display = "block");
           }
      });
 });
 
+window.addEventListener("resize", () => {
+     const activeTab = document.querySelector(".tab.text-whiteColor");
+     if(activeTab) moverIndicador(activeTab);
+});
+
 /*~~~~~~~~~~~~~~~ CAMBIAR FONDO DEL ENCABEZADO (Header) ~~~~~~~~~~~~~~~*/ 
 const scrollHeader = () => {
-     const navbar = document.getElementById("navbar");
+     const header = document.getElementById("header");
      const aTag = document.querySelectorAll("nav ul li a");
      const themeBoton = document.getElementById("theme-btn");
      const hamburguesa = document.getElementById("hamburguesa");
      const logoOscuro = document.getElementById("logo-oscuro");
 
      if(this.scrollY >= 60) {
-          navbar.classList.add("bg-[hsla(216,100%,5%,0.85)]");
+          header.classList.add("bg-[hsla(216,100%,5%,0.85)]");
           aTag.forEach((item) =>{
                item.classList.add("text-whiteColor");
           });
@@ -185,7 +198,7 @@ const scrollHeader = () => {
           logoOscuro.src = "./assets/img/logo.png";          
 
      } else {
-          navbar.classList.remove("bg-[hsla(216,100%,5%,0.85)]");
+          header.classList.remove("bg-[hsla(216,100%,5%,0.85)]");
           aTag.forEach((item) => {
                item.classList.remove("text-whiteColor");
           });
@@ -296,10 +309,13 @@ sr.reveal(".inicio__footer", { origin: "bottom", delay: isMobile ? 50 : 100 });
 sr.reveal(".servicio__top", { origin: "bottom" });
 sr.reveal(".servicio__elemento", { origin: "bottom", interval: isMobile ? 50 : 80 });
 
+/*================ SECCIÓN: SOBRE MÍ ================*/
+sr.reveal(".sobre_mi__top", { origin: "bottom" });
+sr.reveal(".sobre_mi__content", { origin: "bottom", delay: isMobile ? 50 : 100 });
+
 /*================ SECCIÓN: PROYECTOS ================*/
 sr.reveal(".proyectos__top", { origin: "bottom" });
 sr.reveal(".proyectos__taps", { origin: "bottom", delay: isMobile ? 50 : 100 });
-sr.reveal(".work_card", { origin: "bottom", delay: isMobile ? 100 : 150 });
 
 /*================ SECCIÓN: CV ================*/
 sr.reveal(".cv__top", { origin: "bottom" });
@@ -324,27 +340,173 @@ const copyIcons = document.querySelectorAll(".copy-icon");
 
 copyIcons.forEach(icon => {
      icon.addEventListener("click", () => {
-          const texto = icon.getAttribute("data-copy");
-          const tipo = icon.getAttribute("data-text");
+          const texto = icon.dataset.copy;
+          const tipo = icon.dataset.text;
 
-          // Copiar al portapapeles
           navigator.clipboard.writeText(texto).then(() => {
-
-               // Crear alerta temporal
+               // Posición relativa al icono
+               const rect = icon.getBoundingClientRect();
                const alerta = document.createElement("div");
-               alerta.textContent = `✅ ${tipo} copiado: ${texto}`;
-               alerta.className = "fixed bottom-20 right-5 bg-primaryColor text-blob text-white px-9 py-5 rounded-lg shadow-lg opacity-0 animate-fadeInOut z-50";
+
+               alerta.textContent = `${tipo} Copiado ✅ `;
+               alerta.className = `
+                    absolute bg-primaryColor text-white px-4 py-2 rounded-lg shadow-lg
+                    text-sm md:text-base z-50 animate-fadeInOut pointer-events-none
+               `;
 
                document.body.appendChild(alerta);
 
-               // Remover después de 2 segundos
-               setTimeout(() => {
-                    alerta.remove();
-               }, 2000);
+               // Posiciónar alerta cerca del icono
+               alerta.style.top = `${rect.top - 40 + window.scrollY}px`;
+               alerta.style.left = `${rect.left + rect.width/2 - alerta.offsetWidth/2}px`;
+
+               // Remover después de la animación
+               alerta.addEventListener("animationend", () => alerta.remove());
           });
      });
 });
 
+/*~~~~~~~~~~~~~~~ VALIDACIÓN DE FORMULARIO ~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~ LÓGICA DE FORMULARIO MEJORADA ~~~~~~~~~~~~~~~*/
+const form = document.getElementById("contact-form");
+const submitBtn = document.getElementById("submit-btn");
+const btnIcon = document.getElementById("btn-icon");
+const toast = document.getElementById("toast");
+const charCount = document.getElementById("char-count");
+
+const config = {
+    fullname: { regex: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}$/, required: true },
+    subject: { regex: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,100}$/, required: true }, 
+    email: { regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, required: true },
+    message: { regex: /^[\s\S]{10,2000}$/, required: true }
+};
+
+const fields = Object.keys(config);
+
+// --- FUNCIONES AUXILIARES ---
+
+function showToast() {
+    toast.classList.remove("translate-y-32", "opacity-0");
+    setTimeout(() => toast.classList.add("translate-y-32", "opacity-0"), 4000);
+}
+
+function validateField(input, id) {
+    const container = input.parentElement.tagName === 'DIV' ? input.parentElement : input.closest('.space-y-2');
+    const icon = container.querySelector(".icon");
+    const emptyError = container.querySelector(".error-empty");
+    const invalidError = container.querySelector(".error-invalid");
+    const success = container.querySelector(".success");
+    const value = input.value.trim();
+
+    // Reset styles
+    [emptyError, invalidError, success].forEach(el => el?.classList.add("hidden"));
+    input.classList.remove("border-red-500", "border-green-500", "border-blue-500", "ring-1", "ring-blue-500");
+
+    if (config[id].required && value === "") {
+        emptyError?.classList.remove("hidden");
+        input.classList.add("border-red-500");
+        if (icon) icon.textContent = "⚠️";
+        return false;
+    }
+
+    if (config[id].regex && value !== "" && !config[id].regex.test(value)) {
+        invalidError?.classList.remove("hidden");
+        input.classList.add("border-red-500");
+        if (icon) icon.textContent = "❌";
+        return false;
+    }
+
+    if (value !== "") {
+        success?.classList.remove("hidden");
+        input.classList.add("border-green-500");
+        if (icon) icon.textContent = "✅";
+        return true;
+    }
+    return true;
+}
+
+function resetAll() {
+    fields.forEach(id => {
+        const input = document.getElementById(id);
+        input.classList.remove("border-red-500", "border-green-500", "border-blue-500", "ring-1", "ring-blue-500");
+        const container = input.closest('.space-y-2');
+        const icon = container.querySelector(".icon");
+        if (icon) icon.textContent = "";
+        container.querySelectorAll(".error-empty, .error-invalid, .success").forEach(m => m.classList.add("hidden"));
+    });
+    charCount.textContent = "0";
+    charCount.classList.replace("text-red-500", "text-gray-500");
+}
+
+// --- EVENTOS ---
+
+fields.forEach((id, index) => {
+    const input = document.getElementById(id);
+
+    input.addEventListener("focus", () => {
+        // Mejorado: Solo azul en focus, no rojo preventivo
+        if (!input.classList.contains("border-red-500")) {
+            input.classList.add("border-blue-500", "ring-1", "ring-blue-500");
+        }
+    });
+
+    input.addEventListener("input", () => {
+        validateField(input, id);
+        if (id === "message") {
+            charCount.textContent = input.value.length;
+            input.value.length >= 1950 ? charCount.classList.add("text-red-500") : charCount.classList.remove("text-red-500");
+        }
+    });
+});
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let isValid = true;
+
+    fields.forEach(id => {
+        if (!validateField(document.getElementById(id), id)) isValid = false;
+    });
+
+    if (isValid) {
+        // Efecto Loading en Botón
+        const originalText = submitBtn.querySelector("span").textContent;
+        submitBtn.disabled = true;
+        submitBtn.querySelector("span").textContent = "Enviando...";
+        btnIcon.className = "fa fa-spinner animate-spin";
+
+        // Simulación de envío (1 seg)
+        setTimeout(() => {
+            showToast();
+            form.reset();
+            resetAll();
+            
+            // Volver botón a la normalidad
+            submitBtn.disabled = false;
+            submitBtn.querySelector("span").textContent = originalText;
+            btnIcon.className = "fa fa-paper-plane";
+        }, 1000);
+    }
+});
 
 
+// Funcion del modal de proyectos
 
+function openModal(id) {
+     const modal = document.getElementById(id);
+     modal.classList.remove("hidden");
+     modal.classList.add("flex");
+}
+
+function closeModal(id) {
+     const modal = document.getElementById(id);
+     modal.classList.add("hidden");
+     modal.classList.remove("flex");
+}
+
+// Cerrar al hacer click fuera
+window.addEventListener("click", function(e) {
+     const modal = document.getElementById("modal-project-1");
+     if (e.target === modal) {
+          closeModal("modal-project-1");
+     }
+});

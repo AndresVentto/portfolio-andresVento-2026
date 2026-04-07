@@ -1,3 +1,19 @@
+# Node & env
 node_modules/
 .env
 dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+*.bak
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
