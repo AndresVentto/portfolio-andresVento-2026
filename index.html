@@ -45,7 +45,7 @@
                               <img src="./assets/img/logoBlack.png" loading="lazy" alt="black_logo" class="w-20 md:w-27 dark:hidden" id="logo-oscuro">
                          </a>
                     </div>
-                    <nav id="nav-menu" class=" fixed -top-full left-0 w-full bg-[hsla(216,100%,5%,0.85)] backdrop-blur-md py-20 text-center transition-all duration-500 ease-in-out lg:static lg:top-0 lg:block lg:bg-transparent lg:backdrop-blur-0 lg:py-0 lg:w-auto lg:ml-auto">
+                    <nav id="nav-menu" class="fixed -top-full left-0 w-full h-screen flex flex-col justify-center bg-[hsla(216,100%,5%,0.95)] backdrop-blur-md text-center transition-all duration-500 ease-in-out lg:static lg:h-auto lg:flex-row lg:bg-transparent lg:backdrop-blur-0 lg:py-0 lg:w-auto lg:ml-auto">
                          <div class="text-sectionColor mb-10 flex flex-col items-center gap-4 lg:hidden">
                               <span class="text-sm opacity-70 tracking-widest font-bold">- MENU -</span>
                               <h3 class="text-lg font-semibold">💼 Andrés Vento 🚀</h3>
@@ -84,6 +84,7 @@
                     </div>
                </div>
           </header>
+
           <main>
                <!--============== INICIO ==============-->
                <section id="inicio" class="relative py-5 overflow-x-clip">
@@ -100,11 +101,11 @@
                                              <span class="text-3xl sm:text-4xl md:text-5xl inline-block animate-wave origin-bottom-right">
                                                   👋🏼
                                              </span>
-                                             ¡Hola!
+                                             ¡Holaa!
                                         </p>
                                    </div>
                                    <h1 class="text-center md:text-left">
-                                        <span class="title leading-normal">SOY ANDRÉS</span>
+                                        <span class="title leading-normal">SOY ANDRÉS.</span>
                                    </h1>
                                    <div class="relative flex justify-center md:hidden">
                                         <div class="absolute left-0 bottom-0 w-80 h-80 rounded-full blur-[150px] opacity-50 bg-blue-400 dark:bg-primaryColorLight mix-blend-normal dark:mix-blend-screen"></div>
@@ -115,7 +116,7 @@
                                    </div>
                                    <!-- Disponible para Trabajar -->
                                    <div class="flex flex-wrap justify-center md:justify-start">
-                                        <a href="#contacto" class="group relative inline-flex items-center gap-3 px-4 py-2 mb-3 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-500 ease-in-out border rounded-full backdrop-blur-xl bg-white/60 text-slate-700 border-primaryColor shadow-sm hover:bg-primaryColor hover:text-white hover:border-primaryColor dark:bg-slate-900/40 dark:text-emerald-400 dark:border-emerald-500/30 dark:hover:bg-emerald-500/10 dark:hover:border-emerald-400 hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
+                                        <a href="#contacto" class="group relative inline-flex items-center gap-3 px-4 py-2 mb-3 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-500 ease-in-out border rounded-full backdrop-blur-xl from-ligthBodyColor text-slate-700 border-primaryColor shadow-sm hover:bg-primaryColor hover:text-white hover:border-primaryColor dark:bg-slate-900/60 dark:text-emerald-400 dark:border-emerald-500/30 dark:hover:bg-emerald-500/10 dark:hover:border-emerald-400 hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
                                              <span class="relative flex h-3 w-3">
                                                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                                   <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
@@ -135,14 +136,14 @@
                                         </a>
                                         <div class="flex items-center justify-center gap-5 sm:gap-4">
                                              <div class="social-icon">
-                                                  <a href="#" title="Mi Correo" class="copy-icon text-2xl" data-copy="andresvento2004@gmail.com" data-text="Correo">
+                                                  <button title="Mi Correo" class="copy-icon text-2xl cursor-pointer" data-copy="andresvento2004@gmail.com" data-text="Correo">
                                                        <i class="fa-solid fa-envelope"></i>
-                                                  </a>
+                                                  </button>
                                              </div>
                                              <div class="social-icon">
-                                                  <a href="#" title="Mi Teléfono" class="copy-icon text-2xl" data-copy="+58 424 217 1412" data-text="Teléfono">
+                                                  <button title="Mi Teléfono" class="copy-icon text-2xl cursor-pointer" data-copy="+58 424 217 1412" data-text="Teléfono">
                                                        <i class="fa-solid fa-phone"></i>
-                                                  </a>
+                                                  </button>
                                              </div>
                                              <div class="social-icon">
                                                   <a href="https://www.linkedin.com/in/andrés-vento-casseres/" target="_blank" rel="noopener noreferrer" title="Mi LinkedIn" class="text-2xl">
@@ -169,27 +170,27 @@
                          <div class="inicio__footer text-darkSectionColor dark:text-whiteColor grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 py-20 px-6 sm:px-10 md:px-0">
                               <div class="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-2 sm:gap-3 text-center sm:text-left">
                                    <p class="contador font-audiowide text-4xl lg:text-7xl font-bold">4</p>
-                                   <p class="leading-tight sm:text-lg">
+                                   <p class="text-base sm:text-lg md:text-xl leading-relaxed">
                                         Años de 📆 <br> Experiencia.
                                    </p>
                               </div>
                               <div class="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-2 sm:gap-3 text-center sm:text-left">
                                    <p class="contador font-audiowide text-4xl lg:text-7xl font-bold">12+</p>
-                                   <p class="leading-tight sm:text-lg">
+                                   <p class="text-base sm:text-lg md:text-xl leading-relaxed">
                                         Proyectos 🚀 <br> Completados. 
                                    </p>
                               </div>
 
                               <div class="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-2 sm:gap-3 text-center sm:text-left">
                                    <p class="contador font-audiowide text-4xl lg:text-7xl font-bold">10</p>
-                                   <p class="leading-tight sm:text-lg">
+                                   <p class="text-base sm:text-lg md:text-xl leading-relaxed">
                                         Tecnologías <br> Usadas. 💻
                                    </p>
                               </div>
 
                               <div class="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-2 sm:gap-3 text-center sm:text-left">
                                    <p class="contador font-audiowide text-4xl lg:text-7xl font-bold">100%</p>
-                                   <p class="leading-tight sm:text-lg">
+                                   <p class="text-base sm:text-lg md:text-xl leading-relaxed">
                                         Profesional y <br> Comprometido.
                                    </p>
                               </div>
@@ -205,60 +206,49 @@
                     <div class="proyectos__top flex flex-col items-center gap-5 text-center md:text-center">
                          <h2 class="subtitle">Mis Proyectos más Destacados</h2>
 
-                         <p class="max-w-5xl text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed pb-10 text-darkBodyColor dark:text-whiteColor">
+                         <p class="max-w-5xl text-base sm:text-lg md:text-xl leading-relaxed pb-10 text-darkBodyColor dark:text-whiteColor">
                               A continuación presento una selección de proyectos donde pongo en práctica diferentes áreas de la informática, incluyendo desarrollo web, lógica de programación, gestión de bases de datos y diseño y desarrollo de sistemas informáticos. En cada uno he enfocado mis esfuerzos en crear soluciones eficientes, mantenibles y orientadas a resolver problemas reales.
                          </p>
                     </div>
                     <!-- Filtro PRO -->
-                    <div class="proyectos__taps relative w-full max-w-md mx-auto my-10 p-1 rounded-full 
-                              bg-sectionColor dark:bg-darkSectionColor 
-                              border border-primaryColor/30 overflow-hidden">
+                    <div class="proyectos__taps relative w-full max-w-md mx-auto my-10 p-1 rounded-full border-2 border-primaryColor dark:border-primaryColorLight bg-gradient-to-b bg-ligthBodyColor dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                         
+                         <!-- Indicador -->
+                         <div id="indicador" class="absolute top-1 left-1 h-[calc(100%-8px)] w-1/4 rounded-full bg-primaryColorLight transition-all duration-300 ease-in-out"></div>
 
-                    <!-- Indicador -->
-                    <div id="indicador" 
-                         class="absolute top-1 left-1 h-[calc(100%-8px)] w-1/4 
-                                   rounded-full bg-primaryColorLight 
-                                   transition-all duration-300 ease-in-out">
+                         <!-- Tabs -->
+                         <div class="flex relative z-10">
+                              <button class="tab flex-1 py-2 text-xs sm:text-sm md:text-base font-medium text-whiteColor cursor-pointer" data-tabs="todos">
+                                   Todos
+                              </button>
+
+                              <button class="tab flex-1 py-2 text-xs sm:text-sm md:text-base font-medium cursor-pointer" data-tabs="frontend">
+                                   Webs
+                              </button>
+
+                              <button class="tab flex-1 py-2 text-xs sm:text-sm md:text-base font-medium cursor-pointer" data-tabs="sistema">
+                                   Sistemas
+                              </button>
+
+                              <button class="tab flex-1 py-2 text-xs sm:text-sm md:text-base font-medium cursor-pointer" data-tabs="mobile">
+                                   Mobile
+                              </button>
+                         </div>
                     </div>
-
-                    <!-- Tabs -->
-                    <div class="flex relative z-10">
-                         <button class="tab flex-1 py-2 text-xs sm:text-sm md:text-base font-medium text-whiteColor"
-                                   data-tabs="todos">
-                              Todos
-                         </button>
-
-                         <button class="tab flex-1 py-2 text-xs sm:text-sm md:text-base font-medium"
-                                   data-tabs="frontend">
-                              Webs
-                         </button>
-
-                         <button class="tab flex-1 py-2 text-xs sm:text-sm md:text-base font-medium"
-                                   data-tabs="sistema">
-                              Sistemas
-                         </button>
-
-                         <button class="tab flex-1 py-2 text-xs sm:text-sm md:text-base font-medium"
-                                   data-tabs="mobile">
-                              Mobile
-                         </button>
-                    </div>
-                    </div>
-
-                    <div class="mt-6 relative rounded-3xl overflow-x-clip">
+                    <br>
+                    <div class="mt-6 relative rounded-4xl overflow-x-clip">
 
                          <!-- Adorno Azul -->
                          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-100 h-100 max-w-[90vw] bg-primaryColorLight dark:bg-primaryColorLight mix-blend-screen dark:mix-blend-screen rounded-full blur-[150px] opacity-50 pointer-events-none"></div>
 
-                         <ul class="grid grid-cols-1 gap-5 lg:gap-10 md:grid-cols-3">
+                         <ul class="grid grid-cols-1 gap-15 md:gap-13 md:grid-cols-3">
 
                               <!-- Frontend -->
                               <!-- Card-Proyecto-1 -->                              
-                              <div class="work_card frontend group relative max-w-xl overflow-hidden rounded-3xl border border-primaryColor/10 dark:border-white/5 bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(20,55,90,0.2)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                              <div class="work_card frontend group relative max-w-xl overflow-hidden rounded-3xl border-2 border-primaryColor dark:border-primaryColorLight bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-500 hover:shadow-[0_0_25px_rgba(59,130,246,0.8)]">
 
-                                   <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]">
-                                   </div>
-
+                                   <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]"></div>
+                                   
                                    <div class="relative p-3">
                                         <div class="aspect-video rounded-2xl overflow-hidden relative shadow-inner bg-zinc-200 dark:bg-zinc-800">
                                              <img src="./assets/img/project-1.jpg" alt="Imagen del Proyecto 1" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-90 dark:group-hover:brightness-75" />
@@ -282,7 +272,7 @@
                                                   Proyecto 1
                                              </h2>
 
-                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-sm md:text-base">
+                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-base sm:text-lg md:text-xl">
                                                   Real-time social media analytics dashboard with data visualization, sentiment analysis, and automated insights.
                                              </p>
                                         </div>
@@ -312,7 +302,7 @@
                                         <div class="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 dark:via-white/10 to-transparent"></div>
 
                                         <div class="flex items-center justify-between">
-                                             <a href="#" onclick="openModal('modal-project-1')" class="flex items-center gap-2 text-md font-bold text-[hsl(209,74%,45%)] dark:text-emerald-400 group/link">
+                                             <a href="#" onclick="openModal(event, 'modal-project-1')" class="flex items-center gap-2 text-md font-bold text-[hsl(209,74%,45%)] dark:text-emerald-400 group/link">
                                                   Ver más detalles
                                                   <i class="fa-solid fa-arrow-right transition-transform group-hover/link:translate-x-1"></i>
                                              </a>
@@ -325,9 +315,8 @@
                                    </div>
                               </div>
 
-
                               <!-- Card-Proyecto-2 -->
-                              <div class="work_card frontend group relative max-w-xl overflow-hidden rounded-3xl border border-primaryColor/10 dark:border-white/5 bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(20,55,90,0.2)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                              <div class="work_card frontend group relative max-w-xl overflow-hidden rounded-3xl border-2 border-primaryColor dark:border-primaryColorLight bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-500 hover:shadow-[0_0_25px_rgba(59,130,246,0.8)]">
 
                                    <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]"></div>
 
@@ -352,7 +341,7 @@
                                                   Proyecto 2
                                              </h2>
 
-                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-sm md:text-base">
+                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-base sm:text-lg md:text-xl">
                                                   Real-time social media analytics dashboard with data visualization, sentiment analysis, and automated insights.
                                              </p>
                                         </div>
@@ -396,7 +385,7 @@
                               </div>
 
                               <!-- Card-Proyecto-3 -->
-                              <div class="work_card frontend group relative max-w-xl overflow-hidden rounded-3xl border border-primaryColor/10 dark:border-white/5 bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(20,55,90,0.2)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                              <div class="work_card frontend group relative max-w-xl overflow-hidden rounded-3xl border-2 border-primaryColor dark:border-primaryColorLight bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-500 hover:shadow-[0_0_25px_rgba(59,130,246,0.8)]">
 
                                    <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]">
                                    </div>
@@ -422,7 +411,7 @@
                                                   Proyecto 3
                                              </h2>
 
-                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-sm md:text-base">
+                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-base sm:text-lg md:text-xl">
                                                   Real-time social media analytics dashboard with data visualization, sentiment analysis, and automated insights.
                                              </p>
                                         </div>
@@ -466,7 +455,7 @@
                               </div>
 
                               <!-- Card 4 work_card -->
-                              <div class="work_card sistema group relative max-w-xl overflow-hidden rounded-3xl border border-primaryColor/10 dark:border-white/5 bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(20,55,90,0.2)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                              <div class="work_card sistema group relative max-w-xl overflow-hidden rounded-3xl border-2 border-primaryColor dark:border-primaryColorLight bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-500 hover:shadow-[0_0_25px_rgba(59,130,246,0.8)]">
 
                                    <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]">
                                    </div>
@@ -492,7 +481,7 @@
                                                   Proyecto 4
                                              </h2>
 
-                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-sm md:text-base">
+                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-base sm:text-lg md:text-xl">
                                                   Real-time social media analytics dashboard with data visualization, sentiment analysis, and automated insights.
                                              </p>
                                         </div>
@@ -536,10 +525,9 @@
                               </div>
 
                               <!-- Card 5 work_card -->
-                              <div class="work_card sistema group relative max-w-xl overflow-hidden rounded-3xl border border-primaryColor/10 dark:border-white/5 bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(20,55,90,0.2)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                              <div class="work_card sistema group relative max-w-xl overflow-hidden rounded-3xl border-2 border-primaryColor dark:border-primaryColorLight bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-500 hover:shadow-[0_0_25px_rgba(59,130,246,0.8)]">
 
-                                   <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]">
-                                   </div>
+                                   <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]"></div>
 
                                    <div class="relative p-3">
                                         <div class="aspect-video rounded-2xl overflow-hidden relative shadow-inner bg-zinc-200 dark:bg-zinc-800">
@@ -562,7 +550,7 @@
                                                   Proyecto 5
                                              </h2>
 
-                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-sm md:text-base">
+                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-base sm:text-lg md:text-xl">
                                                   Real-time social media analytics dashboard with data visualization, sentiment analysis, and automated insights.
                                              </p>
                                         </div>
@@ -606,10 +594,9 @@
                               </div> 
  
                               <!-- Card 6 work_card -->
-                              <div class="work_card sistema group relative max-w-xl overflow-hidden rounded-3xl border border-primaryColor/10 dark:border-white/5 bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(20,55,90,0.2)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                              <div class="work_card sistema group relative max-w-xl overflow-hidden rounded-3xl border-2 border-primaryColor dark:border-primaryColorLight bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-500 hover:shadow-[0_0_25px_rgba(59,130,246,0.8)]">
 
-                                   <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]">
-                                   </div>
+                                   <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]"></div>
 
                                    <div class="relative p-3">
                                         <div class="aspect-video rounded-2xl overflow-hidden relative shadow-inner bg-zinc-200 dark:bg-zinc-800">
@@ -632,7 +619,7 @@
                                                   Proyecto 6
                                              </h2>
 
-                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-sm md:text-base">
+                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-base sm:text-lg md:text-xl">
                                                   Real-time social media analytics dashboard with data visualization, sentiment analysis, and automated insights.
                                              </p>
                                         </div>
@@ -676,10 +663,9 @@
                               </div> 
  
                               <!-- Card 7 work_card -->
-                              <div class="work_card  mobile group relative max-w-xl overflow-hidden rounded-3xl border border-primaryColor/10 dark:border-white/5 bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(20,55,90,0.2)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                              <div class="work_card  mobile group relative max-w-xl overflow-hidden rounded-3xl border-2 border-primaryColor dark:border-primaryColorLight bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-500 hover:shadow-[0_0_25px_rgba(59,130,246,0.8)]">
 
-                                   <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]">
-                                   </div>
+                                   <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]"></div>
 
                                    <div class="relative p-3">
                                         <div class="aspect-video rounded-2xl overflow-hidden relative shadow-inner bg-zinc-200 dark:bg-zinc-800">
@@ -702,7 +688,7 @@
                                                   Proyecto 7
                                              </h2>
 
-                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-sm md:text-base">
+                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-base sm:text-lg md:text-xl">
                                                   Real-time social media analytics dashboard with data visualization, sentiment analysis, and automated insights.
                                              </p>
                                         </div>
@@ -746,10 +732,9 @@
                               </div> 
 
                               <!-- Card 8 work_card -->
-                              <div class="work_card  mobile group relative max-w-xl overflow-hidden rounded-3xl border border-primaryColor/10 dark:border-white/5 bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(20,55,90,0.2)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                              <div class="work_card  mobile group relative max-w-xl overflow-hidden rounded-3xl border-2 border-primaryColor dark:border-primaryColorLight bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-500 hover:shadow-[0_0_25px_rgba(59,130,246,0.8)]">
 
-                                   <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]">
-                                   </div>
+                                   <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]"></div>
 
                                    <div class="relative p-3">
                                         <div class="aspect-video rounded-2xl overflow-hidden relative shadow-inner bg-zinc-200 dark:bg-zinc-800">
@@ -772,7 +757,7 @@
                                                   Proyecto 8
                                              </h2>
 
-                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-sm md:text-base">
+                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-base sm:text-lg md:text-xl">
                                                   Real-time social media analytics dashboard with data visualization, sentiment analysis, and automated insights.
                                              </p>
                                         </div>
@@ -816,10 +801,8 @@
                               </div>
  
                               <!-- Card 9 work_card -->
-                              <div class="work_card  mobile group relative max-w-xl overflow-hidden rounded-3xl border border-primaryColor/10 dark:border-white/5 bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(20,55,90,0.2)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-
-                                   <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]">
-                                   </div>
+                              <div class="work_card mobile group relative max-w-xl overflow-hidden rounded-3xl border-2 border-primaryColor dark:border-primaryColorLight bg-gradient-to-b from-sectionColor to-white dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-500 hover:shadow-[0_0_25px_rgba(59,130,246,0.8)]">
+                                   <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.15),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]"></div>
 
                                    <div class="relative p-3">
                                         <div class="aspect-video rounded-2xl overflow-hidden relative shadow-inner bg-zinc-200 dark:bg-zinc-800">
@@ -842,7 +825,7 @@
                                                   Proyecto 9
                                              </h2>
 
-                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-sm md:text-base">
+                                             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 text-base sm:text-lg md:text-xl">
                                                   Real-time social media analytics dashboard with data visualization, sentiment analysis, and automated insights.
                                              </p>
                                         </div>
@@ -924,22 +907,26 @@
                               <div class="md:w-1/2 space-y-6 text-center md:text-left">
 
                                    <h2 class="text-xl md:text-2xl font-bold text-slate-800 dark:text-white">
-                                        <span class="subtitle text-center leading-relaxed md:text-3xl">
+                                        <span class="subtitle leading-relaxed md:text-3xl">
                                              Soy un Programador Web FullStack
                                         </span>
                                    </h2>
 
-                                   <p class="text-base sm:text-lg md:text-xl text-black dark:text-white">
-                                        Me especializo en el desarrollo FrontEnd, creando interfaces claras, adaptables y pensadas para el usuario.
-                                        Empecé en la programación a los 18 años, y desde entonces me ha interesado entender cómo resolver problemas de forma lógica y construir soluciones reales.
-                                        <br><br>
-                                        Me gusta cuidar los detalles, escribir código ordenado y hacer las cosas bien desde el inicio.
-                                        Siempre busco mejorar en cada proyecto y dar un poco más de lo esperado.
-                                   </p>
+                                   <div class="space-y-4 max-w-2xl mx-auto md:mx-0">
+                                        <p class="text-base sm:text-lg md:text-xl text-black dark:text-white leading-relaxed">
+                                             Me especializo en el desarrollo FrontEnd, creando interfaces claras, adaptables y centradas en la experiencia del usuario.
+                                        </p>
 
-                                   <!-- Botones reutilizando estilo -->
+                                        <p class="text-base sm:text-lg md:text-xl text-black dark:text-white leading-relaxed">
+                                             Comencé en la programación a los 19 años, y a los 22 culminé mis estudios como Técnico Superior en Informática. Durante este proceso adquirí bases sólidas en resolución de problemas, documentación, redes y arquitectura de software, lo que fortaleció mi capacidad de pensar de forma lógica y estructurada para construir soluciones reales. A futuro, aspiro a formarme como Ingeniero de Software y seguir creciendo profesionalmente en el mundo de la tecnología.
+                                        </p>
+
+                                        <p class="text-base sm:text-lg md:text-xl text-black dark:text-white leading-relaxed">
+                                             Me gusta cuidar los detalles, escribir código limpio y aplicar buenas prácticas desde el inicio. Siempre busco mejorar en cada proyecto y dar un poco más de lo esperado.
+                                        </p>
+                                   </div>
+
                                    <div class="flex flex-col sm:flex-row items-center md:items-start gap-5 pt-4">
-
                                         <a href="./assets/doc/Andrés_Vento_TSU_en_Informática_CV.pdf" target="_blank" rel="noopener noreferrer" title="Mi Currículum" class="btn_outline text-lg sm:text-base md:text-lg px-9">
                                              Ver Currículum <i class="fa-solid fa-file-lines"></i>
                                         </a>
@@ -971,7 +958,7 @@
                               <div class="skills_group flex">
                                    <!-- HTML LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/html.svg" loading="lazy" alt="HTML-5" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   HTML
@@ -980,7 +967,7 @@
                                    </div> 
                                    <!-- CSS LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/css-3.svg" loading="lazy" alt="CSS-3" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   CSS
@@ -989,7 +976,7 @@
                                    </div> 
                                    <!-- SASS LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/sass.svg" loading="lazy" alt="Sass" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   SASS
@@ -998,7 +985,7 @@
                                    </div> 
                                    <!-- JS LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/javascript.svg" loading="lazy" alt="JavaScript" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   JavaScript
@@ -1007,7 +994,7 @@
                                    </div> 
                                    <!-- ReactJS LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/react.svg" loading="lazy" alt="ReactJS" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   ReactJS
@@ -1016,7 +1003,7 @@
                                    </div> 
                                    <!-- NodeJS LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/nodejs.svg" loading="lazy" alt="NodeJS" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   NodeJS
@@ -1025,7 +1012,7 @@
                                    </div> 
                                    <!-- PYTHON LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/python.svg" loading="lazy" alt="Python" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   Python
@@ -1034,7 +1021,7 @@
                                    </div> 
                                    <!-- JAVA LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/java.svg" loading="lazy" alt="Java" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   Java
@@ -1043,7 +1030,7 @@
                                    </div> 
                                    <!-- MySQL LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/mysql.svg" loading="lazy" alt="MySQL" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   MySQL
@@ -1052,7 +1039,7 @@
                                    </div> 
                                    <!-- PostgresSQL LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/postgresql.svg" loading="lazy" alt="PostgresSQL" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   PostgresSQL
@@ -1061,7 +1048,7 @@
                                    </div> 
                                    <!-- Git LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/git.svg" loading="lazy" alt="Git" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   Git
@@ -1070,7 +1057,7 @@
                                    </div> 
                                    <!-- GitHub LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/github.svg" loading="lazy" alt="GitHub" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   GitHub
@@ -1079,7 +1066,7 @@
                                    </div> 
                                    <!-- PHP LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/php.svg" loading="lazy" alt="PHP" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   PHP
@@ -1088,7 +1075,7 @@
                                    </div> 
                                    <!-- WordPress LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/wordpress.svg" loading="lazy" alt="WordPress" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   WordPress
@@ -1097,7 +1084,7 @@
                                    </div> 
                                    <!-- Linux LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/linux.svg" loading="lazy" alt="Linux" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   Linux
@@ -1106,7 +1093,7 @@
                                    </div> 
                                    <!-- Bash LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/bash.svg" loading="lazy" alt="Bash" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   Bash
@@ -1120,7 +1107,7 @@
                                    
                                    <!-- HTML LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/html.svg" loading="lazy" alt="HTML-5" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   HTML
@@ -1129,7 +1116,7 @@
                                    </div> 
                                    <!-- CSS LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/css-3.svg" loading="lazy" alt="CSS-3" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   CSS
@@ -1138,7 +1125,7 @@
                                    </div> 
                                    <!-- SASS LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/sass.svg" loading="lazy" alt="Sass" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   SASS
@@ -1147,7 +1134,7 @@
                                    </div> 
                                    <!-- JS LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/javascript.svg" loading="lazy" alt="JavaScript" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   JavaScript
@@ -1156,7 +1143,7 @@
                                    </div> 
                                    <!-- ReactJS LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/react.svg" loading="lazy" alt="ReactJS" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   ReactJS
@@ -1165,7 +1152,7 @@
                                    </div> 
                                    <!-- NodeJS LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/nodejs.svg" loading="lazy" alt="NodeJS" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   NodeJS
@@ -1174,7 +1161,7 @@
                                    </div> 
                                    <!-- PYTHON LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/python.svg" loading="lazy" alt="Python" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   Python
@@ -1183,7 +1170,7 @@
                                    </div> 
                                    <!-- JAVA LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/java.svg" loading="lazy" alt="Java" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   Java
@@ -1192,7 +1179,7 @@
                                    </div> 
                                    <!-- MySQL LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/mysql.svg" loading="lazy" alt="MySQL" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   MySQL
@@ -1201,7 +1188,7 @@
                                    </div> 
                                    <!-- PostgresSQL LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/postgresql.svg" loading="lazy" alt="PostgresSQL" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   PostgresSQL
@@ -1210,7 +1197,7 @@
                                    </div> 
                                    <!-- Git LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/git.svg" loading="lazy" alt="Git" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   Git
@@ -1219,7 +1206,7 @@
                                    </div> 
                                    <!-- GitHub LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/github.svg" loading="lazy" alt="GitHub" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   GitHub
@@ -1228,7 +1215,7 @@
                                    </div> 
                                    <!-- PHP LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/php.svg" loading="lazy" alt="PHP" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   PHP
@@ -1237,7 +1224,7 @@
                                    </div> 
                                    <!-- WordPress LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/wordpress.svg" loading="lazy" alt="WordPress" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   WordPress
@@ -1246,7 +1233,7 @@
                                    </div> 
                                    <!-- Linux LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/linux.svg" loading="lazy" alt="Linux" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   Linux
@@ -1255,7 +1242,7 @@
                                    </div> 
                                    <!-- Bash LOGO/ICONO --> 
                                    <div class="skills_card w-32 sm:w-36 md:w-40 lg:w-44 flex-shrink-0">
-                                        <div class="bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300"> 
+                                        <div class="border-2 border-primaryColorLight dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 hover:bg-primaryColor hover:border-primaryColorLight duration-300 shadow-[0_0_5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_10px_rgba(59,130,246,0.8)]"> 
                                              <img src="./assets/img/bash.svg" loading="lazy" alt="Bash" class="max-w-16"> 
                                              <p class="text-center text-xl text-black dark:text-white">
                                                   Bash
@@ -1272,158 +1259,216 @@
 
                     <!-- Título -->
                     <div class="text-center mb-16">
-                         <h2 class="subtitle">Currículum</h2>
+                         <h2 class="subtitle">Mi Currículum</h2>
                     </div>
 
-                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="relative max-w-sm md:max-w-5xl mx-auto">
 
-                         <!-- Línea central -->
-                         <div class="hidden md:block absolute left-1/2 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-primaryColorLight to-transparent transform -translate-x-1/2"></div>
+                         <!-- Línea vertical (SIEMPRE visible) -->
+                         <div class="absolute left-4 md:left-5 top-0 h-full w-[2px] bg-primaryColorLight -translate-x-6 md:-translate-x-6 lg:-translate-x-10"></div>
 
                          <!-- ================= EXPERIENCIA ================= -->
-                         <div class="space-y-10">
-                              
+                         <div class="mb-16">
+
                               <!-- Título -->
-                              <div class="flex items-center gap-3">
-                                   <h2 class="subtitle"><i class="fa-solid fa-briefcase text-2xl md:text-3xl"></i> Experiencia</h2>
-                              </div>
+                              <h3 class="flex items-center gap-3 text-3xl md:text-4xl mb-10 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-800 dark:from-blue-300 dark:via-cyan-500 dark:to-blue-600 text-transparent bg-clip-text">
+                                   <i class="fa-solid fa-briefcase"></i> Experiencia
+                              </h3>
 
-                              <!-- Timeline -->
-                              <div class="relative space-y-10">
+                              <div class="space-y-10">
 
-                                   <!-- Punto -->
-                                   <span class="hidden md:block absolute -right-[26px] top-2 w-4 h-4 bg-primaryColorLight rounded-full border-4 border-white dark:border-darkBodyColor"></span>
+                                   <!-- Item -->
+                                   <div class="relative pl-12">
 
-                                   <!-- Card -->
-                                   <div class="cv_card p-6 rounded-2xl bg-white/5 dark:bg-darkSectionColor/60 backdrop-blur-md border border-white/10 hover:border-primaryColorLight transition duration-300 shadow-lg">
+                                        <!-- Punto -->
+                                        <span class="absolute left-[6px] md:left-[10px] top-2 w-4 h-4 bg-primaryColorLight rounded-full border-4 border-white dark:border-darkBodyColor"></span>
+
+                                        <!-- Card -->
+                                        <div class="cv_card p-5 md:p-6 rounded-2xl bg-white dark:bg-darkSectionColor/60 backdrop-blur-md border border-primaryColorLight shadow-lg hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition duration-300 hover:scale-[1.02]">
                                         
-                                        <p class="text-primaryColorLight text-sm font-semibold mb-2">
-                                             Sep - Dic 2025
-                                        </p>
+                                             <p class="text-primaryColorLight text-sm font-semibold mb-2">
+                                                  Sep - Dic 2025
+                                             </p>
 
-                                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold uppercase mb-2">
-                                             Pasantías Profesionales
-                                        </h3>
+                                             <h4 class="text-lg md:text-xl font-bold uppercase mb-2">
+                                                  💼 Pasantías Profesionales
+                                             </h4>
 
-                                        <p class="text-sm md:text-base opacity-80">
-                                             Agencia Bolivariana para Actividades Espaciales (ABAE), Miranda
-                                        </p>
+                                             <p class="text-sm md:text-base opacity-80">
+                                                  Agencia Bolivariana para Actividades Espaciales (ABAE), Miranda
+                                             </p>
+                                        </div>
                                    </div>
 
                                    <!-- Card oculta -->
-                                   <div class="hidden cv_card p-6 rounded-2xl bg-white/5 dark:bg-darkSectionColor/60 backdrop-blur-md border border-white/10 hover:border-primaryColorLight transition duration-300 shadow-lg">
+                                   <div class="relative pl-12 hidden">
+
+                                        <span class="absolute left-[6px] md:left-[10px] top-2 w-4 h-4 bg-primaryColorLight rounded-full border-4 border-white dark:border-darkBodyColor"></span>
+
+                                        <div class="cv_card p-5 md:p-6 rounded-2xl bg-white/5 dark:bg-darkSectionColor/60 backdrop-blur-md border border-white/10 transition duration-300">
                                         
-                                        <p class="text-primaryColorLight text-sm font-semibold mb-2">
-                                             Próximamente
-                                        </p>
+                                             <p class="text-primaryColorLight text-sm font-semibold mb-2">
+                                                  Próximamente
+                                             </p>
 
-                                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold uppercase mb-2">
-                                             Futuro Trabajo
-                                        </h3>
+                                             <h4 class="text-lg md:text-xl font-bold uppercase mb-2">
+                                                  Futuro Trabajo
+                                             </h4>
 
-                                        <p class="text-sm md:text-base opacity-80">
-                                             En proceso...
-                                        </p>
+                                             <p class="text-sm md:text-base opacity-80">
+                                                  En proceso...
+                                             </p>
+                                        </div>
                                    </div>
-
                               </div>
                          </div>
 
                          <!-- ================= EDUCACIÓN ================= -->
-                         <div class="space-y-10">
-
+                         <div>
                               <!-- Título -->
-                              <div class="flex items-center gap-3">
-                                   
-                                   <h2 class="subtitle"><i class="fa-solid fa-graduation-cap text-2xl md:text-3xl"></i> Estudios</h2>
-                              </div>
+                              <h3 class="flex items-center gap-3 text-3xl md:text-4xl mb-10 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-800 dark:from-blue-300 dark:via-cyan-500 dark:to-blue-600 text-transparent bg-clip-text">
+                                   <i class="fa-solid fa-graduation-cap"></i> Estudios
+                              </h3>
 
-                              <!-- Timeline -->
-                              <div class="relative space-y-10">
+                              <div class="space-y-10">
 
-                                   <!-- Punto -->
-                                   <span class="hidden md:block absolute -left-[26px] top-2 w-4 h-4 bg-primaryColorLight rounded-full border-4 border-white dark:border-darkBodyColor"></span>
+                                   <!-- Card -->
+                                   <div class="relative pl-12">
 
-                                   <!-- Card 1 -->
-                                   <a href="javascript:void(0)" class="cursor-default"></a>
-                                        <div class="cv_card p-6 cur rounded-2xl bg-white/5 dark:bg-darkSectionColor/60 backdrop-blur-md border border-white/10 hover:border-primaryColorLight transition duration-300 shadow-lg hover:scale-[1.02]">
+                                        <span class="absolute left-[6px] md:left-[10px] top-2 w-4 h-4 bg-primaryColorLight rounded-full border-4 border-white dark:border-darkBodyColor"></span>
+
+                                        <div class="cv_card p-5 md:p-6 rounded-2xl bg-white dark:bg-darkSectionColor/60 backdrop-blur-md border border-primaryColorLight shadow-lg hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition duration-300 hover:scale-[1.02]">
+
                                              <p class="text-primaryColorLight text-sm font-semibold mb-2">
                                                   Mar 2022 - May 2026
                                              </p>
 
-                                             <h3 class="text-lg md:text-xl lg:text-2xl font-bold uppercase mb-2">
-                                                  Técnico Superior en Informática
-                                             </h3>
-
-                                             <p class="text-sm md:text-base opacity-80">                                             
-                                                  IUJO Caracas - Instituto Universitario "Jesús Obrero" - Sede: Caracas
-                                             </p>
-                                        </div>
-                                   </a>
-                                   <!-- Punto -->
-                                   <span class="hidden md:block absolute -left-[26px] w-4 h-4 bg-primaryColorLight rounded-full border-4 border-white dark:border-darkBodyColor"></span>
-                                   
-                                   <!-- Card 2 -->
-                                   <a href="./assets/doc/certificación EN PYTHON E INTELIGENCIA ARTIFICIAL..pdf" target="_blank">
-                                        <div class="cv_card p-6 rounded-2xl bg-white/5 dark:bg-darkSectionColor/60 backdrop-blur-md border border-white/10 hover:border-primaryColorLight transition duration-300 shadow-lg hover:scale-[1.02]">
-                                             
-                                             <p class="text-primaryColorLight text-sm font-semibold mb-2">
-                                                  Oct 2024 - Mar 2025
-                                             </p>
-
-                                             <h3 class="text-lg md:text-xl lg:text-2xl font-bold uppercase mb-2">
-                                                  Python e Inteligencia Artificial
-                                             </h3>
+                                             <h4 class="text-lg md:text-xl font-bold uppercase mb-2">
+                                                  🎓 Técnico Superior Universitario en Informática
+                                             </h4>
 
                                              <p class="text-sm md:text-base opacity-80">
-                                                  Samsung Innovation Campus
+                                                  IUJO Caracas - Instituto Universitario "Jesús Obrero"
                                              </p>
                                         </div>
-                                   </a>
-                                   <br>
+                                   </div>
 
-                                   <!-- Punto -->
-                                   <span class="hidden md:block absolute -left-[26px] w-4 h-4 bg-primaryColorLight rounded-full border-4 border-white dark:border-darkBodyColor"></span>
-                                   <!-- Card 3 -->
-                                   <a href="./assets/doc/IUJO-CEP PYTHON.pdf" target="_blank">
-                                        <div class="cv_card p-6 rounded-2xl bg-white/5 dark:bg-darkSectionColor/60 backdrop-blur-md border border-white/10 hover:border-primaryColorLight transition duration-300 shadow-lg hover:scale-[1.02]">
-                                             <p class="text-primaryColorLight text-sm font-semibold mb-2">
-                                                  Sep - Dic 2025
-                                             </p>
+                                   <!-- Card -->
+                                   <div class="relative pl-12">
 
-                                             <h3 class="text-lg md:text-xl lg:text-2xl font-bold uppercase mb-2">
-                                                  Python y Visual Studio Code
-                                             </h3>
+                                        <span class="absolute left-[6px] md:left-[10px] top-2 w-4 h-4 bg-primaryColorLight rounded-full border-4 border-white dark:border-darkBodyColor"></span>
 
-                                             <p class="text-sm md:text-base opacity-80">
-                                                  IUJO Caracas - Instituto Universitario "Jesús Obrero" - Sede: Caracas
-                                             </p>
-                                        </div>
-                                   </a>
-                                   <br>
-                                   <!-- Punto -->
-                                   <span class="hidden md:block absolute -left-[26px] w-4 h-4 bg-primaryColorLight rounded-full border-4 border-white dark:border-darkBodyColor"></span>
-                                   <!-- Card 4 -->
-                                   <a href="./assets/doc/IUJO-CEP JAVASCRIPT.pdf" target="_blank">
-                                        <div class="cv_card p-6 rounded-2xl bg-white/5 dark:bg-darkSectionColor/60 backdrop-blur-md border border-white/10 hover:border-primaryColorLight transition duration-300 shadow-lg hover:scale-[1.02]">
-                                             
-                                             <p class="text-primaryColorLight text-sm font-semibold mb-2">
-                                                  Sep - Dic 2025
-                                             </p>
+                                        <a href="./assets/doc/Samsung_Inovation_Campus_2024.pdf" target="_blank">
+                                             <div class="cv_card p-5 md:p-6 rounded-2xl bg-white dark:bg-darkSectionColor/60 backdrop-blur-md border border-primaryColorLight shadow-lg hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition duration-300 hover:scale-[1.02]">
 
-                                             <h3 class="text-lg md:text-xl lg:text-2xl font-bold uppercase mb-2">
-                                                  Desarrollo Web – Nivel Intermedio
-                                             </h3>
+                                                  <p class="text-primaryColorLight text-sm font-semibold mb-2">
+                                                       Oct 2024 - Mar 2025
+                                                  </p>
 
-                                             <p class="text-sm md:text-base opacity-80">
-                                                  IUJO Caracas - Instituto Universitario "Jesús Obrero" - Sede: Caracas
-                                             </p>
-                                        </div>
-                                   </a>
+                                                  <h4 class="text-lg md:text-xl font-bold uppercase mb-2">
+                                                       🐍 Python e Inteligencia Artificial 🤖
+                                                  </h4>
 
+                                                  <p class="text-sm md:text-base opacity-80">
+                                                       Samsung Innovation Campus
+                                                  </p>
+                                             </div>
+                                        </a>
+                                   </div>
+
+                                   <!-- Card -->
+                                   <div class="relative pl-12">
+
+                                        <span class="absolute left-[6px] md:left-[10px] top-2 w-4 h-4 bg-primaryColorLight rounded-full border-4 border-white dark:border-darkBodyColor"></span>
+
+                                        <a href="./assets/doc/Certificado-Ciberseguridad-Hacking.pdf" target="_blank">
+                                             <div class="cv_card p-5 md:p-6 rounded-2xl bg-white dark:bg-darkSectionColor/60 backdrop-blur-md border border-primaryColorLight shadow-lg hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition duration-300 hover:scale-[1.02]">
+
+                                                  <p class="text-primaryColorLight text-sm font-semibold mb-2">
+                                                       Abr 2026
+                                                  </p>
+
+                                                  <h4 class="text-lg md:text-xl font-bold uppercase mb-2">
+                                                       🔐 Hacking Ético y Ciberseguridad 🛡️
+                                                  </h4>
+
+                                                  <p class="text-sm md:text-base opacity-80">
+                                                       Online - BIG School
+                                                  </p>
+                                             </div>
+                                        </a>
+                                   </div>
+
+                                   <!-- Card -->
+                                   <div class="relative pl-12">
+
+                                        <span class="absolute left-[6px] md:left-[10px] top-2 w-4 h-4 bg-primaryColorLight rounded-full border-4 border-white dark:border-darkBodyColor"></span>
+
+                                        <a href="./assets/doc/Certificado-Desarrollo-Con-IA.pdf" target="_blank">
+                                             <div class="cv_card p-5 md:p-6 rounded-2xl bg-white dark:bg-darkSectionColor/60 backdrop-blur-md border border-primaryColorLight shadow-lg hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition duration-300 hover:scale-[1.02]">
+
+                                                  <p class="text-primaryColorLight text-sm font-semibold mb-2">
+                                                       Abr 2026
+                                                  </p>
+
+                                                  <h4 class="text-lg md:text-xl font-bold uppercase mb-2">
+                                                       🧠 Desarrollo con Inteligencia Artificial
+                                                  </h4>
+
+                                                  <p class="text-sm md:text-base opacity-80">
+                                                       Online - BIG School
+                                                  </p>
+                                             </div>
+                                        </a>
+                                   </div>
+
+                                   <!-- Card -->
+                                   <div class="relative pl-12">
+
+                                        <span class="absolute left-[6px] md:left-[10px] top-2 w-4 h-4 bg-primaryColorLight rounded-full border-4 border-white dark:border-darkBodyColor"></span>
+
+                                        <a href="./assets/doc/IUJO-CEP PYTHON.pdf" target="_blank">
+                                             <div class="cv_card p-5 md:p-6 rounded-2xl bg-white dark:bg-darkSectionColor/60 backdrop-blur-md border border-primaryColorLight shadow-lg hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition duration-300 hover:scale-[1.02]">
+
+                                                  <p class="text-primaryColorLight text-sm font-semibold mb-2">
+                                                       Julio 2024
+                                                  </p>
+
+                                                  <h4 class="text-lg md:text-xl font-bold uppercase mb-2">
+                                                       🐍 Programación Básica con Python 
+                                                  </h4>
+
+                                                  <p class="text-sm md:text-base opacity-80">
+                                                       IUJO Caracas - Instituto Universitario "Jesús Obrero"
+                                                  </p>
+                                             </div>
+                                        </a>
+                                   </div>
+
+                                   <!-- Card -->
+                                   <div class="relative pl-12">
+
+                                        <span class="absolute left-[6px] md:left-[10px] top-2 w-4 h-4 bg-primaryColorLight rounded-full border-4 border-white dark:border-darkBodyColor"></span>
+
+                                        <a href="./assets/doc/IUJO-CEP JAVASCRIPT.pdf" target="_blank">
+                                             <div class="cv_card p-5 md:p-6 rounded-2xl bg-white dark:bg-darkSectionColor/60 backdrop-blur-md border border-primaryColorLight shadow-lg hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition duration-300 hover:scale-[1.02]">
+
+                                                  <p class="text-primaryColorLight text-sm font-semibold mb-2">
+                                                       Mar 2023
+                                                  </p>
+
+                                                  <h4 class="text-lg md:text-xl font-bold uppercase mb-2">
+                                                       💻 Desarrollo Web con JavaScript Intermedio 
+                                                  </h4>
+
+                                                  <p class="text-sm md:text-base opacity-80">
+                                                       IUJO Caracas - Instituto Universitario "Jesús Obrero"
+                                                  </p>
+                                             </div>
+                                        </a>
+                                   </div>
                               </div>
                          </div>
-                         
                     </div>
                </section>
 
@@ -1445,10 +1490,10 @@
                          <div class="my-10">
 
                               <!-- 1 -->
-                              <div class="servicio__elemento">
+                              <div class="servicio__elemento border-t">
                                    <div class="text-2xl font-bold flex items-center gap-3 md:w-[40%]">
                                         <p class="text-primaryColorLight">01</p>
-                                        <p>Desarrollo Web</p>
+                                        <p class="text-base sm:text-lg md:text-xl">Desarrollo Web</p>
                                    </div>
 
                                    <div class="ml-auto text-2xl rotate-45 md:order-last">
@@ -1456,7 +1501,7 @@
                                    </div>
 
                                    <div class="md:max-w-[330px] lg:max-w-md xl:max-w-lg">
-                                        <p>
+                                        <p class="text-base sm:text-lg md:text-xl">
                                              Desarrollo sitios y aplicaciones web modernas, rápidas y adaptables a cualquier dispositivo, enfocadas en rendimiento y funcionalidad.
                                         </p>
                                    </div>
@@ -1466,7 +1511,7 @@
                               <div class="servicio__elemento">
                                    <div class="text-2xl font-bold flex items-center gap-3 md:w-[40%]">
                                         <p class="text-primaryColorLight">02</p>
-                                        <p>Diseño Web</p>
+                                        <p class="text-base sm:text-lg md:text-xl">Diseño Web</p>
                                    </div>
 
                                    <div class="ml-auto text-2xl rotate-45 md:order-last">
@@ -1474,7 +1519,7 @@
                                    </div>
 
                                    <div class="md:max-w-[330px] lg:max-w-md xl:max-w-lg">
-                                        <p>
+                                        <p class="text-base sm:text-lg md:text-xl">
                                              Diseño interfaces atractivas y profesionales, cuidando cada detalle visual para transmitir confianza y claridad.
                                         </p>
                                    </div>
@@ -1484,7 +1529,7 @@
                               <div class="servicio__elemento">
                                    <div class="text-2xl font-bold flex items-center gap-3 md:w-[40%]">
                                         <p class="text-primaryColorLight">03</p>
-                                        <p>Experiencia de Usuario (UI/UX)</p>
+                                        <p class="text-base sm:text-lg md:text-xl">Experiencia de Usuario (UI/UX)</p>
                                    </div>
 
                                    <div class="ml-auto text-2xl rotate-45 md:order-last">
@@ -1492,7 +1537,7 @@
                                    </div>
 
                                    <div class="md:max-w-[330px] lg:max-w-md xl:max-w-lg">
-                                        <p>
+                                        <p class="text-base sm:text-lg md:text-xl">
                                              Optimizo la interacción del usuario creando interfaces intuitivas, fáciles de usar y centradas en la experiencia.
                                         </p>
                                    </div>
@@ -1502,7 +1547,7 @@
                               <div class="servicio__elemento">
                                    <div class="text-2xl font-bold flex items-center gap-3 md:w-[40%]">
                                         <p class="text-primaryColorLight">04</p>
-                                        <p>Mantenimiento y Optimización</p>
+                                        <p class="text-base sm:text-lg md:text-xl">Mantenimiento y Optimización</p>
                                    </div>
 
                                    <div class="ml-auto text-2xl rotate-45 md:order-last">
@@ -1510,7 +1555,7 @@
                                    </div>
 
                                    <div class="md:max-w-[330px] lg:max-w-md xl:max-w-lg">
-                                        <p>
+                                        <p class="text-base sm:text-lg md:text-xl">
                                              Mejoro el rendimiento, velocidad y seguridad de sitios web existentes, asegurando su correcto funcionamiento a largo plazo.
                                         </p>
                                    </div>
@@ -1543,9 +1588,9 @@
                                    </p>
                                    <div class="blog_card_info absolute left-0 ring-0 bottom-0 bg-whiteColor dark:bg-primaryColor mx-4 my-3 rounded-2xl space-y-2 p-3">
                                         <div class="text-cyan-500 text-shadow-cyan-200 flex items-center gap-3">
-                                             <p> <i class="fa-solid fa-newspaper"></i> Oct 10, 2025</p>
+                                             <p class="text-base sm:text-lg md:text-xl"> <i class="fa-solid fa-newspaper"></i> Oct 10, 2025</p>
 
-                                             <p><i class="fa-solid fa-comments"></i> 5 Comments</p>
+                                             <p class="text-base sm:text-lg md:text-xl"><i class="fa-solid fa-comments"></i> 5 Comments</p>
                                         </div>
                                         <p class="text-xl font-bold capitalize">Lorem ipsum dolor sit amet consectetur. </p>
                                    </div>
@@ -1559,9 +1604,9 @@
                                    </p>
                                    <div class="blog_card_info absolute left-0 ring-0 bottom-0 bg-whiteColor dark:bg-primaryColor mx-4 my-3 rounded-2xl space-y-2 p-3">
                                         <div class="text-cyan-500 text-shadow-cyan-200 flex items-center gap-3">
-                                             <p> <i class="fa-solid fa-newspaper"></i> Oct 10, 2025</p>
+                                             <p class="text-base sm:text-lg md:text-xl"> <i class="fa-solid fa-newspaper"></i> Oct 10, 2025</p>
 
-                                             <p><i class="fa-solid fa-comments"></i> 5 Comments</p>
+                                             <p class="text-base sm:text-lg md:text-xl"><i class="fa-solid fa-comments"></i> 5 Comments</p>
                                         </div>
                                         <p class="text-xl font-bold capitalize">Lorem ipsum dolor sit amet consectetur. </p>
                                    </div>
@@ -1575,9 +1620,9 @@
                                    </p>
                                    <div class="blog_card_info absolute left-0 ring-0 bottom-0 bg-whiteColor dark:bg-primaryColor mx-4 my-3 rounded-2xl space-y-2 p-3">
                                         <div class="text-cyan-500 text-shadow-cyan-200 flex items-center gap-3">
-                                             <p> <i class="fa-solid fa-newspaper"></i> Oct 10, 2025</p>
+                                             <p class="text-base sm:text-lg md:text-xl"> <i class="fa-solid fa-newspaper"></i> Oct 10, 2025</p>
 
-                                             <p><i class="fa-solid fa-comments"></i> 5 Comments</p>
+                                             <p class="text-base sm:text-lg md:text-xl"><i class="fa-solid fa-comments"></i> 5 Comments</p>
                                         </div>
                                         <p class="text-xl font-bold capitalize">Lorem ipsum dolor sit amet consectetur. </p>
                                    </div>
@@ -1590,7 +1635,7 @@
                <section id="contacto" class="container py-1 relative overflow-hidden">
                     <div class="text-center mb-16">
                          <h2 class="subtitle font-bold">
-                              Contáctame
+                              ¡Contáctame! 
                          </h2>
                     </div>
 
@@ -1604,61 +1649,90 @@
                               <h3 class="text-center text-3xl bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-800 dark:from-blue-300 dark:via-cyan-500 dark:to-blue-600 text-transparent bg-clip-text ">Datos de Contacto:</h3>
 
                               <!-- CARD TELÉFONO -->
-                              <div class="flex items-start gap-5 bg-primaryColor/10  dark:bg-primaryColorLight/10 backdrop-blur-xl border border-primaryColorLight dark:border-primaryColorLight/30 p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-md hover:bg-primaryColor/20 dark:hover:bg-primaryColor/30 transition-all duration-300">
-
-                                   <!-- ICONO -->
-                                   <div class="flex items-center justify-center text-lg p-3 border border-primaryColorLight dark:border-primaryColorLight/40 text-primaryColorLight bg-gray-100/20 dark:bg-primaryColor/20 h-12 w-12 rounded-xl shrink-0">
+                              <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 bg-primaryColor/10 dark:bg-primaryColorLight/10 backdrop-blur-xl border border-primaryColorLight dark:border-primaryColorLight p-5 sm:p-8 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300">
+                              
+                                   <div class="flex items-center justify-center text-lg p-3 border border-primaryColorLight dark:border-primaryColorLight/40 text-primaryColorLight bg-gray-100/20 dark:bg-primaryColor/20 h-12 w-12 rounded-2xl shrink-0 shadow-inner">
                                         <i class="fa-solid fa-phone"></i>
                                    </div>
 
-                                   <!-- TEXTO -->
-                                   <div class="space-y-2">
-                                        <p class="text-md text-gray-700 dark:text-white/70 font-bold">Teléfono:</p>
-                                        
-                                        <p class="text-base text-gray-900 dark:text-white flex items-center gap-3">
-                                             <span class="text-primaryColorLight dark:text-whiteColor transition">+58 424 *** **12</span>
-                                             <span class="copy-icon text-xl p-2 cursor-pointer rounded-full text-primaryColorLight hover:bg-primaryColorLight hover:text-white transition-all duration-300" data-copy="+58 424 217 1412" data-text="Teléfono">
-                                                  <i class="fa-solid fa-copy"></i>
-                                             </span>
+                                   <div class="space-y-1 w-full text-center sm:text-left">
+                                        <p class="text-xs uppercase tracking-wider text-gray-500 dark:text-white/50 font-bold">
+                                             Teléfono:
                                         </p>
+                                        
+                                        <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+                                             <a href="tel:+584242171412" class="text-lg sm:text-xl text-gray-900 dark:text-white hover:text-primaryColorLight transition-colors duration-300">
+                                                  +58 424 *** **12
+                                             </a>
+                                             
+                                             <div class="flex items-center gap-4">
+                                                  <button class="copy-icon flex items-center justify-center gap-2 px-4 py-2 sm:p-2 rounded-xl border border-primaryColorLight dark:border-primaryColorLight/40 bg-primaryColorLight/20 sm:bg-transparent text-primaryColorLight hover:bg-primaryColorLight hover:text-white transition-all duration-300 active:scale-95" 
+                                                       data-copy="+58 424 217 1412" 
+                                                       data-text="Teléfono">
+                                                       <i class="fa-solid fa-copy text-lg"></i>
+                                                       <span class="sm:hidden text-sm font-semibold">Copiar</span>
+                                                  </button>
+
+                                                  <a href="https://wa.me/584242171412" target="_blank" rel="noopener noreferrer" class="sm:hidden flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#3b995d] text-white active:scale-95 transition-all shadow-lg shadow-[#25D366]/20">
+                                                  <i class="fa-brands fa-whatsapp text-lg"></i>
+                                                  <span class="text-sm font-semibold">Mensaje</span>
+                                                  </a>
+                                             </div>
+                                        </div>
                                    </div>
                               </div>
 
                               <!-- CARD CORREO -->
-                              <div class="flex items-start gap-5 bg-primaryColor/10 dark:bg-primaryColorLight/10 backdrop-blur-xl border border-primaryColorLight dark:border-primaryColorLight/30 p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-md hover:bg-primaryColor/20 dark:hover:bg-primaryColor/30 transition-all duration-300">
-                                   <!-- ICONO -->
-                                   <div class="flex items-center justify-center text-lg p-3 border border-primaryColorLight dark:border-primaryColorLight/40 text-primaryColorLight bg-gray-100/20 dark:bg-primaryColor/20 h-12 w-12 rounded-xl shrink-0">
+                              <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 bg-primaryColor/10 dark:bg-primaryColorLight/10 backdrop-blur-xl border border-primaryColorLight dark:border-primaryColorLight p-5 sm:p-8 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300">
+                              
+                                   <div class="flex items-center justify-center text-lg p-3 border border-primaryColorLight dark:border-primaryColorLight/40 text-primaryColorLight bg-gray-100/20 dark:bg-primaryColor/20 h-12 w-12 rounded-2xl shrink-0 shadow-inner">
                                         <i class="fa-solid fa-envelope"></i>
                                    </div>
 
-                                   <!-- TEXTO -->
-                                   <div class="space-y-2 relative">
-                                        <p class="text-md text-gray-700 dark:text-white/70 font-bold">Correo:</p>
-                                        
-                                        <p class="text-base text-gray-900 dark:text-white flex items-center gap-3 flex-wrap">
-                                             <span class="text-base text-gray-900 dark:text-white leading-relaxed hover:text-primaryColorLight transition">andresvento2004@gmail.com</span>
-                                             <span class="copy-icon text-xl p-2 cursor-pointer rounded-full text-primaryColorLight hover:bg-primaryColorLight hover:text-white transition-all duration-300" data-copy="andresvento2004@gmail.com" data-text="Correo">
-                                                  <i class="fa-solid fa-copy"></i>
-                                             </span>
+                                   <div class="space-y-1 w-full text-center sm:text-left overflow-hidden">
+                                        <p class="text-xs uppercase tracking-wider text-gray-500 dark:text-white/50 font-bold">
+                                             Correo electrónico:
                                         </p>
+                                        
+                                        <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
+                                             <span class="text-base sm:text-lg font-medium text-gray-900 dark:text-white break-all sm:break-normal leading-tight">
+                                                  andresvento2004@gmail.com
+                                             </span>
+                                             
+                                             <button class="copy-icon mt-2 sm:mt-0 flex items-center justify-center gap-2 px-4 py-2 sm:p-2 rounded-xl border border-primaryColorLight dark:border-primaryColorLight/40 bg-primaryColorLight/20 sm:bg-transparent text-primaryColorLight hover:bg-primaryColorLight hover:text-white transition-all duration-300 active:scale-95" data-copy="andresvento2004@gmail.com" data-text="Correo">
+                                                  <i class="fa-solid fa-copy text-lg"></i>
+                                                  <span class="sm:hidden text-sm font-semibold">Copiar</span>
+                                             </button>
+                                        </div>
                                    </div>
                               </div>
 
                               <!-- CARD DIRECCIÓN -->
-                              <div class="flex items-start gap-5 bg-primaryColor/10 dark:bg-primaryColorLight/10 backdrop-blur-xl border border-primaryColorLight dark:border-primaryColorLight/30 p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-md hover:bg-primaryColor/20 dark:hover:bg-primaryColor/30 transition-all duration-300">
-
-                                   <!-- ICONO -->
-                                   <div class="flex items-center justify-center text-lg p-3 border border-primaryColorLight dark:border-primaryColorLight/40 text-primaryColorLight bg-gray-100/20 dark:bg-primaryColor/20 h-12 w-12 rounded-xl shrink-0">
+                              <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 bg-primaryColor/10 dark:bg-primaryColorLight/10 backdrop-blur-xl border border-primaryColorLight dark:border-primaryColorLight p-5 sm:p-8 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300">
+                              
+                                   <div class="flex items-center justify-center text-lg p-3 border border-primaryColorLight dark:border-primaryColorLight/40 text-primaryColorLight bg-gray-100/20 dark:bg-primaryColor/20 h-12 w-12 rounded-2xl shrink-0 shadow-inner">
                                         <i class="fa-solid fa-location-dot"></i>
                                    </div>
 
-                                   <!-- TEXTO -->
-                                   <div class="space-y-1">
-                                        <p class="text-md text-gray-800 dark:text-white/70 font-bold">Dirección:</p>
-                                        
-                                        <p class="text-base text-gray-900 dark:text-white leading-relaxed hover:text-primaryColorLight transition">
-                                             <a href="https://maps.app.goo.gl/GsPjXXSa1Yx9tP7VA" target="_blank" class="text-blue-500 hover:text-blue-700">Av. Principal de El Manicomio, Parroquia La Pastora, Municipio Libertador, Caracas, Distrito Capital, Venezuela.</a>
+                                   <div class="space-y-1 w-full text-center sm:text-left">
+                                        <p class="text-xs uppercase tracking-wider text-gray-500 dark:text-white/50 font-bold">
+                                             Dirección:
                                         </p>
+                                        
+                                        <div class="flex flex-col items-center sm:items-start gap-3">
+                                             <p class="text-base font-medium text-gray-900 dark:text-white leading-snug max-w-[400px]">
+                                                  Av. Principal de El Manicomio, Parroquia La Pastora, Municipio Libertador, Caracas, Venezuela.
+                                             </p>
+                                             
+                                             <div class="flex flex-wrap justify-center sm:justify-start gap-2 w-full">
+                                                  <a href="https://maps.google.com/?q=Av.+Principal+de+El+Manicomio,+La+Pastora,+Caracas" 
+                                                  target="_blank" 
+                                                  class="flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-primaryColorLight text-white hover:bg-primaryColorLight/90 active:scale-95 transition-all text-sm font-semibold shadow-md shadow-primaryColorLight/20">
+                                                       <i class="fa-solid fa-map-location-dot"></i>
+                                                       <span>Ver en Google Maps</span>
+                                                  </a>
+                                             </div>
+                                        </div>
                                    </div>
                               </div>
                          </div>
@@ -1670,7 +1744,7 @@
 
                               <div class="text-center">
                                    <h2 class="text-3xl sm:text-2xl md:text-2xl lg:text-3xl bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-800 dark:from-blue-300 dark:via-cyan-500 dark:to-blue-600 inline-block text-transparent bg-clip-text pb-4">
-                                        ¡Mándame un Mensaje! 💬
+                                        ¡Mándame un Mensaje! <span class="text-2xl">💬</span>
                                    </h2>
                               </div>
 
@@ -1731,7 +1805,7 @@
                               </div>
 
                               <!-- Botón -->
-                              <button type="submit" id="submit-btn" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-800 text-white rounded-xl px-6 py-3 text-lg font-semibold hover:scale-105 active:scale-95 transition-all duration-300">
+                              <button type="submit" id="submit-btn" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-800 text-white rounded-xl px-6 py-3 text-lg font-semibold hover:scale-102 active:scale-95 transition-all duration-300">
                                    <span>Enviar</span>
                                    <i class="fa fa-paper-plane" id="btn-icon"></i>
                               </button>
@@ -1767,52 +1841,52 @@
                     </div>
                </section>
           </main>
-          <br>
-          <br>
-          <br>
+
+          <div class="h-32 md:h-32"></div>
+
           <!--============== FOOTER ==============-->
-          <footer id="footer" class="bg-sectionColor dark:bg-darkSectionColor pt-5">
-               <div class="container flex flex-col items-center gap-5">
-                    <div class="py-5">
+          <footer id="footer" class="bg-darkSectionColor dark:bg-darkSectionColor pt-10">
+               <div class="container flex flex-col items-center gap-10">
+                    <div class="py-10">
                          <!-- Logo modo Light -->
                          <img src="./assets/img/logo.png" loading="lazy" alt="logo" class="w-28 md:w-40 hidden dark:block " >
                          <!-- Logo modo Dark -->
-                         <img src="./assets/img/logoBlack.png" loading="lazy" alt="black_logo" class="w-28 md:w-40 dark:hidden" >
+                         <img src="./assets/img/logo.png" loading="lazy" alt="black_logo" class="w-28 md:w-40 dark:hidden" >
 
                     </div>
                     <div>
                          <ul class="flex flex-wrap justify-center items-center gap-x-3 gap-y-2">
                               <li>
-                                   <a href="#proyectos" class="nav-link text-primaryColor dark:text-whiteColor">Proyectos</a>
+                                   <a href="#proyectos" class="nav-link text-primaryLight dark:text-whiteColor">Proyectos</a>
                               </li>
                               <li>
-                                   <a href="#sobre_mi" class="nav-link text-primaryColor dark:text-whiteColor">Sobre Mí</a>
+                                   <a href="#sobre_mi" class="nav-link text-primaryLight dark:text-whiteColor">Sobre Mí</a>
                               </li>
                               <li>
-                                   <a href="#skills" class="nav-link text-primaryColor dark:text-whiteColor">Skills</a>
+                                   <a href="#skills" class="nav-link text-primaryLight dark:text-whiteColor">Skills</a>
                               </li>
                               <li>
-                                   <a href="#curriculum" class="nav-link text-primaryColor dark:text-whiteColor">Currículum</a>
+                                   <a href="#curriculum" class="nav-link text-primaryLight dark:text-whiteColor">Currículum</a>
                               </li>
                               <li>
-                                   <a href="#servicios" class="nav-link text-primaryColor dark:text-whiteColor">Servicios</a>
+                                   <a href="#servicios" class="nav-link text-primaryLight dark:text-whiteColor">Servicios</a>
                               </li>
                               <li>
-                                   <a href="#testimonios" class="nav-link text-primaryColor dark:text-whiteColor">Testimonios</a>
+                                   <a href="#testimonios" class="nav-link text-primaryLight dark:text-whiteColor">Testimonios</a>
                               </li>
                                <li>
-                                   <a href="#contacto" class="nav-link text-primaryColor dark:text-whiteColor">Contacto</a>
+                                   <a href="#contacto" class="nav-link text-primaryLight dark:text-whiteColor">Contacto</a>
                               </li>
                          </ul>
                     </div>
-                    <div class="flex flex-wrap justify-center items-center gap-y-3 dark:text-cyan-400 text-center">
-                         <p>&copy; 2024 Hecho a mano con mucho ❤️ por <span class="font-bold">Andrés. E. Vento. C.</span></p>
+                    <div class="flex flex-wrap justify-center items-center gap-y-3 text-white dark:text-primaryLight text-center">
+                         <p class="text-base sm:text-lg md:text-xl">&copy; 2024 Hecho a mano con mucho ❤️ por <span class="font-bold">Andrés. E. Vento. C.</span></p>
                     </div>
                     <br>
                </div>
           </footer>
 
-          <!--============== BOTON DE SCROLL-UP (FAB)  ==============-->
+          <!--============== BOTON DE SCROLL-UP ==============-->
           <button type="button" id="scroll-up" class="scroll-fab group fixed right-5 z-50 flex h-14 w-14 -translate-y-3 scale-90 cursor-pointer items-center justify-center rounded-full border-0 p-0 text-whiteColor opacity-0 transition-[bottom,opacity,transform] duration-150 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaryColorLight focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-darkBodyColor active:scale-95 pointer-events-none -bottom-28 md:right-8 md:h-16 md:w-16" aria-label="Volver al inicio de la página">
                <span class="scroll-fab-glow" aria-hidden="true"></span>
                <span class="scroll-fab-face">
@@ -1820,94 +1894,71 @@
                </span>
           </button>
 
-
           <!-- Ventanas Modales de Proyectos -->
-
           <!-- MODAL PROYECTO 1 -->
 
-          <div id="modal-project-1" class="fixed inset-0 z-[200] hidden items-center justify-center bg-[#090b0f]/80 backdrop-blur-sm p-4 transition-all duration-300">
+          <div id="modal-project-1" class="fixed inset-0 z-[200] hidden items-center justify-center bg-[#090b0f]/90 backdrop-blur-md p-4 transition-all duration-300">
 
-               <div class="relative w-full max-w-5xl rounded-[1.5rem] bg-[#10141e] border-2 border-primaryColorLight  animate-fadeIn">
-
-                    <button onclick="closeModal('modal-project-1')" 
-                         class="absolute top-4 right-4 z-30 w-8 h-8 flex items-center justify-center rounded-full bg-slate-800/60 hover:bg-slate-700/80 text-zinc-400 hover:text-white transition-all duration-300">
-                         <i class="fa-solid fa-xmark"></i>
+               <div class="relative w-full max-w-4xl rounded-3xl bg-[#10141e] border border-white/10 shadow-2xl overflow-hidden animate-fadeIn">
+                    
+                    <button onclick="closeModal('modal-project-1')" class="absolute top-5 right-5 z-30 w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-red-500/20 text-zinc-400 hover:text-red-500 transition-all duration-300">
+                         <i class="fa-solid fa-xmark text-lg"></i>
                     </button>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:p-8 lg:p-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                         
+                         <div class="relative bg-[#0b0d13] p-6 flex items-center justify-center border-b md:border-b-0 md:border-r border-white/5">
 
-                         <div class="w-full flex items-center justify-center relative md:justify-start">
-                              <div class="w-full aspect-square max-w-[320px] md:max-w-none md:w-auto rounded-xl bg-[#0b0d13] flex items-center justify-center overflow-hidden border border-white/5 shadow-inner relative p-4 group">
-                                   
-                                   <img src="./assets/img/project-1.jpg" alt="Proyecto 1" 
-                                   class="w-full h-full object-cover rounded-full shadow-2xl transition-transform duration-700 group-hover:scale-105" />
-                                   
+                              <div class="relative group overflow-hidden rounded-xl shadow-2xl">
+
+                                   <img src="./assets/img/project-1.jpg" alt="Proyecto 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+
+                                   <div class="absolute inset-0 bg-gradient-to-t from-[#0b0d13]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+
+                                        <span class="text-xs text-white/70 italic">Captura de pantalla del Dashboard</span>
+
+                                   </div>
                               </div>
                          </div>
 
-                         <div class="flex flex-col space-y-6">
-
-                              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 pr-10">
-                                   <h2 class="text-3xl md:text-4xl font-bold text-white group-hover:text-amber-300 transition-colors">
+                         <div class="p-8 md:p-10 flex flex-col justify-center">
+                              
+                              <div class="mb-6">
+                                   <div class="flex items-center gap-3 mb-2">
+                                   <span class="px-2.5 py-0.5 rounded-md bg-amber-500/10 text-amber-500 text-[10px] font-bold uppercase tracking-widest border border-amber-500/20">
+                                        Frontend
+                                   </span>
+                                   <span class="text-zinc-500 text-xs flex items-center gap-1">
+                                        <i class="fa-regular fa-calendar"></i> 2026
+                                   </span>
+                                   </div>
+                                   <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">
                                    Proyecto 1
                                    </h2>
-                                   
-                                   <div class="flex items-center gap-1.5 bg-[#0b0d13] border border-white/5 px-3 py-1.5 rounded-full shadow-md text-xs sm:text-sm">
-                                   <i class="fa-solid fa-star text-amber-400"></i>
-                                   <span class="text-white font-semibold">3.9</span>
-                                   </div>
                               </div>
 
-                              <div class="inline-block px-4 py-1.5 rounded-full border border-zinc-700 text-center self-start bg-transparent">
-                                   <span class="text-xs font-bold text-zinc-300 tracking-widest uppercase">Medio</span>
-                              </div>
-
-                              <a href="URL_DE_TU_GITHUB" target="_blank"  class="group/repo bg-[#0b0d13] rounded-2xl p-5 border border-white/5 flex flex-wrap items-center justify-between gap-4 transition-all duration-300 hover:border-amber-400/50 hover:bg-[#161b26] hover:shadow-[0_0_20px_rgba(245,158,11,0.05)]">
-                              
-                              <div class="flex items-center gap-3">
-                                   <div class="w-12 h-12 rounded-full bg-slate-700 overflow-hidden border border-white/10 group-hover/repo:border-amber-400/30 transition-colors">
-                                        <img src="./assets/img/avatar." alt="Avatar" class="w-full h-full object-cover">
-                                   </div>
-                                   <div>
-                                        <p class="text-[11px] text-zinc-500 uppercase tracking-widest font-medium">Creado por</p>
-                                        <p class="text-md font-semibold text-white group-hover/repo:text-amber-400 transition-colors">Tu Nombre / Pseudónimo</p>
-                                   </div>
-                              </div>
-
-                              <div class="text-right flex flex-col items-end gap-1.5">
-                                   <div class="flex gap-4 text-zinc-400 text-base">
-                                        <span class="hover:text-amber-400 transition-colors"><i class="fa-brands fa-linkedin"></i></span>
-                                        <span class="text-amber-400"><i class="fa-brands fa-github"></i></span>
-                                        <span class="hover:text-amber-400 transition-colors"><i class="fa-brands fa-youtube"></i></span>
-                                   </div>
-                                   <p class="text-[11px] text-zinc-500 flex items-center">
-                                        <i class="fa-regular fa-calendar mr-1.5"></i> 23/03/2026
-                                   </p>
-                              </div>
-                              </a>
-
-                              <p class="text-zinc-400 leading-relaxed text-sm md:text-base">
-                                   Dashboard avanzado con analítica en tiempo real, visualización de datos, análisis de sentimiento y generación automática de insights.
+                              <p class="text-zinc-400 leading-relaxed text-base mb-8">
+                                   Dashboard avanzado con analítica en tiempo real, visualización de datos, análisis de sentimiento y generación automática de insights para la toma de decisiones estratégicas.
                               </p>
 
-                              <div class="space-y-2.5">
-                                   <p class="text-[11px] text-zinc-500 uppercase tracking-wider font-medium">Tecnologías Principales</p>
-                                   <div class="flex flex-wrap gap-2.5">
-                                        <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-inner">HTML</span>
-                                        <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-pink-500/10 text-pink-400 border border-pink-500/20 shadow-inner">Sass</span>
-                                        <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 shadow-inner">JS</span>
-                                        <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 shadow-inner">PHP</span>
+                              <div class="mb-8">
+                                   <h4 class="text-[11px] text-zinc-500 uppercase tracking-widest font-bold mb-3">Stack Tecnológico</h4>
+                                   <div class="flex flex-wrap gap-2">
+                                   <span class="px-3 py-1 text-xs font-medium rounded-md bg-white/5 text-zinc-300 border border-white/10">React</span>
+                                   <span class="px-3 py-1 text-xs font-medium rounded-md bg-white/5 text-zinc-300 border border-white/10">Tailwind</span>
+                                   <span class="px-3 py-1 text-xs font-medium rounded-md bg-white/5 text-zinc-300 border border-white/10">Node.js</span>
                                    </div>
                               </div>
 
-                              <div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-3"></div>
-
-                              <div class="flex flex-col sm:flex-row gap-4 mt-auto">
+                              <div class="flex flex-col sm:flex-row gap-4 pt-4 border-t border-white/5">
                                    <a href="#" target="_blank"
-                                   class="flex-1 flex items-center justify-center gap-2.5 text-center bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-500 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.25)]">
-                                   🚀 <span>Ver demo</span>
+                                   class="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-3 px-6 rounded-xl font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20">
+                                   <i class="fa-solid fa-rocket"></i> Ver Demo
                                    </a>
-
+                                   <a href="URL_DE_GITHUB" target="_blank"
+                                   class="flex-1 flex items-center justify-center gap-2 bg-white/5 text-white py-3 px-6 rounded-xl font-bold hover:bg-white/10 border border-white/10 transition-all">
+                                   <i class="fa-brands fa-github"></i> Código
+                                   </a>
                               </div>
 
                          </div>
@@ -1917,8 +1968,6 @@
 
           <!--============== SCRIPT JS PARTICLES-JS ==============-->
           <script src="./src/js/particles.min.js"></script>
-          <!--============== SCROLL REVEAL ==============-->
-          <script src="https://unpkg.com/scrollreveal"></script> 
           <!--============== SCRIPT JS ==============-->
           <script src="./src/js/main.js"></script>
      </body>

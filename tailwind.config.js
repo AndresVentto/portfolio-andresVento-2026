@@ -16,6 +16,7 @@ export default {
       colors: {
         sectionColor: "hsl(0 0% 92%)",
         darkBodyColor: "hsl(216, 100%, 4%)",
+        ligthBodyColor: "hsl(220 16.7% 92.9%)",
         darkSectionColor: "hsl(211, 100%, 12%)",
         primaryColor: "hsl(209, 87%, 21%)",
         primaryColorLight: "hsl(209, 74%, 45%)",
@@ -24,6 +25,7 @@ export default {
         menuColor: "hsla(216, 100%, 5%, 0.75)",
         primary: "hsl(214, 89%, 52%)",
         primaryLight: "hsl(214, 89%, 65%)",
+        colorCardProyect: "hsl(222 47.4% 11.2%)"
 
       },
 

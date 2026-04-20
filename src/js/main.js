@@ -29,6 +29,25 @@ hamburguesa.addEventListener("click", () => {
      navMenu.classList.add("top-0");
 });
 
+// Cerrar menú al hacer click fuera del contenido
+document.addEventListener("click", (e) => {
+     const isMenuOpen = navMenu.classList.contains("top-0");
+
+     if (isMenuOpen) {
+     // Si el click NO fue dentro del menú ni en la hamburguesa
+          if (!navMenu.contains(e.target) && !hamburguesa.contains(e.target)) {
+               navMenu.classList.remove("top-0");
+               navMenu.classList.add("-top-full");
+          }
+     }
+     document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+               navMenu.classList.remove("top-0");
+               navMenu.classList.add("-top-full");
+          }
+     });
+});
+
 /*~~~~~~~~~~~~~~~ TEMA OSCURO/CLARO ~~~~~~~~~~~~~~~*/ 
 const html = document.documentElement;
 const themeBtn = document.getElementById("theme-btn");
@@ -65,7 +84,7 @@ function lightMode() {
      html.classList.remove("dark"); 
      themeBtn.classList.remove("fa-sun");  
      themeBtn.classList.add("fa-moon"); 
-     localStorage.setItem("mode", "light"); 
+     localStorage.setItem("mode", "light");
 
      cargarParticles("#062d52"); // partículas oscuras
 }
@@ -278,61 +297,6 @@ const activarLink = () => {
 
 window.addEventListener("scroll", activarLink);
 
-/*~~~~~~~~~~~~~~~ ANIMACION DE SCROLL PARA REVELARZE ~~~~~~~~~~~~~~~*/ 
-
-/*
-  DETECCIÓN DE DISPOSITIVO (MOBILE vs DESKTOP)
-  - Usamos 768px como punto de quiebre estándar (Tailwind)
-*/
-const isMobile = window.innerWidth < 408;
-
-/*
-  CONFIGURACIÓN GLOBAL DE SCROLLREVEAL
-  - Animación más rápida y ligera
-*/
-const sr = ScrollReveal({
-     origin: "bottom",
-     distance: isMobile ? "10px" : "20px",
-     duration: isMobile ? 250 : 350,
-     delay: isMobile ? 50 : 50,
-     easing: "ease-out",
-     reset: false,
-     mobile: true
-});
-
-/*================ SECCIÓN: INICIO ================*/
-sr.reveal(".inicio__imagen");
-sr.reveal(".inicio__content", { origin: "bottom" });
-sr.reveal(".inicio__footer", { origin: "bottom", delay: isMobile ? 50 : 100 });
-
-/*================ SECCIÓN: SERVICIOS ================*/
-sr.reveal(".servicio__top", { origin: "bottom" });
-sr.reveal(".servicio__elemento", { origin: "bottom", interval: isMobile ? 50 : 80 });
-
-/*================ SECCIÓN: SOBRE MÍ ================*/
-sr.reveal(".sobre_mi__top", { origin: "bottom" });
-sr.reveal(".sobre_mi__content", { origin: "bottom", delay: isMobile ? 50 : 100 });
-
-/*================ SECCIÓN: PROYECTOS ================*/
-sr.reveal(".proyectos__top", { origin: "bottom" });
-sr.reveal(".proyectos__taps", { origin: "bottom", delay: isMobile ? 50 : 100 });
-
-/*================ SECCIÓN: CV ================*/
-sr.reveal(".cv__top", { origin: "bottom" });
-sr.reveal(".cv_card", { origin: "left", interval: isMobile ? 50 : 80 });
-
-/*================ SECCIÓN: ESTUDIOS ================*/
-sr.reveal(".estudios__top", { origin: "bottom" });
-sr.reveal(".estudios_card", { origin: "right", interval: isMobile ? 50 : 80 });
-
-/*================ SECCIÓN: BLOG ================*/
-sr.reveal(".blog_top", { origin: "top" });
-sr.reveal(".blog_card", { origin: "top", interval: isMobile ? 50 : 80 });
-
-/*================ SECCIÓN: CONTACTO ================*/
-sr.reveal(".contacto_form", { origin: "left" });
-sr.reveal(".contacto_info", { origin: "right", interval: isMobile ? 50 : 80 });
-
 /*~~~~~~~~~~~~~~~ COPIAR NUMERO DE TELEFONO Y CORREO ~~~~~~~~~~~~~~~*/
 
 // Selecciona todos los íconos de copia
@@ -491,22 +455,29 @@ form.addEventListener("submit", (e) => {
 
 // Funcion del modal de proyectos
 
-function openModal(id) {
+function openModal(event, id) {
+     event.preventDefault(); // 🔥 evita salto del <a>
+
      const modal = document.getElementById(id);
      modal.classList.remove("hidden");
      modal.classList.add("flex");
+
+     document.body.style.overflow = "hidden";
 }
 
 function closeModal(id) {
      const modal = document.getElementById(id);
      modal.classList.add("hidden");
      modal.classList.remove("flex");
+
+     // Restaurar scroll
+     document.body.style.overflow = "";
 }
 
-// Cerrar al hacer click fuera
-window.addEventListener("click", function(e) {
-     const modal = document.getElementById("modal-project-1");
-     if (e.target === modal) {
-          closeModal("modal-project-1");
+// Cerrar al hacer click fuera (genérico)
+window.addEventListener("click", function (e) {
+     const modal = document.querySelector(".modal-active");
+     if (e.target.classList.contains("modal-bg")) {
+          closeModal(e.target.id);
      }
 });

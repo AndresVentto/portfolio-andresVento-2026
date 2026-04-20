@@ -7,7 +7,7 @@
           @apply scroll-smooth overflow-x-clip;
      }
      body {
-     @apply bg-white dark:bg-darkBodyColor text-black dark:text-textColor font-poppins tracking-wide overflow-x-clip;
+     @apply bg-ligthBodyColor dark:bg-darkBodyColor text-black dark:text-textColor font-poppins tracking-wide overflow-x-clip;
      }         
 
      h1, h2, h3, h4, h5, h6 {
@@ -55,7 +55,7 @@
           @apply scale-x-100 origin-left;
      }
      .btn_outline {
-          @apply inline-flex items-center justify-center gap-2 h-11 font-semibold border-2 border-primaryColor  dark:border-primaryColorLight text-primaryColor dark:text-primaryColorLight py-2 px-4 rounded-full  hover:bg-primaryColorLight hover:text-whiteColor dark:hover:text-white duration-300 cursor-pointer whitespace-nowrap;
+          @apply inline-flex items-center justify-center gap-2 h-11 font-semibold border-2 border-primaryColor  dark:border-primaryLight text-primaryColor dark:text-primaryLight py-2 px-4 rounded-full  hover:bg-primaryColorLight hover:text-whiteColor dark:hover:text-white duration-300 cursor-pointer whitespace-nowrap;
      }
      .title {
           @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[75px] font-bold bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-800 dark:from-blue-300 dark:via-cyan-500 dark:to-blue-600 inline-block text-transparent bg-clip-text pb-2;
@@ -67,7 +67,7 @@
 
 @layer utilities {
      .social-icon {
-          @apply relative border-2 border-primaryColor dark:border-primaryColorLight dark:text-primaryColorLight  text-primaryColor h-11 w-11 rounded-full grid place-items-center cursor-pointer hover:text-whiteColor dark:hover:text-white duration-300;
+          @apply relative border-2 border-primaryColor dark:border-primaryLight dark:text-primaryLight  text-primaryColor h-11 w-11 rounded-full grid place-items-center cursor-pointer hover:text-whiteColor dark:hover:text-white duration-300;
      }
 
      .social-icon::before {
@@ -337,11 +337,11 @@
           overflow: hidden;
 
           /* LIGHT MODE (por defecto) */
-          background: #76c8ff; /* gris claro elegante */
+          background: #3192ec; /* gris claro elegante */
      }
 
      .dark .border-animated {
-          background: #000814; /* tu fondo original */
+          background: #000a1a; /* tu fondo original */
      }
 
      /* LUCES */
@@ -357,13 +357,13 @@
 
      /* Luz 1 */
      .border-animated::before {
-          background: radial-gradient(circle, #122864 5%, transparent 30%);
+          background: radial-gradient(circle, #000a1a 5%, transparent 30%);
           animation: orbit1 4.3s linear infinite;
      }
 
      /* Luz 2 */
      .border-animated::after {
-          background: radial-gradient(circle, #122864 5%, transparent 30%);
+          background: radial-gradient(circle, #000a1a 5%, transparent 30%);
           animation: orbit2 4.3s linear infinite;
      }
 
