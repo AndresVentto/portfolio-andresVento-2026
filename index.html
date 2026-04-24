@@ -35,15 +35,15 @@
      </head>
      <body>
           <!--============== HEADER ==============-->
-          <header id="header" class="sticky top-0 z-50 transition-all duration-300">
+          <header id="header" class="sticky top-0 z-50 transition-all duration-300 w-full">
                
-               <div class="relative container flex justify-between items-center">
+               <div class="relative container mx-auto flex justify-between items-center px-4 md:px-0">
                     <div class="py-5 cursor-pointer">
                          <a href="#inicio">
                               <!-- Logo modo claro -->
                               <img src="./assets/img/logo.png" loading="lazy" alt="logo" class="w-20 md:w-27 hidden dark:block" id="logo-claro">
                               <!-- Logo modo oscuro -->
-                              <img src="./assets/img/logoBlack.png" loading="lazy" alt="black_logo" class="w-20 md:w-27 dark:hidden" id="logo-oscuro">
+                              <img src="./assets/img/logoBlack.png" loading="lazy" alt="logo oscuro" class="w-20 md:w-27 dark:hidden" id="logo-oscuro">
                          </a>
                     </div>
                     <nav id="nav-menu" class="fixed -top-full left-0 w-full h-screen flex flex-col justify-center bg-[hsla(216,100%,5%,0.90)] backdrop-blur-md text-center transition-all duration-500 ease-in-out lg:static lg:h-auto lg:flex-row lg:bg-transparent lg:backdrop-blur-0 lg:py-0 lg:w-auto lg:ml-auto">
@@ -78,10 +78,10 @@
                     </nav>
                     <div class="flex items-center gap-3 sm:gap-5">
 
-                         <i class="fa-regular fa-moon cursor-pointer ml-4 sm:ml-8 md:ml-16 text-2xl text-darkBodyColor dark:text-white" id="theme-btn"></i>
+                         <i class="fa-regular fa-moon cursor-pointer ml-4 sm:ml-8 md:ml-16 text-2xl transition-colors duration-300 text-darkBodyColor dark:text-white" id="theme-btn"></i>
 
                          <!-- Botón hamburguesa -->
-                         <div id="hamburguesa" class="lg:hidden text-darkBodyColor dark:text-white">
+                         <div id="hamburguesa" class="lg:hidden text-darkBodyColor dark:text-white transition-colors duration-300">
                               <i class="fa-solid fa-bars-staggered cursor-pointer text-2xl"></i>
                          </div>
                     </div>

@@ -1,44 +1,55 @@
 /*~~~~~~~~~~~~~~~ CAMBIAR FONDO DEL ENCABEZADO (Header) ~~~~~~~~~~~~~~~*/ 
 
 export function scrollHeaderFondo() {
+    // Seleccionamos los elementos UNA SOLA VEZ fuera del evento para mayor rendimiento
+    const header = document.getElementById("header");
+    const aTags = document.querySelectorAll("nav ul li a");
+    const themeBoton = document.getElementById("theme-btn");
+    const hamburguesa = document.getElementById("hamburguesa");
+    const logoOscuro = document.getElementById("logo-oscuro");
 
     const scrollHeader = () => {
-        const header = document.getElementById("header");
-        const aTag = document.querySelectorAll("nav ul li a");
-        const themeBoton = document.getElementById("theme-btn");
-        const hamburguesa = document.getElementById("hamburguesa");
-        const logoOscuro = document.getElementById("logo-oscuro");
+        if (window.scrollY >= 60) {
+            // Añadimos fondo oscuro al header
+            header.classList.add("bg-[hsla(216,100%,5%,0.95)]", "shadow-md");
 
-        if(window.scrollY >= 60) {
-            header.classList.add("bg-[hsla(216,100%,5%,0.85)]");
+            // Cambiamos los enlaces a blanco
+            aTags.forEach((link) => link.classList.add("text-white"));
 
-            aTag.forEach((item) =>{
-                item.classList.add("text-whiteColor");
-            });
+            // Aseguramos que los iconos se vean (blanco)
+            themeBoton.classList.add("text-white");
+            hamburguesa.classList.add("text-white");
 
-            themeBoton.classList.add("text-whiteColor");
-            hamburguesa.classList.add("text-whiteColor");
-            logoOscuro.src = "./assets/img/logo.png";          
+            // TRUCO: En lugar de cambiar el src, usamos un filtro para volver el logo negro a blanco
+            // Esto evita que el logo "desaparezca" si la imagen no carga rápido o hay conflicto con dark mode
+            if (logoOscuro) {
+                logoOscuro.style.filter = "brightness(0) invert(1)";
+            }
 
         } else {
-            header.classList.remove("bg-[hsla(216,100%,5%,0.85)]");
+            // Volvemos al estado original (transparente/claro)
+            header.classList.remove("bg-[hsla(216,100%,5%,0.95)]", "shadow-md");
 
-            aTag.forEach((item) => {
-                item.classList.remove("text-whiteColor");
-            });
+            aTags.forEach((link) => link.classList.remove("text-white"));
             
-            themeBoton.classList.remove("text-whiteColor");
-            hamburguesa.classList.remove("text-whiteColor");
-            logoOscuro.src = "./assets/img/logoBlack.png";
+            themeBoton.classList.remove("text-white");
+            hamburguesa.classList.remove("text-white");
+
+            if (logoOscuro) {
+                logoOscuro.style.filter = "none";
+            }
         }
     };
 
     window.addEventListener("scroll", scrollHeader);
+    // Llamamos una vez al inicio por si la página ya carga con scroll
+    scrollHeader();
 }
 
 /*~~~~~~~~~~~~~~~ MOSTRAR BOTÓN DE DESPLAZAMIENTO HACIA ARRIBA ~~~~~~~~~~~~~~~*/ 
 const scrollUpBtn = document.getElementById("scroll-up");
 
+// Función de suavizado (Easing)
 const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
 
 const scrollToTopGraceful = () => {
@@ -53,54 +64,49 @@ const scrollToTopGraceful = () => {
         const t = Math.min(1, elapsed / duration);
         const eased = easeOutQuint(t);
         window.scrollTo(0, startY * (1 - eased));
-        if (t < 1) {
-            requestAnimationFrame(step);
-        }
+        if (t < 1) requestAnimationFrame(step);
     };
-
-    step(performance.now());
+    requestAnimationFrame(step);
 };
 
 const updateScrollUpBtn = () => {
+    if (!scrollUpBtn) return; // Seguridad por si el ID no existe en el HTML
+    
     if (window.scrollY >= 300) {
-        scrollUpBtn.classList.remove("-bottom-28", "opacity-0", "pointer-events-none", "scale-90", "-translate-y-3");
-        scrollUpBtn.classList.add("scroll-fab--on", "bottom-6", "md:bottom-8", "opacity-100", "pointer-events-auto", "scale-100", "translate-y-0");
+        scrollUpBtn.classList.remove("-bottom-28", "opacity-0", "pointer-events-none");
+        scrollUpBtn.classList.add("bottom-6", "opacity-100", "pointer-events-auto");
     } else {
-        scrollUpBtn.classList.add("-bottom-28", "opacity-0", "pointer-events-none", "scale-90", "-translate-y-3");
-        scrollUpBtn.classList.remove("scroll-fab--on", "bottom-6", "md:bottom-8", "opacity-100", "pointer-events-auto", "scale-100", "translate-y-0");
+        scrollUpBtn.classList.add("-bottom-28", "opacity-0", "pointer-events-none");
+        scrollUpBtn.classList.remove("bottom-6", "opacity-100", "pointer-events-auto");
     }
 };
 
 window.addEventListener("scroll", updateScrollUpBtn);
+if (scrollUpBtn) scrollUpBtn.addEventListener("click", scrollToTopGraceful);
 
-updateScrollUpBtn();
-
-scrollUpBtn.addEventListener("click", () => {
-    scrollToTopGraceful();
-});
-
-
-/*~~~~~~~~~~~~~~~ ENLACE ACTIVO DE SECCIONES CON DESPLAZAMIENTO ~~~~~~~~~~~~~~~*/ 
+/*~~~~~~~~~~~~~~~ ENLACE ACTIVO DE SECCIONES ~~~~~~~~~~~~~~~*/ 
 const activarLink = () => {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");
 
-    let current = "inicio";
+    let current = "";
 
     sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-
-        if(window.scrollY >= sectionTop - 60) {
+        const sectionHeight = section.offsetHeight;
+        // Ajustamos el offset para que el cambio sea más natural
+        if (window.scrollY >= sectionTop - 100) {
             current = section.getAttribute("id");
         }
     });
 
-    navLinks.forEach(item => {
-        item.classList.remove('active');
-        if(item.href.includes(current)) {
-            item.classList.add('active');
+    navLinks.forEach((item) => {
+        item.classList.remove("active");
+        // Verificamos si el href termina en el ID actual
+        if (item.getAttribute("href") === `#${current}`) {
+            item.classList.add("active");
         }
     });
-}
+};
 
 window.addEventListener("scroll", activarLink);

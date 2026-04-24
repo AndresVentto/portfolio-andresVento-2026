@@ -939,6 +939,9 @@
   .bg-\[hsla\(216\,100\%\,5\%\,0\.90\)\] {
     background-color: hsla(216,100%,5%,0.90);
   }
+  .bg-\[hsla\(216\,100\%\,5\%\,0\.95\)\] {
+    background-color: hsla(216,100%,5%,0.95);
+  }
   .bg-amber-500\/10 {
     background-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
