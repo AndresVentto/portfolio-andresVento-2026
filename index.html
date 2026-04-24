@@ -35,62 +35,52 @@
      </head>
      <body>
           <!--============== HEADER ==============-->
-          <header id="header" class="sticky top-0 z-50 transition-all duration-300 w-full">
-               
+          <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[hsla(216,100%,5%,0.90)] py-4">
                <div class="relative container mx-auto flex justify-between items-center px-4 md:px-0">
-                    <div class="py-5 cursor-pointer">
-                         <a href="#inicio">
-                              <!-- Logo modo claro -->
-                              <img src="./assets/img/logo.png" loading="lazy" alt="logo" class="w-20 md:w-27 hidden dark:block" id="logo-claro">
-                              <!-- Logo modo oscuro -->
-                              <img src="./assets/img/logoBlack.png" loading="lazy" alt="logo oscuro" class="w-20 md:w-27 dark:hidden" id="logo-oscuro">
+                    <div class="cursor-pointer">
+                         <a href="#inicio" aria-label="Ir al inicio">
+                              <img src="./assets/img/logo.png" loading="lazy" alt="Logo Andrés Vento" class="w-20 md:w-27 hidden dark:block" id="logo-claro">
+                              <img src="./assets/img/logoBlack.png" loading="lazy" alt="Logo Andrés Vento Oscuro" class="w-20 md:w-27 dark:hidden" id="logo-oscuro">
                          </a>
                     </div>
-                    <nav id="nav-menu" class="fixed -top-full left-0 w-full h-screen nvisible opacity-0 lg:visible lg:opacity-100 flex flex-col justify-center bg-[hsla(216,100%,5%,0.90)] backdrop-blur-md text-center transition-all duration-500 ease-in-out lg:static lg:h-auto lg:flex-row lg:bg-transparent lg:backdrop-blur-0 lg:py-0 lg:w-auto lg:ml-auto">
+
+                    <nav id="nav-menu" class="fixed top-0 left-0 w-full h-screen flex flex-col justify-center bg-[hsla(216,100%,5%,0.95)] backdrop-blur-md text-center transform -translate-y-full transition-transform duration-500 ease-in-out lg:static lg:h-auto lg:flex-row lg:bg-transparent lg:backdrop-blur-0 lg:translate-y-0 lg:w-auto lg:ml-auto">
+                         
                          <div class="text-sectionColor mb-15 flex flex-col items-center gap-4 lg:hidden">
                               <span class="text-sm opacity-70 tracking-widest font-bold">~ MENU ~</span>
                               <h3 class="text-lg font-semibold text-primaryLight uppercase">💼 Andrés Vento 🚀</h3>
                          </div>
-                         <ul class="flex flex-col items-center text-center gap-8 lg:flex-row lg:gap-5">
-                              <li>
-                                   <a href="#proyectos" class="nav-link">Proyectos</a>
-                              </li>
-                              <li>
-                                   <a href="#sobre_mi" class="nav-link">Sobre Mí</a>
-                              </li>
-                              <li>
-                                   <a href="#skills" class="nav-link">Skills</a>
-                              </li>
-                              <li>
-                                   <a href="#curriculum" class="nav-link">Currículum</a>
-                              </li>
-                              <li>
-                                   <a href="#servicios" class="nav-link">Servicios</a>
-                              </li>
-
-                               <li>
-                                   <a href="#contacto" class="nav-link">Contacto</a>
-                              </li>
+                         
+                         <ul class="flex flex-col items-center text-center gap-8 lg:flex-row lg:gap-5 text-white lg:text-inherit">
+                              <li><a href="#proyectos" class="nav-link transition-colors hover:text-primary">Proyectos</a></li>
+                              <li><a href="#sobre_mi" class="nav-link transition-colors hover:text-primary">Sobre Mí</a></li>
+                              <li><a href="#skills" class="nav-link transition-colors hover:text-primary">Skills</a></li>
+                              <li><a href="#curriculum" class="nav-link transition-colors hover:text-primary">Currículum</a></li>
+                              <li><a href="#servicios" class="nav-link transition-colors hover:text-primary">Servicios</a></li>
+                              <li><a href="#contacto" class="nav-link transition-colors hover:text-primary">Contacto</a></li>
                          </ul>
-                         <div id="nav-close" class="text-whiteColor absolute top-9 right-5 text-3xl cursor-pointer lg:hidden">
+
+                         <button id="nav-close" aria-label="Cerrar menú" class="text-white absolute top-9 right-5 text-3xl cursor-pointer lg:hidden hover:text-red-500 transition-colors">
                               <i class="fa-solid fa-xmark"></i>
-                         </div>
+                         </button>
                     </nav>
-                    <div class="flex items-center gap-3 sm:gap-5">
 
-                         <i class="fa-regular fa-moon cursor-pointer ml-4 sm:ml-8 md:ml-16 text-2xl transition-colors duration-300 text-darkBodyColor dark:text-white" id="theme-btn"></i>
+                    <div class="flex items-center gap-4 sm:gap-6">
+                         
+                         <button aria-label="Cambiar tema" id="theme-btn" class="text-2xl ml-8 transition-colors duration-300 text-darkBodyColor dark:text-white hover:opacity-80">
+                              <i class="fa-regular fa-moon"></i>
+                         </button>
 
-                         <!-- Botón hamburguesa -->
-                         <div id="hamburguesa" class="lg:hidden text-darkBodyColor dark:text-white transition-colors duration-300">
-                              <i class="fa-solid fa-bars-staggered cursor-pointer text-2xl"></i>
-                         </div>
+                         <button id="hamburguesa" aria-label="Abrir menú" class="lg:hidden text-2xl text-darkBodyColor dark:text-white transition-colors duration-300 hover:opacity-80">
+                              <i class="fa-solid fa-bars-staggered"></i>
+                         </button>
                     </div>
                </div>
           </header>
 
           <main>
                <!--============== INICIO ==============-->
-               <section id="inicio" class="relative py-5 overflow-x-clip">
+               <section id="inicio" class="pt-32 md:pt-38 relative py-5 overflow-x-clip">
                     <!-- Particles.JS -->
                     <div id="particlesJS" class="absolute inset-0 w-full h-full z-0"></div>
                     <!-- Adorno Azul -->

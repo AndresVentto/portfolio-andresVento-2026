@@ -3,51 +3,31 @@
 export function menuFunciones() {
     const hamburguesa = document.getElementById("hamburguesa"); 
     const navMenu = document.getElementById("nav-menu"); 
-    const navLink = document.querySelectorAll(".nav-link"); 
+    const navLinks = document.querySelectorAll(".nav-link"); 
     const closeIcon = document.getElementById("nav-close"); 
 
-    // ================= MENU RESPONSIVE CON ANIMACIÓN SUAVE =================
+    // Funciones controladoras
+    const openMenu = () => navMenu.classList.remove("-translate-y-full");
+    const closeMenu = () => navMenu.classList.add("-translate-y-full");
 
-    // Cuando se hace click en cualquier link del menú
-    navLink.forEach((link) => {
-        link.addEventListener("click", () => {
-            // Oculta el menú deslizándolo hacia arriba (animación)
-            navMenu.classList.remove("top-0");
-            navMenu.classList.add("-top-full");
-        });
-    });
+    // Abrir menú
+    hamburguesa?.addEventListener("click", openMenu);
 
-    // Botón de cerrar (X)
-    closeIcon.addEventListener("click", () => {
-        // Misma lógica: lo escondemos hacia arriba
-        navMenu.classList.remove("top-0");
-        navMenu.classList.add("-top-full");
-    });
+    // Cerrar menú (X o click en enlace)
+    closeIcon?.addEventListener("click", closeMenu);
+    navLinks.forEach(link => link.addEventListener("click", closeMenu));
 
-    // Botón hamburguesa (abrir menú)
-    hamburguesa.addEventListener("click", () => {
-        // Mostramos el menú bajándolo suavemente
-        navMenu.classList.remove("-top-full", "invisible", "opacity-0");
-        navMenu.classList.add("top-0", "visible", "opacity-100");
-    });
-
-    // Cerrar menú al hacer click fuera del contenido
+    // Cerrar menú al hacer clic fuera
     document.addEventListener("click", (e) => {
-        const isMenuOpen = navMenu.classList.contains("top-0");
-
-        if (isMenuOpen) {
-        // Si el click NO fue dentro del menú ni en la hamburguesa
-            if (!navMenu.contains(e.target) && !hamburguesa.contains(e.target)) {
-                navMenu.classList.remove("top-0");
-                navMenu.classList.add("-top-full");
-            }
+        const isMenuOpen = !navMenu.classList.contains("-translate-y-full");
+        
+        if (isMenuOpen && !navMenu.contains(e.target) && !hamburguesa.contains(e.target)) {
+            closeMenu();
         }
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") {
-                navMenu.classList.remove("top-0");
-                navMenu.classList.add("-top-full");
-            }
-        });
+    });
+
+    // Cerrar con tecla Escape (Corregido: ahora está en el root)
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
     });
 }
-

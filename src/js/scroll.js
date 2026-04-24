@@ -1,45 +1,44 @@
 /*~~~~~~~~~~~~~~~ CAMBIAR FONDO DEL ENCABEZADO (Header) ~~~~~~~~~~~~~~~*/ 
 
 export function scrollHeaderFondo() {
-    const header = document.getElementById("header");
-    const logoOscuro = document.getElementById("logo-oscuro");
-    const themeBoton = document.getElementById("theme-btn");
-    const hamburguesa = document.getElementById("hamburguesa");
-    const aTags = document.querySelectorAll("nav ul li a");
 
     const scrollHeader = () => {
-        // Aumentamos un poco el umbral a 20px para evitar saltos bruscos
-        if (window.scrollY > 20) {
-            header.classList.add("bg-[hsla(216,100%,5%,0.98)]", "shadow-xl", "py-2");
-            header.classList.remove("py-5"); // Hacemos el header un poco más delgado al bajar
-            
-            // Forzar color blanco en elementos críticos
-            [themeBoton, hamburguesa, ...aTags].forEach(el => {
-                if(el) el.style.color = "#ffffff";
+        const header = document.getElementById("header");
+        const aTag = document.querySelectorAll("nav ul li a");
+        const themeBoton = document.getElementById("theme-btn");
+        const hamburguesa = document.getElementById("hamburguesa");
+        const logoOscuro = document.getElementById("logo-oscuro");
+
+        if(window.scrollY >= 60) {
+            header.classList.add("bg-[hsla(216,100%,5%,0.90)]");
+
+            aTag.forEach((item) =>{
+                item.classList.add("text-whiteColor");
             });
 
-            if (logoOscuro) logoOscuro.style.filter = "brightness(0) invert(1)";
+            themeBoton.classList.add("text-whiteColor");
+            hamburguesa.classList.add("text-whiteColor");
+            logoOscuro.src = "./assets/img/logo.png";          
+
         } else {
-            header.classList.remove("bg-[hsla(216,100%,5%,0.98)]", "shadow-xl", "py-2");
-            header.classList.add("py-5");
-            
-            // Volver a colores originales (esto quita el estilo inline)
-            [themeBoton, hamburguesa, ...aTags].forEach(el => {
-                if(el) el.style.color = "";
-            });
+            header.classList.remove("bg-[hsla(216,100%,5%,0.90)]");
 
-            if (logoOscuro) logoOscuro.style.filter = "none";
+            aTag.forEach((item) => {
+                item.classList.remove("text-whiteColor");
+            });
+            
+            themeBoton.classList.remove("text-whiteColor");
+            hamburguesa.classList.remove("text-whiteColor");
+            logoOscuro.src = "./assets/img/logoBlack.png";
         }
     };
 
     window.addEventListener("scroll", scrollHeader);
-    window.addEventListener("load", scrollHeader); // Ejecutar al cargar la página
 }
 
 /*~~~~~~~~~~~~~~~ MOSTRAR BOTÓN DE DESPLAZAMIENTO HACIA ARRIBA ~~~~~~~~~~~~~~~*/ 
 const scrollUpBtn = document.getElementById("scroll-up");
 
-// Función de suavizado (Easing)
 const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
 
 const scrollToTopGraceful = () => {
@@ -54,49 +53,54 @@ const scrollToTopGraceful = () => {
         const t = Math.min(1, elapsed / duration);
         const eased = easeOutQuint(t);
         window.scrollTo(0, startY * (1 - eased));
-        if (t < 1) requestAnimationFrame(step);
+        if (t < 1) {
+            requestAnimationFrame(step);
+        }
     };
-    requestAnimationFrame(step);
+
+    step(performance.now());
 };
 
 const updateScrollUpBtn = () => {
-    if (!scrollUpBtn) return; // Seguridad por si el ID no existe en el HTML
-    
     if (window.scrollY >= 300) {
-        scrollUpBtn.classList.remove("-bottom-28", "opacity-0", "pointer-events-none");
-        scrollUpBtn.classList.add("bottom-6", "opacity-100", "pointer-events-auto");
+        scrollUpBtn.classList.remove("-bottom-28", "opacity-0", "pointer-events-none", "scale-90", "-translate-y-3");
+        scrollUpBtn.classList.add("scroll-fab--on", "bottom-6", "md:bottom-8", "opacity-100", "pointer-events-auto", "scale-100", "translate-y-0");
     } else {
-        scrollUpBtn.classList.add("-bottom-28", "opacity-0", "pointer-events-none");
-        scrollUpBtn.classList.remove("bottom-6", "opacity-100", "pointer-events-auto");
+        scrollUpBtn.classList.add("-bottom-28", "opacity-0", "pointer-events-none", "scale-90", "-translate-y-3");
+        scrollUpBtn.classList.remove("scroll-fab--on", "bottom-6", "md:bottom-8", "opacity-100", "pointer-events-auto", "scale-100", "translate-y-0");
     }
 };
 
 window.addEventListener("scroll", updateScrollUpBtn);
-if (scrollUpBtn) scrollUpBtn.addEventListener("click", scrollToTopGraceful);
 
-/*~~~~~~~~~~~~~~~ ENLACE ACTIVO DE SECCIONES ~~~~~~~~~~~~~~~*/ 
+updateScrollUpBtn();
+
+scrollUpBtn.addEventListener("click", () => {
+    scrollToTopGraceful();
+});
+
+
+/*~~~~~~~~~~~~~~~ ENLACE ACTIVO DE SECCIONES CON DESPLAZAMIENTO ~~~~~~~~~~~~~~~*/ 
 const activarLink = () => {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");
 
-    let current = "";
+    let current = "inicio";
 
     sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        // Ajustamos el offset para que el cambio sea más natural
-        if (window.scrollY >= sectionTop - 100) {
+
+        if(window.scrollY >= sectionTop - 60) {
             current = section.getAttribute("id");
         }
     });
 
-    navLinks.forEach((item) => {
-        item.classList.remove("active");
-        // Verificamos si el href termina en el ID actual
-        if (item.getAttribute("href") === `#${current}`) {
-            item.classList.add("active");
+    navLinks.forEach(item => {
+        item.classList.remove('active');
+        if(item.href.includes(current)) {
+            item.classList.add('active');
         }
     });
-};
+}
 
 window.addEventListener("scroll", activarLink);
