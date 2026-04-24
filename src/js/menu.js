@@ -27,8 +27,8 @@ export function menuFunciones() {
     // Botón hamburguesa (abrir menú)
     hamburguesa.addEventListener("click", () => {
         // Mostramos el menú bajándolo suavemente
-        navMenu.classList.remove("-top-full");
-        navMenu.classList.add("top-0");
+        navMenu.classList.remove("-top-full", "invisible", "opacity-0");
+        navMenu.classList.add("top-0", "visible", "opacity-100");
     });
 
     // Cerrar menú al hacer click fuera del contenido
