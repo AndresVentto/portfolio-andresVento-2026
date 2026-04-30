@@ -893,6 +893,9 @@
   .gap-y-12 {
     row-gap: calc(var(--spacing) * 12);
   }
+  .gap-y-20 {
+    row-gap: calc(var(--spacing) * 20);
+  }
   .overflow-hidden {
     overflow: hidden;
   }
@@ -2824,6 +2827,16 @@
       padding-block: calc(var(--spacing) * 20);
     }
   }
+  .md\:py-25 {
+    @media (width >= 768px) {
+      padding-block: calc(var(--spacing) * 25);
+    }
+  }
+  .md\:py-30 {
+    @media (width >= 768px) {
+      padding-block: calc(var(--spacing) * 30);
+    }
+  }
   .md\:pt-6 {
     @media (width >= 768px) {
       padding-top: calc(var(--spacing) * 6);
@@ -2881,6 +2894,12 @@
     @media (width >= 768px) {
       font-size: var(--text-5xl);
       line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+  .md\:text-6xl {
+    @media (width >= 768px) {
+      font-size: var(--text-6xl);
+      line-height: var(--tw-leading, var(--text-6xl--line-height));
     }
   }
   .md\:text-base {
