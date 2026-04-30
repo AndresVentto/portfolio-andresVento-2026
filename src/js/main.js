@@ -1,17 +1,19 @@
 import { menuFunciones } from './menu.js';
 import { darkMode, lightMode, cargarParticles } from './theme.js';
 import { scrollHeaderFondo } from './scroll.js';
-import { moverIndicador, openModal, closeModal } from './proyectos.js';
+import { moverIndicador } from './proyectos.js';
 import { copyAr, renderContacto } from './copy.js';
-// Importamos la nueva función
 import { initContactForm } from './contact.js'; 
+import { openModal, closeModal } from './modalProyect.js'; 
 
 // Ejecución de funciones
 menuFunciones();
 scrollHeaderFondo();
 copyAr();
 renderContacto();
-initContactForm(); // <--- Llamada a la validación
+initContactForm(); 
+openModal('modal-project-1');
+closeModal('modal-project-1');
 
 
 

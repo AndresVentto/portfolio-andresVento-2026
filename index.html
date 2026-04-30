@@ -35,7 +35,7 @@
      </head>
      <body>
           <!--============== HEADER ==============-->
-          <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[hsla(216,100%,5%,0.90)] py-4">
+          <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[hsla(216,100%,5%,0.90)] py-4 ">
                <div class="relative container mx-auto flex justify-between items-center px-4 md:px-0">
                     <div class="cursor-pointer">
                          <a href="#inicio" aria-label="Ir al inicio">
@@ -80,12 +80,12 @@
 
           <main>
                <!--============== INICIO ==============-->
-               <section id="inicio" class="pt-32 md:pt-38 relative py-5 overflow-x-clip">
+               <section id="inicio" class="pt-35 md:pt-27 relative py-5 overflow-x-clip">
                     <!-- Particles.JS -->
                     <div id="particlesJS" class="absolute inset-0 w-full h-full z-0"></div>
                     <!-- Adorno Azul -->
                     <div class="absolute right-0 top-[-20%] w-80 h-80 rounded-full blur-[150px] opacity-50 bg-blue-400 dark:bg-primaryColorLight mix-blend-normal dark:mix-blend-screen"></div>  
-                    <div class="container relative z-10"> 
+                    <div class="container relative z-10 px-5"> 
                          <!-- Contenido -->
                          <div class="flex flex-col md:flex-row items-center gap-10">
                               <div class="inicio__content space-y-5 md:w-1/2 text-center md:text-left">
@@ -103,7 +103,6 @@
                                    <div class="relative flex justify-center md:hidden">
                                         <div class="absolute left-0 bottom-0 w-80 h-80 rounded-full blur-[150px] opacity-50 bg-blue-400 dark:bg-primaryColorLight mix-blend-normal dark:mix-blend-screen"></div>
                                         <div class="border-animated my-10 max-w-[70%] rotate-[4.5deg] hover:rotate-0 duration-300">
-                                             <div class="inner-mask"></div>
                                              <img src="./assets/img/yo.jpeg" alt="Foto de Andrés Vento" class="rounded-[38px] w-full">
                                         </div>
                                    </div>
@@ -115,9 +114,9 @@
                                                   <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
                                              </span>
                                              <span class="uppercase tracking-wider">
-                                                  ¡Trabajemos juntos! 
+                                                  ¡Disponible para Trabajar! 
                                              </span>
-                                             <i class="fa-solid fa-rocket text-[25px] transition-all duration-300opacity-100 translate-x-0 md:opacity-0 md:-translate-x-2 md:group-hover:opacity-100 md:group-hover:translate-x-0"></i>
+                                             <i class="fa-solid fa-rocket text-[25px] transition-all duration-300 opacity-100 translate-x-0 md:opacity-100 md:-translate-x-2 md:group-hover:opacity-100 md:group-hover:translate-x-0"></i>
                                         </a>
                                    </div>
                                    <p class="max-w-2xl text-base sm:text-lg md:text-xl lg:text-2xl pb-5 text-center md:text-left">
@@ -160,49 +159,59 @@
                               </div>
                          </div>
                          <!-- Footer Contenido -->
-                         <div class="inicio__footer text-darkSectionColor dark:text-whiteColor grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 py-20 px-6 sm:px-10 md:px-0">
-                              <div class="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-2 sm:gap-3 text-center sm:text-left">
-                                   <p class="contador font-audiowide text-4xl lg:text-7xl font-bold">4</p>
-                                   <p class="text-base sm:text-lg md:text-xl leading-relaxed">
-                                        Años de 📆 <br> Experiencia.
-                                   </p>
-                              </div>
-                              <div class="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-2 sm:gap-3 text-center sm:text-left">
-                                   <p class="contador font-audiowide text-4xl lg:text-7xl font-bold">12+</p>
-                                   <p class="text-base sm:text-lg md:text-xl leading-relaxed">
-                                        Proyectos 🚀 <br> Completados. 
-                                   </p>
-                              </div>
-
-                              <div class="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-2 sm:gap-3 text-center sm:text-left">
-                                   <p class="contador font-audiowide text-4xl lg:text-7xl font-bold">10</p>
-                                   <p class="text-base sm:text-lg md:text-xl leading-relaxed">
-                                        Tecnologías <br> Usadas. 💻
+                         <!-- grid-cols-1 para que en móvil sea una sola columna, lg:grid-cols-4 para escritorio -->
+                         <div class="inicio__footer text-darkSectionColor dark:text-whiteColor grid grid-cols-1 lg:grid-cols-4 gap-y-12 gap-x-6 py-12 md:py-20 px-4 sm:px-10 md:px-0">
+                              
+                              <!-- ITEM 1 -->
+                              <!-- flex-col (móvil: vertical) lg:flex-row (escritorio: horizontal) -->
+                              <div class="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-2 md:gap-4 group">
+                                   <p class="contador font-audiowide text-5xl lg:text-7xl font-bold text-primaryColor dark:text-primaryLight transition-transform duration-300 group-hover:scale-110">4</p>
+                                   <p class="text-base sm:text-lg lg:text-xl leading-tight lg:leading-snug font-medium opacity-90 text-center lg:text-left">
+                                        Años de 📆 <br class="lg:block"> Experiencia.
                                    </p>
                               </div>
 
-                              <div class="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-2 sm:gap-3 text-center sm:text-left">
-                                   <p class="contador font-audiowide text-4xl lg:text-7xl font-bold">100%</p>
-                                   <p class="text-base sm:text-lg md:text-xl leading-relaxed">
-                                        Profesional y <br> Comprometido.
+                              <!-- ITEM 2 -->
+                              <div class="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-2 md:gap-4 group">
+                                   <p class="contador font-audiowide text-5xl lg:text-7xl font-bold text-primaryColor dark:text-primaryLight transition-transform duration-300 group-hover:scale-110">12+</p>
+                                   <p class="text-base sm:text-lg lg:text-xl leading-tight lg:leading-snug font-medium opacity-90 text-center lg:text-left">
+                                        Proyectos 🚀 <br class="lg:block"> Completados. 
+                                   </p>
+                              </div>
+
+                              <!-- ITEM 3 -->
+                              <div class="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-2 md:gap-4 group">
+                                   <p class="contador font-audiowide text-5xl lg:text-7xl font-bold text-primaryColor dark:text-primaryLight transition-transform duration-300 group-hover:scale-110">10</p>
+                                   <p class="text-base sm:text-lg lg:text-xl leading-tight lg:leading-snug font-medium opacity-90 text-center lg:text-left">
+                                        Tecnologías <br class="lg:block"> Usadas. 💻
+                                   </p>
+                              </div>
+
+                              <!-- ITEM 4 -->
+                              <div class="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-2 md:gap-4 group">
+                                   <p class="contador font-audiowide text-5xl lg:text-7xl font-bold text-primaryColor dark:text-primaryLight transition-transform duration-300 group-hover:scale-110">100%</p>
+                                   <p class="text-base sm:text-lg lg:text-xl leading-tight lg:leading-snug font-medium opacity-90 text-center lg:text-left">
+                                        Profesional y <br class="lg:block"> Comprometido.
                                    </p>
                               </div>
                          </div>
                     </div>
+
                     <div class="absolute left-0 bottom-[-2%] w-80 h-80 rounded-full blur-[150px] opacity-50 bg-blue-400 dark:bg-primaryColorLight mix-blend-normal dark:mix-blend-screen"></div>
                </section>
 
                <!--============== PROYECTOS ==============-->
                <!-- NOTA: Agregar ventanas modales para los proyectos -->
-               <section id="proyectos" class="container overflow-x-clip" >
+               <section id="proyectos" class="container overflow-x-clip px-5" >
 
-                    <div class="proyectos__top flex flex-col items-center gap-5 text-center md:text-center">
-                         <h2 class="subtitle mb-5">Mis Proyectos más Destacados</h2>
+                    <div class="proyectos__top flex flex-col items-center gap-16 text-center md:text-center">
+                         <h2 class="subtitle mb-5">Proyectos Destacados</h2>
 
                          <p class="max-w-5xl text-base sm:text-lg md:text-xl leading-relaxed pb-8 text-darkBodyColor dark:text-whiteColor">
                               A continuación presento una selección de proyectos donde pongo en práctica diferentes áreas de la informática, incluyendo desarrollo web, lógica de programación, gestión de bases de datos y diseño y desarrollo de sistemas informáticos. En cada uno he enfocado mis esfuerzos en crear soluciones eficientes, mantenibles y orientadas a resolver problemas reales.
                          </p>
                     </div>
+                    
                     <!-- Filtro PRO -->
                     <div class="proyectos__taps relative w-full max-w-md mx-auto my-10 p-1 rounded-full border-2 border-primaryColor dark:border-primaryColorLight bg-gradient-to-b bg-ligthBodyColor dark:from-[hsl(211,100%,12%)] dark:to-[hsl(216,100%,4%)] backdrop-blur-xl shadow-[0_0_15px_rgba(59,130,246,0.5)]">
                          
@@ -284,7 +293,7 @@
                                         <div class="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 dark:via-white/10 to-transparent"></div>
 
                                         <div class="flex items-center justify-between">
-                                             <a href="#" onclick="openModal('modal-project-1')" class="flex items-center gap-2 text-md font-bold text-[hsl(209,74%,45%)] dark:text-emerald-400 group/link">
+                                             <a href="#" onclick="event.preventDefault(); openModal('modal-project-1')" class="flex items-center gap-2 text-md font-bold text-[hsl(209,74%,45%)] dark:text-emerald-400 group/link">
                                                   Ver más detalles
                                                   <i class="fa-solid fa-arrow-right transition-transform group-hover/link:translate-x-1"></i>
                                              </a>
@@ -796,7 +805,7 @@
                </section>
 
                <!--============== SOBRE MÍ ==============-->
-               <section id="sobre_mi" class="relative overflow-x-clip">
+               <section id="sobre_mi" class="relative overflow-x-clip  px-5">
 
                     <!-- Fondo estilo INICIO -->
                     <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 24px 24px;">
@@ -865,7 +874,7 @@
                </section>
 
                <!--============== MYS SKILLS ==============--> 
-               <section id="skills" class="container"> 
+               <section id="skills" class="container px-5"> 
                     
                     <div class="skills__top flex flex-col items-center gap-5 text-center"> 
                          <h2 class="subtitle mb-5">My Skills</h2> 
@@ -1178,7 +1187,7 @@
                </section>
 
                <!--============== CURRÍCULUM ==============-->
-               <section id="curriculum" class="container py-16">
+               <section id="curriculum" class="container py-16 px-5">
 
                     <!-- Título -->
                     <div class="text-center mb-16">
@@ -1402,7 +1411,7 @@
 
                     <div class="absolute right-0 top-[10%] w-80 h-80 bg-primaryColorLight mix-blend-screen dark:mix-blend-screen rounded-full blur-[150px] opacity-50"></div>
                     
-                    <div class="container">
+                    <div class="container px-5">
 
                          <div class="servicio__top flex flex-col items-center text-center">
                               <h2 class="subtitle font-bold">Mis Servicios</h2>
@@ -1494,7 +1503,7 @@
                <!-- Agregar iteractividad, para que las personas puedan escribir testimonios de como soy y como es mi trabajo -->
                <!-- <section id="testimonios" class="hidden bg-sectionColor dark:bg-darkBodyColor">
 
-                    <div class="container">
+                    <div class="container px-5">
 
                          <div class="blog_top flex flex-col items-center gap-5 text-center">
                               <h2 class="subtitle">Testimonios</h2>
@@ -1557,7 +1566,8 @@
                </section> -->
                
                <!--============== CONTACTO ==============-->
-               <section id="contacto" class="container py-1 relative overflow-hidden">
+               <section id="contacto" class="container py-1 relative overflow-hidden px-5">
+                    
                     <div class="text-center mb-16">
                          <h2 class="subtitle font-bold">
                               ¡Contáctame! 
@@ -1591,14 +1601,13 @@
                                              </a>
                                              
                                              <div class="flex items-center gap-4">
-                                                  <button class="copy-icon flex items-center justify-center gap-2 px-4 py-2 sm:p-2 rounded-xl border border-primaryColorLight dark:border-primaryColorLight/40 bg-primaryColorLight/20 sm:bg-transparent text-primaryColorLight hover:bg-primaryColorLight hover:text-white transition-all duration-300 active:scale-95" data-type="phone" data-text="Teléfono">
+                                                  <button class="copy-icon flex items-center justify-center gap-2 px-4 py-2 sm:p-2 rounded-xl border border-primaryColorLight dark:border-primaryColorLight/40 bg-primaryColorLight/20 sm:bg-transparent text-primaryColorLight hover:bg-primaryColorLight hover:text-white transition-all duration-100 active:scale-95" data-type="phone" title="Copiar teléfono" data-text="Teléfono">
                                                        <i class="fa-solid fa-copy text-lg"></i>
                                                        <span class="sm:hidden text-sm font-semibold">Copiar</span>
                                                   </button>
 
-                                                  <a id="whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="sm:hidden flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#3b995d] text-white active:scale-95 transition-all shadow-lg shadow-[#25D366]/20">
-                                                       <i class="fa-brands fa-whatsapp text-lg"></i>
-                                                       <span class="text-sm font-semibold">Mensaje</span>
+                                                  <a id="whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center px-3 py-2 rounded-xl bg-[#3b995d] text-white active:scale-95 transition-all shadow-lg shadow-[#25D366]/20" title="Contactar por WhatsApp">
+                                                       <i class="fa-brands fa-whatsapp text-xl"></i>
                                                   </a>
                                              </div>
                                         </div>
@@ -1619,10 +1628,10 @@
                                         
                                         <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
                                              <span id="email-text" class="text-base sm:text-lg font-medium text-gray-900 dark:text-white break-all sm:break-normal leading-tight">
-                                                  <!-- Se inserta con JS -->
+                                                  <!-- Se inserta en el JavaScript -->
                                              </span>
                                              
-                                             <button class="copy-icon mt-2 sm:mt-0 flex items-center justify-center gap-2 px-4 py-2 sm:p-2 rounded-xl border border-primaryColorLight dark:border-primaryColorLight/40 bg-primaryColorLight/20 sm:bg-transparent text-primaryColorLight hover:bg-primaryColorLight hover:text-white transition-all duration-300 active:scale-95" data-type="email" data-text="Correo">
+                                             <button class="copy-icon mt-2 sm:mt-0 flex items-center justify-center gap-2 px-4 py-2 sm:p-2 rounded-xl border border-primaryColorLight dark:border-primaryColorLight/40 bg-primaryColorLight/20 sm:bg-transparent text-primaryColorLight hover:bg-primaryColorLight hover:text-white transition-all duration-100 active:scale-95" data-type="email" data-text="Correo" title="Copiar Correo">
                                                   <i class="fa-solid fa-copy text-lg"></i>
                                                   <span class="sm:hidden text-sm font-semibold">Copiar</span>
                                              </button>
@@ -1769,7 +1778,7 @@
 
           <!--============== FOOTER ==============-->
           <footer id="footer" class="bg-darkSectionColor dark:bg-darkSectionColor pt-10">
-               <div class="container flex flex-col items-center gap-10">
+               <div class="container flex flex-col items-center gap-10 px-5">
                     <div class="py-10">
                          <!-- Logo modo Light -->
                          <img src="./assets/img/logo.png" loading="lazy" alt="logo" class="w-28 md:w-40 hidden dark:block " >
@@ -1818,70 +1827,105 @@
           </button>
 
           <!-- Ventanas Modales de Proyectos -->
+           
           <!-- MODAL PROYECTO 1 -->
+          <!-- Fondo oscuro con desenfoque (backdrop-blur) para la superposición de la modal -->
+          <div id="modal-project-1" class="fixed inset-0 z-[200] hidden items-center justify-center bg-slate-900/40 dark:bg-slate-950/80 backdrop-blur-md p-3 sm:p-4 transition-all duration-300">
 
-          <div id="modal-project-1" class="fixed inset-0 z-[200] hidden items-center justify-center bg-sectionColor dark:bg-darkSectionColor  backdrop-blur-md p-4 transition-all duration-300">
-
-               <div class="relative w-full max-w-4xl rounded-3xl bg-[#10141e] border border-white/10 shadow-2xl overflow-hidden animate-fadeIn">
+               <!-- CONTENEDOR PRINCIPAL DE LA MODAL -->
+               <!-- Añadido max-h-[95vh] y overflow-y-auto para permitir scroll interno en móviles -->
+               <div class="relative w-full max-w-6xl max-h-[100vh] md:max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-xl md:rounded-3xl bg-whiteColor dark:bg-darkBodyColor border-2 border-primaryColor dark:border-primaryColorLight shadow-2xl dark:shadow-[0_0_30px_rgba(14,165,233,0.3)] animate-fadeIn transition-colors duration-200 custom-scrollbar">
                     
-                    <button onclick="closeModal('modal-project-1')" class="absolute top-5 right-5 z-30 w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-red-500/20 text-zinc-400 hover:text-red-500 transition-all duration-300">
-                         <i class="fa-solid fa-xmark text-lg"></i>
+                    <!-- BOTÓN DE CERRAR -->
+                    <!-- Posición y tamaño reducidos en móvil para no estorbar -->
+                    <button onclick="closeModal('modal-project-1')" class="absolute top-3 right-3 md:top-5 md:right-5 z-30 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-slate-100/90 md:bg-slate-100 dark:bg-slate-800/90 dark:md:bg-slate-800 hover:bg-red-500 dark:hover:bg-red-500 hover:text-white text-slate-500 dark:text-slate-400 transition-all duration-100 shadow-sm md:shadow-none backdrop-blur-sm">
+                         <i class="fa-solid fa-xmark text-base md:text-lg"></i>
                     </button>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2">
+                    <!-- ESTRUCTURA DE DOS COLUMNAS -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 h-full">
                          
-                         <div class="relative bg-[#0b0d13] p-6 flex items-center justify-center border-b md:border-b-0 md:border-r border-white/5">
-
-                              <div class="relative group overflow-hidden rounded-xl shadow-2xl">
-
+                         <!-- COLUMNA IZQUIERDA: IMAGEN -->
+                         <!-- Altura fija en móvil (h-56) para que la imagen no empuje el texto fuera de la pantalla -->
+                         <div class="relative bg-sectionColor dark:bg-slate-800/30 p-4 md:p-6 flex items-center justify-center h-56 sm:h-64 md:h-auto">
+                              <div class="relative group overflow-hidden rounded-xl shadow-lg dark:shadow-none w-full h-full">
                                    <img src="./assets/img/project-1.jpg" alt="Proyecto 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
 
-                                   <div class="absolute inset-0 bg-gradient-to-t from-[#0b0d13]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-
-                                        <span class="text-xs text-white/70 italic">Captura de pantalla del Dashboard</span>
-
+                                   <!-- Overlay de la imagen al hacer hover -->
+                                   <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                        <span class="text-xs text-white/90 italic drop-shadow-md">Captura de pantalla del Dashboard</span>
                                    </div>
                               </div>
                          </div>
 
-                         <div class="p-8 md:p-10 flex flex-col justify-center">
+                         <!-- COLUMNA DERECHA: CONTENIDO Y TEXTOS -->
+                         <!-- Paddings reducidos en móvil (p-5) -->
+                         <div class="p-5 sm:p-7 md:p-10 flex flex-col justify-center">
                               
-                              <div class="mb-6">
+                              <div class="mb-4 md:mb-6">
                                    <div class="flex items-center gap-3 mb-2">
-                                   <span class="px-2.5 py-0.5 rounded-md bg-amber-500/10 text-amber-500 text-[10px] font-bold uppercase tracking-widest border border-amber-500/20">
-                                        Frontend
-                                   </span>
-                                   <span class="text-zinc-500 text-xs flex items-center gap-1">
-                                        <i class="fa-regular fa-calendar"></i> 2026
-                                   </span>
+                                        <span class="px-2 py-0.5 md:px-2.5 rounded-md bg-orange-50 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400 text-[10px] font-bold uppercase tracking-widest border border-orange-200 dark:border-orange-500/20">
+                                             Frontend
+                                        </span>
+                                        <span class="text-slate-500 dark:text-slate-400 text-xs flex items-center gap-1 font-medium">
+                                             <i class="fa-regular fa-calendar"></i> 2026
+                                        </span>
                                    </div>
-                                   <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">
-                                   Proyecto 1
+                                   <!-- Tamaño de fuente adaptable (text-2xl en móvil, text-4xl en desktop) -->
+                                   <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
+                                        Proyecto 1
                                    </h2>
                               </div>
 
-                              <p class="text-zinc-400 leading-relaxed text-base mb-8">
-                                   Dashboard avanzado con analítica en tiempo real, visualización de datos, análisis de sentimiento y generación automática de insights para la toma de decisiones estratégicas.
+                              <!-- DESCRIPCIÓN -->
+                              <!-- Texto ligeramente más pequeño en móvil -->
+                              <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base mb-6">
+                                   Dashboard avanzado con analítica en tiempo real, visualización de datos, análisis de sentimiento y generación automática de insights para la toma de decisiones estratégicas. Dashboard avanzado con analítica en tiempo real, visualización de datos, análisis de sentimiento.Dashboard avanzado con analítica en tiempo real, visualización de datos, análisis de sentimiento y generación automática de insights para la toma de decisiones estratégicas
                               </p>
 
-                              <div class="mb-8">
-                                   <h4 class="text-[11px] text-zinc-500 uppercase tracking-widest font-bold mb-3">Stack Tecnológico</h4>
+                              <!-- STACK TECNOLÓGICO -->
+                              <div class="mb-6 md:mb-8">
+                                   <h4 class="text-[10px] md:text-[11px] text-slate-500 dark:text-slate-400 uppercase tracking-widest font-bold mb-3">Stack Tecnológico</h4>
                                    <div class="flex flex-wrap gap-2">
-                                   <span class="px-3 py-1 text-xs font-medium rounded-md bg-white/5 text-zinc-300 border border-white/10">React</span>
-                                   <span class="px-3 py-1 text-xs font-medium rounded-md bg-white/5 text-zinc-300 border border-white/10">Tailwind</span>
-                                   <span class="px-3 py-1 text-xs font-medium rounded-md bg-white/5 text-zinc-300 border border-white/10">Node.js</span>
+                                        <span class="px-2 md:px-3 py-1 text-[11px] md:text-xs font-semibold rounded-lg bg-[#E34F26]/10 text-[#E34F26] border border-[#E34F26]/20 backdrop-blur-sm tracking-wide">
+                                             HTML
+                                        </span>
+                                        <span class="px-2 md:px-3 py-1 text-[11px] md:text-xs font-semibold rounded-lg bg-[#CC6699]/10 text-[#CC6699] border border-[#CC6699]/20 backdrop-blur-sm tracking-wide">
+                                             Sass
+                                        </span>
+                                        <span class="px-2 md:px-3 py-1 text-[11px] md:text-xs font-semibold rounded-lg bg-[#bdac30]/10 text-[#bdac30] border border-[#bdac30]/20 backdrop-blur-sm tracking-wide">
+                                             JavaScript
+                                        </span>
+                                        <span class="px-2 md:px-3 py-1 text-[11px] md:text-xs font-semibold rounded-lg bg-[#777BB4]/10 text-[#777BB4] border border-[#777BB4]/20 backdrop-blur-sm tracking-wide">
+                                             PHP
+                                        </span>
+                                        <span class="px-2 md:px-3 py-1 text-[11px] md:text-xs font-semibold rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                                             MySQL
+                                        </span>
                                    </div>
                               </div>
 
-                              <div class="flex flex-col sm:flex-row gap-4 pt-4 border-t border-white/5">
+                              <!-- BOTONES DE ACCIÓN -->
+                              <!-- gap-3 en móvil, gap-4 en desktop -->
+                              <div class="flex flex-col sm:flex-row gap-3 md:gap-4 pt-5 md:pt-6 border-t border-slate-100 dark:border-slate-800">
+                                   
+                                   <!-- BOTÓN PREVIEW (Cohete) -->
+                                   <!-- Mejoras: Se añadió cambio de color de texto en hover para contraste, elevación y animación del icono -->
                                    <a href="#" target="_blank"
-                                   class="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-3 px-6 rounded-xl font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20">
-                                   <i class="fa-solid fa-rocket"></i> Ver Demo
+                                        class="group flex-1 flex items-center justify-center gap-2 bg-transparent border-2 border-primaryColorLight dark:border-primaryColor text-bodyDark dark:text-primaryLight py-2.5 md:py-3 px-6 rounded-xl text-base md:text-lg font-bold transition-all duration-300 hover:-translate-y-1 hover:bg-primaryColor dark:hover:bg-primaryLight hover:text-white dark:hover:text-slate-900 shadow-none hover:shadow-lg hover:shadow-blue-600/30 dark:hover:shadow-sky-500/20">
+                                        <!-- El cohete "despega" ligeramente hacia arriba y a la derecha al hacer hover -->
+                                        <i class="fa-solid fa-rocket text-xl md:text-2xl duration-300 ease-out"></i> 
+                                        Preview
                                    </a>
+                                   
+                                   <!-- BOTÓN GITHUB -->
                                    <a href="URL_DE_GITHUB" target="_blank"
-                                   class="flex-1 flex items-center justify-center gap-2 bg-white/5 text-white py-3 px-6 rounded-xl font-bold hover:bg-white/10 border border-white/10 transition-all">
-                                   <i class="fa-brands fa-github"></i> Código
+                                        class="group flex-1 flex items-center justify-center gap-2 bg-primaryColor dark:bg-transparent text-white py-2.5 md:py-3 px-6 rounded-xl text-base md:text-lg font-bold border-2 border-primaryColor dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primaryColor dark:hover:text-white hover:border-gray shadow-none hover:shadow-lg hover:shadow-slate-500/10 dark:hover:shadow-slate-900/50 text-center">
+                                        <!-- El logo de GitHub hace un sutil efecto de rebote/escala al hacer hover -->
+                                        <i class="fa-brands fa-github text-xl md:text-2xl group-hover:scale-110 transition-transform duration-300 ease-out"></i> 
+                                        GitHub
                                    </a>
+
                               </div>
 
                          </div>

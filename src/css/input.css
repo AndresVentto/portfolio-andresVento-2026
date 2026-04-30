@@ -61,7 +61,7 @@
           @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[75px] font-bold bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-800 dark:from-blue-300 dark:via-cyan-500 dark:to-blue-600 inline-block text-transparent bg-clip-text pb-2;
      }
      .subtitle {
-          @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-800 dark:from-blue-300 dark:via-cyan-500 dark:to-blue-600 inline-block text-transparent bg-clip-text pb-3;
+          @apply text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-800 dark:from-blue-300 dark:via-cyan-500 dark:to-blue-600 inline-block text-transparent bg-clip-text pb-3;
      }
 }
 

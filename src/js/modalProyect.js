@@ -1,27 +1,33 @@
 /*~~~~~~~~~~~~~~~ VENTANAS MODALES ~~~~~~~~~~~~~~~*/ 
 
-export function openModal(event, id) {
-    event.preventDefault(); 
-
+export function openModal(id) {
+    // Eliminamos 'event' de los parámetros si lo llamas desde onclick simple,
+    // o asegúrate de pasarlo. Aquí lo simplificamos:
     const modal = document.getElementById(id);
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
-
-    document.body.style.overflow = "hidden";
+    if (modal) {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        document.body.style.overflow = "hidden";
+    }
 }
 
-export function closeModal(id) {
+export function closeModal(id) { 
     const modal = document.getElementById(id);
-    modal.classList.add("hidden");
-    modal.classList.remove("flex");
-
-    document.body.style.overflow = "";
+    if (modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        document.body.style.overflow = "";
+    }
 }
 
-// Cerrar al hacer click fuera (genérico)
+// Mejora para cerrar al hacer click fuera:
 window.addEventListener("click", function (e) {
-    const modal = document.querySelector(".modal-active");
-    if (e.target.classList.contains("modal-bg")) {
+    // Si el usuario hace click en el fondo oscurecido (el div del modal)
+    if (e.target.classList.contains('fixed')) {
         closeModal(e.target.id);
     }
 });
+
+// ESTA ES LA CLAVE: Hacerlas accesibles al HTML
+window.openModal = openModal;
+window.closeModal = closeModal;

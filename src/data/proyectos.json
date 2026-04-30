@@ -1,0 +1,79 @@
+
+[
+    {
+        "id": "proyecto-1",
+        "nombre": "Proyecto 1",
+        "descripcion": "Descripción larga para la modal...",
+        "descripcionCorta": "Resumen para la card...",
+        "imagen": "./assets/img/project-1.jpg",
+        "tecnologias": [
+            {"name": "React", "bg": "bg-blue-500/10", "text": "text-blue-500", "border": "border-blue-500/20"},
+            {"name": "Tailwind", "bg": "bg-cyan-500/10", "text": "text-cyan-500", "border": "border-cyan-500/20"}
+        ],
+        "demo": "https://example.com/demo1",
+        "repo": "https://github.com/tu-usuario/proyecto1"
+    },
+    {
+        "id": "proyecto-2",
+        "nombre": "Proyecto 2",
+        "categoria": "Fullstack",
+        "año": "2025",
+        "descripcion": "Descripción del proyecto 2. Aplicación enfocada en rendimiento y UI/UX.",
+        "descripcionCorta": "Resumen para la card...",
+        "tecnologias": [
+            {"name": "React", "bg": "bg-blue-500/10", "text": "text-blue-500", "border": "border-blue-500/20"},
+            {"name": "Tailwind", "bg": "bg-cyan-500/10", "text": "text-cyan-500", "border": "border-cyan-500/20"},
+            {"name": "Node.js", "bg": "bg-green-500/10", "text": "text-green-500", "border": "border-green-500/20"}
+        ],
+        "imagen": "./assets/img/project-2.jpg",
+        "demo": "https://example.com/demo2",
+        "repo": "https://github.com/tu-usuario/proyecto2"
+    },
+    {
+        "id": "proyecto-3",
+        "nombre": "Proyecto 3",
+        "categoria": "Backend",
+        "año": "2024",
+        "descripcion": "Descripción del proyecto 3. Servicio RESTful con autenticación JWT.",
+        "descripcionCorta": "Resumen para la card...",
+        "tecnologias": [
+            {"name": "Python", "bg": "bg-green-500/10", "text": "text-green-500", "border": "border-green-500/20"},
+            {"name": "Django", "bg": "bg-green-500/10", "text": "text-green-500", "border": "border-green-500/20"},
+            {"name": "PostgreSQL", "bg": "bg-blue-500/10", "text": "text-blue-500", "border": "border-blue-500/20"}
+        ],
+        "imagen": "./assets/img/project-3.jpg",
+        "demo": "https://example.com/demo3",
+        "repo": "https://github.com/tu-usuario/proyecto3"
+    },
+    {
+        "id": "proyecto-4",
+        "nombre": "Proyecto 4",
+        "categoria": "Mobile",
+        "año": "2023",
+        "descripcion": "Descripción del proyecto 4. Aplicación móvil con Flutter y Firebase.",
+        "descripcionCorta": "Resumen para la card...",
+        "tecnologias": [
+            {"name": "Flutter", "bg": "bg-blue-500/10", "text": "text-blue-500", "border": "border-blue-500/20"},
+            {"name": "Firebase", "bg": "bg-yellow-500/10", "text": "text-yellow-500", "border": "border-yellow-500/20"}
+        ],
+        "imagen": "./assets/img/project-4.jpg",
+        "demo": "https://example.com/demo4",
+        "repo": "https://github.com/tu-usuario/proyecto4"
+    },
+    {
+        "id": "proyecto-5",
+        "nombre": "Proyecto 5",
+        "categoria": "Data Science",
+        "año": "2022",
+        "descripcion": "Descripción del proyecto 5. Análisis de datos con Python y visualización con Matplotlib.",
+        "descripcionCorta": "Resumen para la card...",
+        "tecnologias": [
+            {"name": "Python", "bg": "bg-green-500/10", "text": "text-green-500", "border": "border-green-500/20"},
+            {"name": "Pandas", "bg": "bg-green-500/10", "text": "text-green-500", "border": "border-green-500/20"},
+            {"name": "Matplotlib", "bg": "bg-blue-500/10", "text": "text-blue-500", "border": "border-blue-500/20"}
+        ],      
+        "imagen": "./assets/img/project-5.jpg",
+        "demo": "https://example.com/demo5",
+        "repo": "https://github.com/tu-usuario/proyecto5"
+    }
+]

@@ -1,6 +1,6 @@
 const secretos = {
-    phone: ["+58", "424", "217", "1412"].join(""),
-    email: ["andresvento2004", "gmail.com"].join("@")
+    phone: ["+58", "424", "217", "1412"].join(" "),
+    email: ["andresvento.dev", "gmail.com"].join("@")
 };
 
 export function copyAr() {
@@ -44,18 +44,21 @@ export function copyAr() {
 export function renderContacto() {
     // Teléfono
     const phoneLink = document.getElementById("phone-link");
+
     if (phoneLink) {
         phoneLink.href = `tel:${secretos.phone}`;
     }
 
     // Email
     const emailText = document.getElementById("email-text");
+
     if (emailText) {
         emailText.textContent = secretos.email;
     }
 
-    // WhatsApp 🔥
+    // WhatsApp 
     const whatsappLink = document.getElementById("whatsapp-link");
+
     if (whatsappLink) {
         whatsappLink.href = `https://wa.me/${secretos.phone}`;
     }
