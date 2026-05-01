@@ -33,7 +33,7 @@
 
 @layer components {
      .nav-link {
-          @apply relative font-bold text-textColor lg:text-primaryColor dark:text-textColor;
+          @apply relative font-bold text-lg text-textColor lg:text-primaryColor dark:text-textColor;
      }
      .nav-link::before {
           content: "";
