@@ -1,13 +1,16 @@
-/*~~~~~~~~~~~~~~~ VALIDACIÓN DE FORMULARIO ~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~ VALIDACIÓN E INTEGRACIÓN DE FORMULARIO ~~~~~~~~~~~~~~~*/
 
 export function initContactForm() {
     const form = document.getElementById("contact-form");
-    if (!form) return; // Seguridad por si el form no existe en la página actual
+    if (!form) return; 
 
     const submitBtn = document.getElementById("submit-btn");
     const btnIcon = document.getElementById("btn-icon");
     const toast = document.getElementById("toast");
     const charCount = document.getElementById("char-count");
+
+    // Inicializar EmailJS con tu Public Key
+    emailjs.init("FT_Fg8WdvRpcifXSD");
 
     const config = {
         fullname: { regex: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}$/, required: true },
@@ -20,11 +23,13 @@ export function initContactForm() {
 
     // --- FUNCIONES AUXILIARES ---
     function showToast() {
+        if (!toast) return;
         toast.classList.remove("translate-y-32", "opacity-0");
         setTimeout(() => toast.classList.add("translate-y-32", "opacity-0"), 4000);
     }
 
     function validateField(input, id) {
+        if (!input) return false;
         const container = input.closest('.space-y-2') || input.parentElement;
         const icon = container.querySelector(".icon");
         const elements = {
@@ -38,20 +43,17 @@ export function initContactForm() {
         const isEmpty = value === "";
         const isInvalid = config[id].regex && !isEmpty && !config[id].regex.test(value);
 
-        // 1. Determinar el estado
         let status = "valid";
         if (isRequired && isEmpty) status = "empty";
         else if (isInvalid) status = "invalid";
-        else if (isEmpty) status = "none"; // Campo opcional vacío
+        else if (isEmpty) status = "none";
 
-        // 2. Actualizar UI (Mensajes y Colores)
         elements.empty?.classList.toggle("hidden", status !== "empty");
         elements.invalid?.classList.toggle("hidden", status !== "invalid");
         elements.success?.classList.toggle("hidden", status !== "valid");
 
         input.classList.remove("border-red-500", "border-green-500", "border-blue-500", "ring-1", "ring-blue-500");
 
-        // 3. Aplicar estilos según el estado final
         if (status === "empty" || status === "invalid") {
             input.classList.add("border-red-500");
             if (icon) icon.textContent = status === "empty" ? "⚠️" : "❌";
@@ -71,11 +73,13 @@ export function initContactForm() {
     function resetAll() {
         fields.forEach(id => {
             const input = document.getElementById(id);
-            input.classList.remove("border-red-500", "border-green-500", "border-blue-500", "ring-1", "ring-blue-500");
-            const container = input.closest('.space-y-2');
-            const icon = container.querySelector(".icon");
-            if (icon) icon.textContent = "";
-            container.querySelectorAll(".error-empty, .error-invalid, .success").forEach(m => m.classList.add("hidden"));
+            if (input) {
+                input.classList.remove("border-red-500", "border-green-500", "border-blue-500", "ring-1", "ring-blue-500");
+                const container = input.closest('.space-y-2');
+                const icon = container.querySelector(".icon");
+                if (icon) icon.textContent = "";
+                container.querySelectorAll(".error-empty, .error-invalid, .success").forEach(m => m.classList.add("hidden"));
+            }
         });
         if (charCount) {
             charCount.textContent = "0";
@@ -103,29 +107,59 @@ export function initContactForm() {
         });
     });
 
+    // --- ENVÍO CON DOBLE PLANTILLA ---
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         let isValid = true;
 
         fields.forEach(id => {
-            if (!validateField(document.getElementById(id), id)) isValid = false;
+            const input = document.getElementById(id);
+            if (!validateField(input, id)) isValid = false;
         });
 
         if (isValid) {
             const originalText = submitBtn.querySelector("span").textContent;
+            
+            // UI de carga
             submitBtn.disabled = true;
             submitBtn.querySelector("span").textContent = "Enviando...";
-            btnIcon.className = "fa fa-spinner animate-spin";
+            if (btnIcon) btnIcon.className = "fa fa-spinner animate-spin";
 
-            setTimeout(() => {
-                showToast();
-                form.reset();
-                resetAll();
-                
-                submitBtn.disabled = false;
-                submitBtn.querySelector("span").textContent = originalText;
-                btnIcon.className = "fa fa-paper-plane";
-            }, 1000);
+            // Recopilación de datos
+            const templateParams = {
+                fullname: document.getElementById("fullname").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                subject: document.getElementById("subject").value.trim(),
+                message: document.getElementById("message").value.trim(),
+                time: new Date().toLocaleString('es-VE', { 
+                    dateStyle: 'medium', 
+                    timeStyle: 'short' 
+                })
+            };
+
+            // EJECUCIÓN DE AMBAS PLANTILLAS
+            // 1. Notificación para ti (template_u0osuj7)
+            const sendToMe = emailjs.send('service_kkd2unc', 'template_u0osuj7', templateParams);
+            
+            // 2. Auto-reply para el cliente (template_5g7m7le)
+            const sendToClient = emailjs.send('service_kkd2unc', 'template_5g7m7le', templateParams);
+
+            Promise.all([sendToMe, sendToClient])
+                .then(() => {
+                    showToast(); // Éxito
+                    form.reset();
+                    resetAll();
+                })
+                .catch((error) => {
+                    console.error("Error en el envío:", error);
+                    alert("Lo siento, hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.");
+                })
+                .finally(() => {
+                    // Restaurar botón
+                    submitBtn.disabled = false;
+                    submitBtn.querySelector("span").textContent = originalText;
+                    if (btnIcon) btnIcon.className = "fa fa-paper-plane";
+                });
         }
     });
 }
