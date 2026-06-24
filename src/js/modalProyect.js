@@ -28,6 +28,5 @@ window.addEventListener("click", function (e) {
     }
 });
 
-// ESTA ES LA CLAVE: Hacerlas accesibles al HTML
 window.openModal = openModal;
 window.closeModal = closeModal;
