@@ -288,10 +288,8 @@
                          <!-- Contenido (CAMBIADO: gap ampliado estratégicamente en md y lg) -->
                          <div class="flex flex-col md:flex-row items-center gap-16 md:gap-24 lg:gap-32">
 
-                              <!-- Figura (CAMBIADO: se añade my-14 para proteger título/párrafo en móviles) -->
-                              <figure class="relative md:w-1/2 flex justify-center items-center min-h-[380px] sm:min-h-[420px] my-14 md:my-0 group">
-                              
-                                   <!-- CAPA: EFECTO GLOW TRASERO -->
+                              <figure class="relative md:w-1/2 flex justify-center items-center min-h-[380px] sm:min-h-[420px] my-14 md:my-0 group" style="perspective: 1200px;">
+
                                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
                                         <div class="absolute w-72 h-72 bg-blue-500/30 rounded-full blur-[45px] translate-x-12 -translate-y-12"></div>
                                         <div class="absolute w-72 h-72 bg-red-500/30 rounded-full blur-[45px] -translate-x-12 translate-y-4"></div>
@@ -299,72 +297,90 @@
                                         <div class="absolute w-72 h-72 bg-green-500/20 rounded-full blur-[45px] -translate-x-10 -translate-y-14"></div>
                                    </div>
 
-                                   <!-- CAPA DE ÓRBITA DE LOGOS (Mismos tamaños intactos) -->
-                                   <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-                                        <div class="w-[110%] sm:w-[105%] max-w-[680px] aspect-square rounded-full animate-orbit" style="--duration: 60s;">
+                                   <div class="relative w-full flex justify-center items-center preserve-3d">
+
+                                        <div class="absolute flex items-center justify-center pointer-events-none preserve-3d w-[110%] sm:w-[105%] max-w-[680px] aspect-square">
                                              
-                                             <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto hover:scale-110 transition-transform duration-300">
-                                                  <div class="counter-orbit flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-sky-600/30 shadow-[0_0_20px_rgba(59,130,246,0.6)]" style="--duration: 60s;">
-                                                       <img src="./assets/img/react.svg" alt="React" class="w-8 md:w-12">
+                                             <div class="atom-orbit" style="--rz: 0deg; --rx: 70deg; --duration: 16s;">
+                                                  <div class="atom-electron-spin" style="--delay: 0s;">
+                                                       <div class="atom-electron-pos"><div class="atom-electron-counter"><div class="atom-electron-untilt pointer-events-auto cursor-pointer">
+                                                            <div class="atom-fade-effect flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-sky-600/30 shadow-[0_0_20px_rgba(59,130,246,0.6)]">
+                                                                 <img src="./assets/img/react.svg" alt="React" class="w-8 md:w-12">
+                                                            </div>
+                                                       </div></div></div>
+                                                  </div>
+                                                  <div class="atom-electron-spin" style="--delay: -8s;">
+                                                       <div class="atom-electron-pos"><div class="atom-electron-counter"><div class="atom-electron-untilt pointer-events-auto cursor-pointer">
+                                                            <div class="atom-fade-effect flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-emerald-600/30 shadow-[0_0_20px_rgba(16,185,129,0.5)]">
+                                                                 <img src="./assets/img/nodejs.svg" alt="Node.js" class="w-8 md:w-12">
+                                                            </div>
+                                                       </div></div></div>
                                                   </div>
                                              </div>
 
-                                             <div class="absolute top-[14.65%] left-[85.35%] -translate-x-1/2 -translate-y-1/2 pointer-events-auto hover:scale-110 transition-transform duration-300">
-                                                  <div class="counter-orbit flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-cyan-500/30 shadow-[0_0_20px_rgba(6,182,212,0.6)]" style="--duration: 60s;">
-                                                       <img src="./assets/img/tailwind.svg" alt="Tailwind CSS" class="w-8 md:w-12">
+                                             <div class="atom-orbit" style="--rz: 45deg; --rx: 70deg; --duration: 18s;">
+                                                  <div class="atom-electron-spin" style="--delay: 0s;">
+                                                       <div class="atom-electron-pos"><div class="atom-electron-counter"><div class="atom-electron-untilt pointer-events-auto cursor-pointer">
+                                                            <div class="atom-fade-effect flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-cyan-500/30 shadow-[0_0_20px_rgba(6,182,212,0.6)]">
+                                                                 <img src="./assets/img/tailwind.svg" alt="Tailwind CSS" class="w-8 md:w-12">
+                                                            </div>
+                                                       </div></div></div>
+                                                  </div>
+                                                  <div class="atom-electron-spin" style="--delay: -9s;">
+                                                       <div class="atom-electron-pos"><div class="atom-electron-counter"><div class="atom-electron-untilt pointer-events-auto cursor-pointer">
+                                                            <div class="atom-fade-effect flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-purple-500/30 shadow-[0_0_20px_rgba(147,51,234,0.6)]">
+                                                                 <img src="./assets/img/php.svg" alt="PHP" class="w-8 md:w-12">
+                                                            </div>
+                                                       </div></div></div>
                                                   </div>
                                              </div>
 
-                                             <div class="absolute top-1/2 left-full -translate-x-1/2 -translate-y-1/2 pointer-events-auto hover:scale-110 transition-transform duration-300">
-                                                  <div class="counter-orbit flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-yellow-500/30 shadow-[0_0_20px_rgba(250,204,21,0.5)]" style="--duration: 60s;">
-                                                       <img src="./assets/img/javascript.svg" alt="JavaScript" class="w-8 md:w-12">
+                                             <div class="atom-orbit" style="--rz: 90deg; --rx: 70deg; --duration: 19s;">
+                                                  <div class="atom-electron-spin" style="--delay: 0s;">
+                                                       <div class="atom-electron-pos"><div class="atom-electron-counter"><div class="atom-electron-untilt pointer-events-auto cursor-pointer">
+                                                            <div class="atom-fade-effect flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-yellow-500/30 shadow-[0_0_20px_rgba(250,204,21,0.5)]">
+                                                                 <img src="./assets/img/javascript.svg" alt="JavaScript" class="w-8 md:w-12">
+                                                            </div>
+                                                       </div></div></div>
+                                                  </div>
+                                                  <div class="atom-electron-spin" style="--delay: -9.5s;">
+                                                       <div class="atom-electron-pos"><div class="atom-electron-counter"><div class="atom-electron-untilt pointer-events-auto cursor-pointer">
+                                                            <div class="atom-fade-effect flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-red-600/30 shadow-[0_0_20px_rgba(239,68,68,0.5)]">
+                                                                 <img src="./assets/img/html.svg" alt="HTML5" class="w-8 md:w-12">
+                                                            </div>
+                                                       </div></div></div>
                                                   </div>
                                              </div>
 
-                                             <div class="absolute top-[85.35%] left-[85.35%] -translate-x-1/2 -translate-y-1/2 pointer-events-auto hover:scale-110 transition-transform duration-300">
-                                                  <div class="counter-orbit flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-blue-600/30 shadow-[0_0_20px_rgba(37,99,235,0.6)]" style="--duration: 60s;">
-                                                       <img src="./assets/img/python.svg" alt="Python" class="w-8 md:w-12">
+                                             <div class="atom-orbit" style="--rz: 135deg; --rx: 70deg; --duration: 30s;">
+                                                  <div class="atom-electron-spin" style="--delay: 0s;">
+                                                       <div class="atom-electron-pos"><div class="atom-electron-counter"><div class="atom-electron-untilt pointer-events-auto cursor-pointer">
+                                                            <div class="atom-fade-effect flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-blue-600/30 shadow-[0_0_20px_rgba(37,99,235,0.6)]">
+                                                                 <img src="./assets/img/python.svg" alt="Python" class="w-8 md:w-12">
+                                                            </div>
+                                                       </div></div></div>
+                                                  </div>
+                                                  <div class="atom-electron-spin" style="--delay: -15s;">
+                                                       <div class="atom-electron-pos"><div class="atom-electron-counter"><div class="atom-electron-untilt pointer-events-auto cursor-pointer">
+                                                            <div class="atom-fade-effect flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-orange-500/30 shadow-[0_0_20px_rgba(249,115,22,0.6)]">
+                                                                 <img src="./assets/img/postgresql.svg" alt="PostgreSQL" class="w-8 md:w-12">
+                                                            </div>
+                                                       </div></div></div>
                                                   </div>
                                              </div>
-
-                                             <div class="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto hover:scale-110 transition-transform duration-300">
-                                                  <div class="counter-orbit flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-emerald-600/30 shadow-[0_0_20px_rgba(16,185,129,0.5)]" style="--duration: 60s;">
-                                                       <img src="./assets/img/nodejs.svg" alt="Node.js" class="w-8 md:w-12">
-                                                  </div>
-                                             </div>
-
-                                             <div class="absolute top-[85.35%] left-[14.65%] -translate-x-1/2 -translate-y-1/2 pointer-events-auto hover:scale-110 transition-transform duration-300">
-                                                  <div class="counter-orbit flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-purple-500/30 shadow-[0_0_20px_rgba(147,51,234,0.6)]" style="--duration: 60s;">
-                                                       <img src="./assets/img/php.svg" alt="PHP" class="w-8 md:w-12">
-                                                  </div>
-                                             </div>
-
-                                             <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 pointer-events-auto hover:scale-110 transition-transform duration-300">
-                                                  <div class="counter-orbit flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-red-600/30 shadow-[0_0_20px_rgba(239,68,68,0.5)]" style="--duration: 60s;">
-                                                       <img src="./assets/img/html.svg" alt="HTML5" class="w-8 md:w-12">
-                                                  </div>
-                                             </div>
-
-                                             <div class="absolute top-[14.65%] left-[14.65%] -translate-x-1/2 -translate-y-1/2 pointer-events-auto hover:scale-110 transition-transform duration-300">
-                                                  <div class="counter-orbit flex items-center justify-center w-14 h-14 md:w-18 md:h-18 bg-[#111113] rounded-2xl border border-orange-500/30 shadow-[0_0_20px_rgba(249,115,22,0.6)]" style="--duration: 60s;">
-                                                       <img src="./assets/img/postgresql.svg" alt="PostgreSQL" class="w-8 md:w-12">
-                                                  </div>
-                                             </div>
-
                                         </div>
-                                   </div>
 
-                                   <!-- FOTO DE PERFIL CENTRAL (Mismo tamaño) -->
-                                   <div class="relative z-10 w-74 h-74 sm:w-130 sm:h-133 rounded-full border-2 border-gray-700/50 overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.6)] transition-all duration-500 hover:scale-105">
-                                        <img src="./assets/img/yo5.jpeg" title="Andrés Vento con corbata frente al espejo en su oficina"
-                                             alt="Fotografía de Andrés Vento" 
-                                             loading="lazy" 
-                                             class="w-full h-full object-cover">
+                                        <div class="relative w-74 h-74 sm:w-130 sm:h-133 rounded-full border-2 border-gray-700/50 overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.6)] transition-all duration-500 hover:scale-105 preserve-3d" style="transform: translateZ(40px);">
+                                             <img src="./assets/img/yo5.jpeg" title="Andrés Vento con corbata frente al espejo en su oficina"
+                                                  alt="Fotografía de Andrés Vento" 
+                                                  loading="lazy" 
+                                                  class="w-full h-full object-cover relative z-10">
+                                        </div>
+
                                    </div>
 
                               </figure>
 
-                              <!-- Texto (CAMBIADO: md:pl-6 para un extra de separación en computadoras) -->
                               <div class="md:w-1/2 space-y-6 text-center md:text-left md:pl-6">
                                    <h3 class="text-xl md:text-2xl font-bold text-slate-800 dark:text-white">
                                         <span class="subtitle leading-relaxed md:text-3xl">
@@ -384,7 +400,7 @@
                                         </p>
                                    </div>
 
-                                   <nav class="flex flex-col sm:flex-row items-center md:items-start gap-5 pt-4">
+                                   <nav class="flex flex-col sm:flex-row items-center md:items-start gap-5 pt-6">
                                         <a href="./assets/doc/CV_Andres_Vento_TSU_Informatica_Desarrollador_Web.pdf" target="_blank" rel="noopener noreferrer" title="Mi Currículum" class="btn_outline text-lg sm:text-base md:text-lg px-9">
                                              Ver Currículum <i class="fa-solid fa-file-lines"></i>
                                         </a>

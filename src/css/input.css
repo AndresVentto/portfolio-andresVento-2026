@@ -269,18 +269,6 @@
           transform: translateY(-2px) scale(0.88);
      }
      
-     @keyframes orbit {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-     }
-
-     .animate-orbit {
-          animation: orbit 30s linear infinite;
-     }
-
-     .counter-orbit {
-          animation: orbit 30s linear infinite reverse;
-     }
 }
 
 @keyframes scroll-fab-bob {
@@ -326,6 +314,77 @@
 .work_card_animated {
     /* "backwards" para que no parpadee antes de empezar */
     animation: slideInUp 0.5s cubic-bezier(0.25, 1, 0.5, 1) backwards;
+}
+/* ==========================================
+   ANIMACIÓN 3D ÁTOMO (Sobre Mí) - CORREGIDA
+========================================== */
+.preserve-3d {
+     transform-style: preserve-3d;
+}
+
+@keyframes spin-z {
+     from { transform: rotateZ(0deg); }
+     to { transform: rotateZ(360deg); }
+}
+
+@keyframes spin-z-reverse {
+     from { transform: rotateZ(0deg); }
+     to { transform: rotateZ(-360deg); }
+}
+
+@keyframes fade-behind {
+     0%, 45% { opacity: 1; filter: blur(0px); }
+     55% { opacity: 0; filter: blur(2px); } 
+     85% { opacity: 0; } 
+     95%, 100% { opacity: 1; filter: blur(0px); } 
+}
+
+/* El anillo de la órbita */
+.atom-orbit {
+     position: absolute;
+     inset: 0;
+     border: 1.5px dashed rgba(112, 132, 160, 0.2); 
+     border-radius: 50%;
+     transform-style: preserve-3d;
+     transform: rotateZ(var(--rz, 0deg)) rotateX(var(--rx, 75deg));
+}
+
+/* El contenedor que gira (¡SIN opacity/filter para no romper el 3D!) */
+.atom-electron-spin {
+     position: absolute;
+     inset: 0;
+     transform-style: preserve-3d;
+     animation: spin-z var(--duration, 20s) linear infinite;
+     animation-delay: var(--delay, 0s);
+}
+
+.atom-electron-pos {
+     position: absolute;
+     top: 50%;
+     left: 100%;
+     transform: translate(-50%, -50%);
+     transform-style: preserve-3d;
+}
+
+.atom-electron-counter {
+     transform-style: preserve-3d;
+     animation: spin-z-reverse var(--duration, 20s) linear infinite;
+     animation-delay: var(--delay, 0s);
+}
+
+.atom-electron-untilt {
+     transform: rotateX(calc(var(--rx, 75deg) * -1)) rotateZ(calc(var(--rz, 0deg) * -1));
+     transition: transform 0.3s ease;
+}
+
+.atom-electron-untilt:hover {
+     transform: rotateX(calc(var(--rx, 75deg) * -1)) rotateZ(calc(var(--rz, 0deg) * -1)) scale(1.15);
+}
+
+/* NUEVA CLASE: Se aplica directo a la caja del logo */
+.atom-fade-effect {
+     animation: fade-behind var(--duration, 20s) linear infinite;
+     animation-delay: var(--delay, 0s);
 }
 
 /*===== ESTILO BARRA DE SCROLL ====*/
