@@ -24,8 +24,12 @@
           <!--===== Canonical URL =====-->
           <link rel="canonical" href="https://andresvento-dev.vercel.app">
           <!--============== CSS ================-->
+          <link rel="preload" href="./src/css/output.css" as="style" />
           <link rel="stylesheet" href="./src/css/output.css"/>
           <!--============== Google Fonts ================-->
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:opsz,wght@14..32,500&display=swap">
           <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:opsz,wght@14..32,500&display=swap" rel="stylesheet">
           <!--============== Favicon ================-->
           <link rel="icon" type="image/png" href="./assets/img/logoBlack.png">
@@ -80,8 +84,8 @@
 
                     <div class="flex items-center gap-4 sm:gap-6">
                          
-                         <button aria-label="Cambiar tema" id="theme-btn" class="text-2xl ml-15 transition-colors duration-300 text-darkBodyColor dark:text-white hover:opacity-80">
-                              <i class="fa-regular fa-moon"></i>
+                         <button id="theme-btn" aria-label="Cambiar tema" class="text-2xl ml-15 transition-colors duration-300 text-darkBodyColor dark:text-white hover:opacity-80">
+                              <i id="theme-icon" class="fa-regular fa-moon"></i>
                          </button>
 
                          <button id="hamburguesa" aria-label="Abrir menú" class="lg:hidden text-2xl text-darkBodyColor dark:text-white transition-colors duration-300 hover:opacity-80">
@@ -236,23 +240,23 @@
                          <!-- Tabs -->
                          <div class="flex relative z-10">
                               <!-- Botón 1 -->
-                              <button type="button" aria-pressed="true" class="tab flex-1 py-2 text-sm sm:text-sm md:text-base font-medium text-whiteColor cursor-pointer border-r border-whiteColor/10 dark:border-whiteColor/5" data-tabs="todos">
+                              <button type="button" aria-pressed="true" class="tab flex-1 py-2 text-sm sm:text-sm md:text-base font-medium text-whiteColor cursor-pointer border-r border-whiteColor/10 dark:border-whiteColor/5" data-category="todos">
                                    Todos
                               </button>
 
                               <!-- Botón 2 -->
-                              <button type="button" aria-pressed="false" class="tab flex-1 py-2 text-sm sm:text-sm md:text-base font-medium cursor-pointer border-r border-whiteColor/10 dark:border-whiteColor/5" data-tabs="web">
+                              <button type="button" aria-pressed="false" class="tab flex-1 py-2 text-sm sm:text-sm md:text-base font-medium cursor-pointer border-r border-whiteColor/10 dark:border-whiteColor/5" data-category="web">
                                    Web
                               </button>
 
                               <!-- Botón 3 -->
-                              <button type="button" aria-pressed="false" class="tab flex-1 py-2 text-sm sm:text-sm md:text-base font-medium cursor-pointer border-r border-whiteColor/10 dark:border-whiteColor/5" data-tabs="sistemas">
+                              <button type="button" aria-pressed="false" class="tab flex-1 py-2 text-sm sm:text-sm md:text-base font-medium cursor-pointer border-r border-whiteColor/10 dark:border-whiteColor/5" data-category="sistemas">
                                    Sistemas
                               </button>
                               
                               <!-- Botón 4 (Sin borde derecho) -->
-                              <button type="button" aria-pressed="false" class="tab flex-1 py-2 text-sm sm:text-sm md:text-base font-medium cursor-pointer" data-tabs="apps">
-                                   Apps
+                              <button type="button" aria-pressed="false" class="tab flex-1 py-2 text-sm sm:text-sm md:text-base font-medium cursor-pointer" data-category="ia">
+                                   IA
                               </button>
                          </div>
                     </nav>
@@ -371,7 +375,7 @@
                                         </div>
 
                                         <div class="relative w-74 h-74 sm:w-130 sm:h-133 rounded-full border-2 border-gray-700/50 overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.6)] transition-all duration-500 hover:scale-105 preserve-3d" style="transform: translateZ(40px);">
-                                             <img src="./assets/img/yo5.jpeg" title="Andrés Vento con corbata frente al espejo en su oficina"
+                                             <img src="./assets/img/Gemini_Generated_Image_eognvgeognvgeogn.png" title="Andrés Vento con corbata frente al espejo en su oficina"
                                                   alt="Fotografía de Andrés Vento" 
                                                   loading="lazy" 
                                                   class="w-full h-full object-cover relative z-10">
@@ -1363,7 +1367,7 @@
                <div class="relative w-full max-w-5xl max-h-[80vh] md:max-h-[70vh] overflow-y-auto overflow-x-hidden rounded-xl bg-whiteColor dark:bg-darkBodyColor border-2 border-primaryColor dark:border-primaryColorLight shadow-2xl dark:shadow-[0_0_30px_rgba(14,165,233,0.3)] animate-fadeIn transition-colors duration-200 custom-scrollbar">
                     
                     <!-- BOTÓN DE CERRAR -->
-                    <button onclick="cerrarDetalleModal()" class="absolute top-3 right-3 md:top-5 md:right-5 z-30 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-slate-100/90 md:bg-slate-100 dark:bg-slate-800/90 dark:md:bg-slate-800 hover:bg-red-700 dark:hover:bg-red-700 hover:text-white text-slate-500 dark:text-slate-400 transition-all duration-100 shadow-sm md:shadow-none backdrop-blur-sm">
+                    <button type="button" data-action="close-project-modal" class="absolute top-3 right-3 md:top-5 md:right-5 z-30 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-slate-100/90 md:bg-slate-100 dark:bg-slate-800/90 dark:md:bg-slate-800 hover:bg-red-700 dark:hover:bg-red-700 hover:text-white text-slate-500 dark:text-slate-400 transition-all duration-100 shadow-sm md:shadow-none backdrop-blur-sm">
                          <i class="fa-solid fa-xmark text-base md:text-lg"></i>
                     </button>
 
@@ -1437,15 +1441,15 @@
           </div>
 
           <!--============== SCRIPT JS PARTICLES-JS ==============-->
-          <script  src="./src/js/particles.min.js"></script>
+          <script defer src="./src/js/particles.min.js"></script>
 
           <!--============== SCRIPT JS EMAILJS ==============-->
           <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
           <!--============== SCRIPT JS ==============-->
-          <script type="module" src="./src/js/main.js"></script>
+          <script type="module" defer src="./src/js/main.js"></script>
 
           <!-- Import de la librería de Supabase desde su servidor (CDN) -->
-          <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
      </body>
 </html>

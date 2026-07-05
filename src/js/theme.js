@@ -1,7 +1,20 @@
 /*~~~~~~~~~~~~~~~ TEMA OSCURO/CLARO ~~~~~~~~~~~~~~~*/ 
 const html = document.documentElement;
 const themeBtn = document.getElementById("theme-btn");
+const themeIcon = themeBtn?.querySelector("#theme-icon");
 const savedMode = localStorage.getItem("mode");
+
+function actualizarIconoTema(mode) {
+     if (!themeIcon) return;
+
+     themeIcon.classList.remove("fa-moon", "fa-sun", "fa-regular");
+
+     if (mode === "dark") {
+          themeIcon.classList.add("fa-regular", "fa-sun");
+     } else {
+          themeIcon.classList.add("fa-regular", "fa-moon");
+     }
+}
 
 // Inicialización
 if (savedMode) {
@@ -11,7 +24,7 @@ if (savedMode) {
 }
 
 // Toggle
-themeBtn.addEventListener("click", () => { 
+themeBtn?.addEventListener("click", () => { 
      if (html.classList.contains("dark")) {
           lightMode();
      } else {
@@ -22,8 +35,7 @@ themeBtn.addEventListener("click", () => {
 // Dark Mode: 
 export function darkMode() { 
      html.classList.add("dark"); 
-     themeBtn.classList.remove("fa-moon"); 
-     themeBtn.classList.add("fa-sun"); 
+     actualizarIconoTema("dark");
      localStorage.setItem("mode", "dark"); 
 
      cargarParticles("#e3e3e3"); // partículas claras
@@ -32,8 +44,7 @@ export function darkMode() {
 // Light Mode:
 export function lightMode() {
      html.classList.remove("dark"); 
-     themeBtn.classList.remove("fa-sun");  
-     themeBtn.classList.add("fa-moon"); 
+     actualizarIconoTema("light");
      localStorage.setItem("mode", "light");
 
      cargarParticles("#062d52"); // partículas oscuras

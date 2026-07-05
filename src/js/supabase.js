@@ -19,6 +19,6 @@ export async function obtenerProyectosDeBD() {
         return [];
     }
 
-    proyectosCache = data;
-    return data;
+    proyectosCache = data || [];
+    return proyectosCache;
 }
