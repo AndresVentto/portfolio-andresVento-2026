@@ -18,7 +18,7 @@ export function scrollHeaderFondo() {
 
             themeBoton.classList.add("text-whiteColor");
             hamburguesa.classList.add("text-whiteColor");
-            logoOscuro.src = "./assets/img/logo.png";          
+            logoOscuro.src = "./assets/img/logo.webp";          
 
         } else {
             header.classList.remove("bg-[hsla(216,100%,5%,0.90)]");
@@ -29,7 +29,7 @@ export function scrollHeaderFondo() {
             
             themeBoton.classList.remove("text-whiteColor");
             hamburguesa.classList.remove("text-whiteColor");
-            logoOscuro.src = "./assets/img/logoBlack.png";
+            logoOscuro.src = "./assets/img/logoBlack.webp";
         }
     };
 
