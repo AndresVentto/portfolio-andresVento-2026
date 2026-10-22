@@ -1,90 +1,167 @@
 /*~~~~~~~~~~~~~~~ VALIDACIÓN E INTEGRACIÓN DE FORMULARIO ~~~~~~~~~~~~~~~*/
+import { secretos } from './copy.js';
+
+const EMAILJS_PUBLIC_KEY = "FT_Fg8WdvRpcifXSD";
+const EMAILJS_SERVICE = "service_kkd2unc";
+const TEMPLATE_PARA_MI = "template_u0osuj7";
+const TEMPLATE_AUTO_RESPUESTA = "template_5g7m7le";
+
+const COOLDOWN_MS = 60 * 1000; // Tiempo mínimo entre envíos (anti-spam)
+const COOLDOWN_KEY = "contacto:ultimoEnvio";
+
+// Cada campo define su propia validación y el mensaje que verá el usuario
+const config = {
+    fullname: {
+        validate: (v) => {
+            if (v.length < 3) return "Escribe al menos 3 caracteres.";
+            if (!/^[\p{L}\s'.-]+$/u.test(v)) return "Usa solo letras, espacios, guiones o apóstrofos.";
+            if ((v.match(/\p{L}/gu) || []).length < 2) return "Escribe tu nombre.";
+            return "";
+        }
+    },
+    subject: {
+        validate: (v) => {
+            if (v.length < 3) return "Escribe al menos 3 caracteres.";
+            if (/[<>]/.test(v)) return "El asunto no puede contener los símbolos < o >.";
+            return "";
+        }
+    },
+    email: {
+        validate: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? "" : "Escribe un correo válido, por ejemplo nombre@correo.com."
+    },
+    message: {
+        validate: (v) => v.length < 10 ? `El mensaje es muy corto (${v.length}/10 caracteres mínimo).` : ""
+    }
+};
+
+const fields = Object.keys(config);
 
 export function initContactForm() {
     const form = document.getElementById("contact-form");
-    if (!form) return; 
+    if (!form) return;
 
     const submitBtn = document.getElementById("submit-btn");
+    const btnText = submitBtn?.querySelector("span");
     const btnIcon = document.getElementById("btn-icon");
     const toast = document.getElementById("toast");
     const charCount = document.getElementById("char-count");
+    const formStatus = document.getElementById("form-status");
+    const honeypot = document.getElementById("website");
 
-    // Inicializar EmailJS con tu Public Key
-    emailjs.init("FT_Fg8WdvRpcifXSD");
+    // Campos que el usuario ya visitó: solo a esos se les muestran errores mientras escribe
+    const touched = new Set();
+    let toastTimer = null;
 
-    const config = {
-        fullname: { regex: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}$/, required: true },
-        subject: { regex: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,100}$/, required: true }, 
-        email: { regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, required: true },
-        message: { regex: /^[\s\S]{10,2000}$/, required: true }
-    };
-
-    const fields = Object.keys(config);
+    const emailjsDisponible = () => typeof window.emailjs !== "undefined";
+    if (emailjsDisponible()) window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
     // --- FUNCIONES AUXILIARES ---
     function showToast() {
         if (!toast) return;
+        clearTimeout(toastTimer);
         toast.classList.remove("translate-y-32", "opacity-0");
-        setTimeout(() => toast.classList.add("translate-y-32", "opacity-0"), 4000);
+        toastTimer = setTimeout(() => toast.classList.add("translate-y-32", "opacity-0"), 5000);
     }
 
-    function validateField(input, id) {
+    function setStatus(html, tipo = "error") {
+        if (!formStatus) return;
+        if (!html) {
+            formStatus.classList.add("hidden");
+            formStatus.innerHTML = "";
+            return;
+        }
+        formStatus.className = tipo === "error"
+            ? "rounded-xl border px-4 py-3 text-sm border-red-500/40 bg-red-500/10 text-red-700 dark:text-red-300"
+            : "rounded-xl border px-4 py-3 text-sm border-amber-500/40 bg-amber-500/10 text-amber-800 dark:text-amber-200";
+        formStatus.innerHTML = html;
+    }
+
+    function mailtoFallback() {
+        return `<a class="underline font-semibold" href="mailto:${secretos.email}">${secretos.email}</a>`;
+    }
+
+    function validateField(input, id, { mostrar = true } = {}) {
         if (!input) return false;
-        const container = input.closest('.space-y-2') || input.parentElement;
-        const icon = container.querySelector(".icon");
-        const elements = {
-            empty: container.querySelector(".error-empty"),
-            invalid: container.querySelector(".error-invalid"),
-            success: container.querySelector(".success")
-        };
-        
+        const container = input.closest(".form-field");
+        const icon = container?.querySelector(".icon");
+        const msg = container?.querySelector(".field-msg");
+
         const value = input.value.trim();
-        const isRequired = config[id].required;
-        const isEmpty = value === "";
-        const isInvalid = config[id].regex && !isEmpty && !config[id].regex.test(value);
 
-        let status = "valid";
-        if (isRequired && isEmpty) status = "empty";
-        else if (isInvalid) status = "invalid";
-        else if (isEmpty) status = "none";
-
-        elements.empty?.classList.toggle("hidden", status !== "empty");
-        elements.invalid?.classList.toggle("hidden", status !== "invalid");
-        elements.success?.classList.toggle("hidden", status !== "valid");
-
-        input.classList.remove("border-red-500", "border-green-500", "border-blue-500", "ring-1", "ring-blue-500");
-
-        if (status === "empty" || status === "invalid") {
-            input.classList.add("border-red-500");
-            if (icon) icon.textContent = status === "empty" ? "⚠️" : "❌";
-            return false;
-        } 
-        
-        if (status === "valid") {
-            input.classList.add("border-green-500");
-            if (icon) icon.textContent = "✅";
+        // Un campo opcional vacío es válido y no muestra nada
+        if (value === "" && config[id].optional) {
+            if (mostrar) clearField(input);
             return true;
         }
 
-        if (icon) icon.textContent = "";
-        return true;
+        const error = value === "" ? "Este campo es obligatorio." : config[id].validate(value);
+        const valido = error === "";
+
+        if (!mostrar) return valido;
+
+        input.setAttribute("aria-invalid", String(!valido));
+        input.classList.toggle("border-red-500", !valido);
+        input.classList.toggle("border-green-500", valido);
+        if (msg) msg.textContent = error;
+        if (icon) {
+            icon.innerHTML = valido
+                ? '<i class="fa-solid fa-circle-check text-green-500"></i>'
+                : '<i class="fa-solid fa-circle-exclamation text-red-500"></i>';
+        }
+        return valido;
+    }
+
+    function clearField(input) {
+        const container = input.closest(".form-field");
+        input.removeAttribute("aria-invalid");
+        input.classList.remove("border-red-500", "border-green-500");
+        const icon = container?.querySelector(".icon");
+        const msg = container?.querySelector(".field-msg");
+        if (icon) icon.innerHTML = "";
+        if (msg) msg.textContent = "";
+    }
+
+    function updateCharCount(input) {
+        if (!charCount) return;
+        const len = input.value.length;
+        charCount.textContent = len;
+        charCount.classList.toggle("text-red-500", len >= 1950);
     }
 
     function resetAll() {
-        fields.forEach(id => {
+        touched.clear();
+        fields.forEach((id) => {
             const input = document.getElementById(id);
-            if (input) {
-                input.classList.remove("border-red-500", "border-green-500", "border-blue-500", "ring-1", "ring-blue-500");
-                const container = input.closest('.space-y-2');
-                const icon = container.querySelector(".icon");
-                if (icon) icon.textContent = "";
-                container.querySelectorAll(".error-empty, .error-invalid, .success").forEach(m => m.classList.add("hidden"));
-            }
+            if (input) clearField(input);
         });
         if (charCount) {
             charCount.textContent = "0";
-            charCount.classList.replace("text-red-500", "text-gray-500");
+            charCount.classList.remove("text-red-500");
         }
+    }
+
+    function setLoading(cargando) {
+        if (!submitBtn) return;
+        submitBtn.disabled = cargando;
+        submitBtn.setAttribute("aria-busy", String(cargando));
+        if (btnText) btnText.textContent = cargando ? "Enviando..." : "Enviar";
+        if (btnIcon) btnIcon.className = cargando ? "fa fa-spinner animate-spin" : "fa fa-paper-plane";
+    }
+
+    function segundosDeEspera() {
+        try {
+            const ultimo = Number(localStorage.getItem(COOLDOWN_KEY)) || 0;
+            const restante = COOLDOWN_MS - (Date.now() - ultimo);
+            return restante > 0 ? Math.ceil(restante / 1000) : 0;
+        } catch {
+            return 0;
+        }
+    }
+
+    function guardarEnvio() {
+        try {
+            localStorage.setItem(COOLDOWN_KEY, String(Date.now()));
+        } catch { /* modo privado: sin límite local */ }
     }
 
     // --- EVENTOS ---
@@ -92,74 +169,83 @@ export function initContactForm() {
         const input = document.getElementById(id);
         if (!input) return;
 
-        input.addEventListener("focus", () => {
-            if (!input.classList.contains("border-red-500")) {
-                input.classList.add("border-blue-500", "ring-1", "ring-blue-500");
-            }
+        // Al salir del campo se valida por primera vez (no mientras se empieza a escribir)
+        input.addEventListener("blur", () => {
+            if (input.value.trim() === "" && !touched.has(id)) return;
+            touched.add(id);
+            validateField(input, id);
         });
 
         input.addEventListener("input", () => {
-            validateField(input, id);
-            if (id === "message" && charCount) {
-                charCount.textContent = input.value.length;
-                input.value.length >= 1950 ? charCount.classList.add("text-red-500") : charCount.classList.remove("text-red-500");
-            }
+            if (id === "message") updateCharCount(input);
+            if (touched.has(id)) validateField(input, id);
+            setStatus("");
         });
     });
 
-    // --- ENVÍO CON DOBLE PLANTILLA ---
-    form.addEventListener("submit", (e) => {
+    // --- ENVÍO ---
+    form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        let isValid = true;
+        setStatus("");
 
-        fields.forEach(id => {
+        let primerInvalido = null;
+        fields.forEach((id) => {
             const input = document.getElementById(id);
-            if (!validateField(input, id)) isValid = false;
+            touched.add(id);
+            if (!validateField(input, id) && !primerInvalido) primerInvalido = input;
         });
 
-        if (isValid) {
-            const originalText = submitBtn.querySelector("span").textContent;
-            
-            // UI de carga
-            submitBtn.disabled = true;
-            submitBtn.querySelector("span").textContent = "Enviando...";
-            if (btnIcon) btnIcon.className = "fa fa-spinner animate-spin";
-
-            // Recopilación de datos
-            const templateParams = {
-                fullname: document.getElementById("fullname").value.trim(),
-                email: document.getElementById("email").value.trim(),
-                subject: document.getElementById("subject").value.trim(),
-                message: document.getElementById("message").value.trim(),
-                time: new Date().toLocaleString('es-VE', { 
-                    dateStyle: 'medium', 
-                    timeStyle: 'short' 
-                })
-            };
-
-            // EJECUCIÓN DE AMBAS PLANTILLAS
-            // 1. Notificación para ti (template_u0osuj7)
-            const sendToMe = emailjs.send('service_kkd2unc', 'template_u0osuj7', templateParams);
-            
-            // 2. Auto-reply para el cliente (template_5g7m7le)
-            const sendToClient = emailjs.send('service_kkd2unc', 'template_5g7m7le', templateParams);
-
-            Promise.all([sendToMe, sendToClient])
-                .then(() => {
-                    showToast(); // Éxito
-                    form.reset();
-                    resetAll();
-                })
-                .catch((error) => {
-                    console.error("Error en el envío:", error);
-                    alert("Lo siento, hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.");
-                })
-                .finally(() => {
-                    // Restaurar botón
-                    submitBtn.disabled = false;
-                    submitBtn.querySelector("span").textContent = originalText;
-                    if (btnIcon) btnIcon.className = "fa fa-paper-plane";
-                });
+        if (primerInvalido) {
+            primerInvalido.focus();
+            return;
         }
+
+        // Si el campo trampa tiene contenido es un bot: se simula éxito sin enviar nada
+        if (honeypot && honeypot.value.trim() !== "") {
+            form.reset();
+            resetAll();
+            showToast();
+            return;
+        }
+
+        const espera = segundosDeEspera();
+        if (espera > 0) {
+            setStatus(`Ya enviaste un mensaje hace poco. Espera ${espera} segundos antes de enviar otro.`, "aviso");
+            return;
+        }
+
+        if (!emailjsDisponible()) {
+            setStatus(`No se pudo cargar el servicio de envío (quizás un bloqueador de anuncios lo impidió). Escríbeme directamente a ${mailtoFallback()}.`);
+            return;
+        }
+
+        const templateParams = {
+            fullname: document.getElementById("fullname").value.trim(),
+            email: document.getElementById("email").value.trim(),
+            subject: document.getElementById("subject").value.trim(),
+            message: document.getElementById("message").value.trim(),
+            time: new Date().toLocaleString("es-VE", { dateStyle: "medium", timeStyle: "short" })
+        };
+
+        setLoading(true);
+        try {
+            // 1. Lo importante: que el mensaje me llegue a mí
+            await window.emailjs.send(EMAILJS_SERVICE, TEMPLATE_PARA_MI, templateParams);
+        } catch (error) {
+            console.error("Error en el envío:", error);
+            setStatus(`No se pudo enviar el mensaje. Revisa tu conexión e inténtalo de nuevo, o escríbeme a ${mailtoFallback()}.`);
+            setLoading(false);
+            return;
+        }
+
+        // 2. La respuesta automática es un extra: si falla, el mensaje igual llegó
+        window.emailjs.send(EMAILJS_SERVICE, TEMPLATE_AUTO_RESPUESTA, templateParams)
+            .catch((error) => console.warn("No se envió la respuesta automática:", error));
+
+        guardarEnvio();
+        form.reset();
+        resetAll();
+        setLoading(false);
+        showToast();
     });
 }

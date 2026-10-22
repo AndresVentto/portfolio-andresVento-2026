@@ -32,6 +32,15 @@
 }
 
 @layer components {
+     /* Footer: enlaces propios (no usan .nav-link para que el JS del menú no los afecte) */
+     .footer-link {
+          @apply relative text-white/70 transition-colors duration-300 hover:text-primaryLight focus-visible:text-primaryLight focus-visible:outline-none focus-visible:underline underline-offset-4;
+     }
+
+     .footer-social {
+          @apply grid h-10 w-10 place-items-center rounded-full border border-white/15 text-lg text-white/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-primaryLight hover:bg-primaryColorLight hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primaryLight;
+     }
+
      .nav-link {
           @apply relative font-bold text-lg text-textColor lg:text-primaryColor dark:text-textColor;
      }
@@ -161,6 +170,7 @@
           display: flex;
           width: max-content;
           animation: scrollSkills 20s linear infinite;
+          will-change: transform;
      }
 
      .skills_group {
@@ -332,11 +342,12 @@
      to { transform: rotateZ(-360deg); }
 }
 
+/* Solo opacity: animar filter: blur() obliga a repintar en cada frame */
 @keyframes fade-behind {
-     0%, 45% { opacity: 1; filter: blur(0px); }
-     55% { opacity: 0; filter: blur(2px); } 
+     0%, 45% { opacity: 1; }
+     55% { opacity: 0; } 
      85% { opacity: 0; } 
-     95%, 100% { opacity: 1; filter: blur(0px); } 
+     95%, 100% { opacity: 1; } 
 }
 
 /* El anillo de la órbita */
@@ -554,4 +565,57 @@
 
 .animate-fadeIn {
      animation: fadeIn 0.3s ease;
+}
+
+/* ==========================================
+   RENDIMIENTO DE ANIMACIONES
+========================================== */
+
+/* Manchas de luz: un filter: blur(150px) en elementos grandes es de lo más costoso
+   al hacer scroll. Un degradado radial con máscara da casi el mismo resultado. */
+.blur-\[150px\] {
+     filter: none;
+     scale: 1.8;
+     pointer-events: none;
+     -webkit-mask-image: radial-gradient(closest-side, rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.25) 55%, transparent);
+     mask-image: radial-gradient(closest-side, rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.25) 55%, transparent);
+}
+
+/* ==========================================
+   EXPERIENCIA: DESPLEGABLES (<details>)
+========================================== */
+.exp_summary {
+     list-style: none;
+}
+
+.exp_summary::-webkit-details-marker {
+     display: none;
+}
+
+.exp_summary:focus-visible {
+     outline: 2px solid hsl(209, 74%, 45%);
+     outline-offset: 3px;
+}
+
+.exp_card:hover .exp_chevron,
+.exp_card[open] .exp_chevron {
+     background-color: hsl(209, 74%, 45%);
+     color: #fff;
+}
+
+/* Apertura suave (Chrome/Edge 131+). En otros navegadores abre al instante. */
+.exp_card {
+     interpolate-size: allow-keywords;
+}
+
+.exp_card::details-content {
+     block-size: 0;
+     overflow: hidden;
+     opacity: 0;
+     transition: block-size 0.35s ease, opacity 0.35s ease, content-visibility 0.35s allow-discrete;
+}
+
+.exp_card[open]::details-content {
+     block-size: auto;
+     opacity: 1;
 }

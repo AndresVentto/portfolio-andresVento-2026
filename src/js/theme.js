@@ -1,4 +1,4 @@
-/*~~~~~~~~~~~~~~~ TEMA OSCURO/CLARO ~~~~~~~~~~~~~~~*/ 
+/*~~~~~~~~~~~~~~~ TEMA OSCURO/CLARO ~~~~~~~~~~~~~~~*/
 const html = document.documentElement;
 const themeBtn = document.getElementById("theme-btn");
 const themeIcon = themeBtn?.querySelector("#theme-icon");
@@ -16,15 +16,8 @@ function actualizarIconoTema(mode) {
      }
 }
 
-// Inicialización
-if (savedMode) {
-     savedMode === "dark" ? darkMode() : lightMode();
-} else {
-     darkMode(); // default oscuro
-}
-
 // Toggle
-themeBtn?.addEventListener("click", () => { 
+themeBtn?.addEventListener("click", () => {
      if (html.classList.contains("dark")) {
           lightMode();
      } else {
@@ -33,17 +26,17 @@ themeBtn?.addEventListener("click", () => {
 });
 
 // Dark Mode: 
-export function darkMode() { 
-     html.classList.add("dark"); 
+export function darkMode() {
+     html.classList.add("dark");
      actualizarIconoTema("dark");
-     localStorage.setItem("mode", "dark"); 
+     localStorage.setItem("mode", "dark");
 
      cargarParticles("#e3e3e3"); // partículas claras
 }
 
 // Light Mode:
 export function lightMode() {
-     html.classList.remove("dark"); 
+     html.classList.remove("dark");
      actualizarIconoTema("light");
      localStorage.setItem("mode", "light");
 
@@ -51,18 +44,49 @@ export function lightMode() {
 }
 
 // Cargar Particulas:
-export function cargarParticles(color) {
+const esMovil = window.matchMedia("(max-width: 768px)").matches;
+let particulasVisibles = true;
 
-     // Elimina partículas anteriores
-     const oldCanvas = document.querySelector("#particlesJS canvas");
-     if (oldCanvas) {
-          oldCanvas.remove();
-     }
+function instanciaParticles() {
+     return window.pJSDom?.[0]?.pJS;
+}
+
+function pausarParticles() {
+     const pJS = instanciaParticles();
+     if (pJS) cancelAnimationFrame(pJS.fn.drawAnimFrame);
+}
+
+function reanudarParticles() {
+     const pJS = instanciaParticles();
+     if (!pJS || !particulasVisibles || document.hidden) return;
+     cancelAnimationFrame(pJS.fn.drawAnimFrame);
+     pJS.fn.vendors.draw();
+}
+
+// Pausar la animación cuando el hero no está en pantalla o la pestaña está oculta
+const contenedorParticles = document.getElementById("particlesJS");
+if (contenedorParticles) {
+     new IntersectionObserver(([entry]) => {
+          particulasVisibles = entry.isIntersecting;
+          particulasVisibles ? reanudarParticles() : pausarParticles();
+     }).observe(contenedorParticles);
+}
+document.addEventListener("visibilitychange", () => {
+     document.hidden ? pausarParticles() : reanudarParticles();
+});
+
+export function cargarParticles(color) {
+     if (typeof window.particlesJS !== "function") return;
+
+     // Destruir la instancia anterior (si solo se borra el canvas, su animación sigue corriendo)
+     const anterior = instanciaParticles();
+     if (anterior) anterior.fn.vendors.destroypJS();
+     window.pJSDom = [];
 
      particlesJS("particlesJS", {
           particles: {
                number: {
-                    value: 25,
+                    value: esMovil ? 14 : 25,
                     density: {
                          enable: true,
                          value_area: 800
@@ -94,10 +118,19 @@ export function cargarParticles(color) {
                },
                move: {
                     enable: true,
-                    speed: 5
+                    speed: esMovil ? 2.5 : 3.5
                }
           },
-          retina_detect: true
+          // En celular la densidad retina duplica los píxeles a dibujar
+          retina_detect: !esMovil
      });
+
+     if (!particulasVisibles) pausarParticles();
 }
 
+// Inicialización
+if (savedMode) {
+     savedMode === "dark" ? darkMode() : lightMode();
+} else {
+     darkMode(); // default oscuro
+}

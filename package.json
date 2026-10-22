@@ -1,21 +1,21 @@
 {
-  "name": "portafolio",
-  "version": "1.0.0",
-  "description": "![Portfolio Preview](./assets/img/portafolio-img.png)",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "dev": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
-    "build": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@tailwindcss/cli": "^4.1.18"
-  },
-  "devDependencies": {
-    "tailwindcss": "^4.2.2"
-  }
+     "name": "portafolio",
+     "version": "1.0.0",
+     "description": "Portafolio personal de Andrés Vento, desarrollador Full-Stack",
+     "main": "index.js",
+     "type": "module",
+     "scripts": {
+          "dev": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
+          "build": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --minify",
+          "test": "echo \"Error: no test specified\" && exit 1"
+     },
+     "keywords": [],
+     "author": "",
+     "license": "ISC",
+     "dependencies": {
+          "@tailwindcss/cli": "^4.1.18"
+     },
+     "devDependencies": {
+          "tailwindcss": "^4.2.2"
+     }
 }
